@@ -13,14 +13,28 @@ export default function BlogPost({ params }: { params: { id: string } }) {
   const otherPosts = blogPosts.filter(p => p.id !== params.id);
 
   if (!post) {
-    return <div>Post not found</div>;
+    return (
+      <div className={styles.page}>
+        <header className={styles.header}>
+          <nav>
+            <Link href="/">Home</Link> / <span>Post Not Found</span>
+          </nav>
+        </header>
+        <main className={styles.main}>
+          <div className={styles.error}>
+            <h1>Oops! Post not found.</h1>
+            <p>We couldn't find the post you're looking for. Please check the URL or return to the <Link href="/">homepage</Link>.</p>
+          </div>
+        </main>
+      </div>
+    );
   }
 
   return (
     <div className={styles.page}>
       <header className={styles.header}>
         <nav>
-          <Link href="/">Home</Link>
+          <Link href="/">Home</Link> / <Link href="/#blog">Blog</Link> / <span>{post.title}</span>
         </nav>
       </header>
       <main className={styles.main}>
@@ -31,6 +45,15 @@ export default function BlogPost({ params }: { params: { id: string } }) {
           <Link href="/#blog" className={styles.backToBlog}>
             Back to Blog
           </Link>
+          <section className={styles.commentsSection}>
+            <h2>Comments</h2>
+            <p>Comments functionality coming soon!</p>
+          </section>
+          <section className={styles.socialSharing}>
+            <h2>Share this post</h2>
+            <button className={styles.shareButton}>Share on Twitter</button>
+            <button className={styles.shareButton}>Share on Facebook</button>
+          </section>
         </article>
         <aside className={styles.otherPosts}>
           <h2>Other Posts</h2>
