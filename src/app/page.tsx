@@ -54,10 +54,7 @@ export default function Home() {
             <div className={styles.aboutText}>
               <h1 className={styles.title}>Jonathan Aaron Rocha</h1>
               <p className={styles.description}>
-                As a web developer and marketer with over five years of experience, I excel in full-stack development and SEO strategy. My expertise includes graphic design, UX/UI, and content management systems. I possess diverse skills in web development, digital marketing, and content creation, and I am experienced in data analysis, project management, and leadership, with knowledge of emerging technologies like AI.
-              </p>
-              <p className={styles.description}>
-                In my most recent role as a Content Manager at Fullsteam, I oversee developing, optimizing, and managing high-quality content across multiple platforms. I collaborate with cross-functional teams to create engaging, SEO-optimized copy, lead a team of writers and editors, and ensure all content aligns with company goals. As an SEO Analyst at Fullsteam, I significantly improved visibility and search engine rankings across multiple digital properties through data-driven SEO strategies.
+                As a web developer and marketer with over five years of experience, I excel in full-stack development and SEO strategy. My expertise includes graphic design, UX/UI, and content management systems. I possess diverse skills in web development, digital marketing, and content creation, and I am experienced in data analysis, project management, and leadership, with knowledge of emerging technologies like AI. In my most recent role as a Content Manager at Fullsteam, I oversee developing, optimizing, and managing high-quality content across multiple platforms. I collaborate with cross-functional teams to create engaging, SEO-optimized copy, lead a team of writers and editors, and ensure all content aligns with company goals. As an SEO Analyst at Fullsteam, I significantly improved visibility and search engine rankings across multiple digital properties through data-driven SEO strategies.
               </p>
             </div>
             <div className={styles.imageContainer}>
