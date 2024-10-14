@@ -1,20 +1,14 @@
-<!DOCTYPE html>
-<html lang="en">
+// pages/index.js
+import dynamic from 'next/dynamic';
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jonathan Aaron Rocha</title>
-    <script>
-        window.location.href = '/src/app/page';
-    </script>
-</head>
+// Dynamically import the component
+const DynamicComponent = dynamic(() => import('../components/MyComponent'));
 
-<body>
-    <noscript>
-        <p>Hi, Welcome to Jonathan Aaron Rocha's website. Please enable JavaScript to view the full site.</p>
-        <a href="/src/app/page">Click here to enter the site</a>
-    </noscript>
-</body>
+const HomePage = () => (
+<div>
+    <h1>Welcome to the Home Page</h1>
+    <DynamicComponent />
+</div>
+);
 
-</html>
+export default HomePage;
