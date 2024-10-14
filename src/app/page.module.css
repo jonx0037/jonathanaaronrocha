@@ -447,3 +447,10 @@
 .darkMode .typewriter {
   background-color: rgba(255, 255, 255, 0.05);
 }
+
+.typewriterSection {
+  margin-top: 2rem;
+  margin-bottom: 4rem;
+  /* Adjust margin as needed */
+  text-align: center;
+}

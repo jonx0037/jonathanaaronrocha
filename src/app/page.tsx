@@ -73,6 +73,9 @@ export default function Home() {
               />
             </div>
           </div>
+        </section>
+
+        <section className={`${styles.section} ${styles.typewriterSection}`}>
           <TypewriterAnimation text="Content Editor, Web Developer, Graphic Artist, SEO Professional, Leader, Entrepreneur, Writer, Scholar, Music Producer" />
         </section>
 
