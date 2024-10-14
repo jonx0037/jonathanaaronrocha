@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { useState, useEffect } from 'react';
 import styles from "./page.module.css";
 import { blogPosts } from './blogPosts';
+import TypewriterAnimation from '../components/TypewriterAnimation';
 
 export default function Home() {
   const [isDarkMode, setIsDarkMode] = useState(true);
@@ -53,66 +54,13 @@ export default function Home() {
             <div className={styles.aboutText}>
               <h1 className={styles.title}>Jonathan Aaron Rocha</h1>
               <p className={styles.description}>
-                WEB DEVELOPER & MARKETER
+                Web Developer & Digital Marketer
               </p>
-              <h2>Professional Summary</h2>
               <p>
-                Digital marketing professional with more than 5 years of experience in managing online communities and social networks.
+                Passionate about creating engaging digital experiences and driving online growth. With over 5 years of experience in web development and digital marketing, I specialize in crafting user-friendly websites, implementing effective SEO strategies, and managing high-impact content across multiple platforms.
               </p>
-              <h2>Experience</h2>
               <p>
-                <strong>Content Manager - Fullsteam</strong><br />
-                May 2024 - Present<br />
-                • Oversee developing, optimizing, and managing high-quality content across multiple platforms<br />
-                • Collaborate with cross-functional teams to create engaging, SEO-optimized copy<br />
-                • Tailor content to business objectives and audience needs<br />
-                • Manage content calendars<br />
-                • Ensure brand consistency<br />
-                • Utilize data-driven strategies to enhance user engagement, search rankings, and conversion rates<br />
-                • Lead a team of writers and editors<br />
-                • Guide best practices, tone, and style<br />
-                • Ensure all content aligns with company goals<br />
-                <strong>SEO Analyst- Fullsteam</strong><br />
-                March 2023 - May 2024<br />
-                • Optimized website performance through data-driven SEO strategies<br />
-                • Conducted keyword research<br />
-                • Performed competitive analysis<br />
-                • Executed technical audits to improve organic search rankings<br />
-                • Collaborated with marketing and development teams<br />
-                • Implemented on-page and off-page SEO best practices<br />
-                • Monitored site analytics<br />
-                • Refined strategies to enhance traffic and conversion rates<br />
-                • Significantly improved visibility and search engine rankings across multiple digital properties<br />
-                <strong>Web Developer - Fullsteam</strong><br />
-                March 2021 - March 2023<br />
-                • Developed and maintained user-friendly websites and web applications<br />
-                • Aligned projects with company goals<br />
-                • Performed front-end and back-end development<br />
-                • Coded in HTML, CSS, JavaScript, and Python<br />
-                • Optimized site performance for SEO and user experience<br />
-                • Collaborated with cross-functional teams<br />
-                • Troubleshot issues<br />
-                • Integrated new features<br />
-                • Ensured seamless functionality across platforms<br />
-                • Contributed to the company's digital strategy and growth<br />
-              </p>
-              <h2>Education</h2>
-              <p>
-                <strong>Bachelors of Arts in History</strong><br />
-                Texas A&M University, College Station, TX, USA<br />
-                1999-2004<br />
-                <strong>Masters of Arts in English</strong><br />
-                Texas A&M University - Central Texas, Killeen, TX, USA<br />
-                2023-2024<br />
-              </p>
-              <h2>Skills</h2>
-              <p>
-                I possess diverse skills in web development, digital marketing, and content creation. Proficient in multiple programming languages, I excel in full-stack development and SEO strategy. My expertise includes graphic design, UX/UI, and content management systems. I'm experienced in data analysis, project management, and leadership, with knowledge of emerging technologies like AI. My versatility spans from technical development to creative content strategy.
-              </p>
-              <h2>Languages</h2>
-              <p>
-                • Native English<br />
-                • Fluent Spanish, French<br />
+                My diverse skill set spans from full-stack development to content strategy, allowing me to bridge the gap between technical implementation and creative marketing solutions. I'm dedicated to staying at the forefront of emerging technologies and industry best practices to deliver innovative digital solutions.
               </p>
             </div>
             <div className={styles.imageContainer}>
@@ -125,6 +73,7 @@ export default function Home() {
               />
             </div>
           </div>
+          <TypewriterAnimation text="Content Editor, Web Developer, Graphic Artist, SEO Professional, Leader, Entrepreneur, Writer, Scholar, Music Producer" />
         </section>
 
         <section id="projects" className={styles.section}>
