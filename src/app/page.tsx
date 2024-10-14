@@ -5,7 +5,11 @@ import Link from 'next/link';
 import { useState, useEffect } from 'react';
 import styles from "./page.module.css";
 import { blogPosts } from './blogPosts';
-import TypewriterAnimation from '../components/TypewriterAnimation';
+import dynamic from 'next/dynamic';
+
+// Dynamically import components
+const DarkModeToggle = dynamic(() => import('../components/DarkModeToggle'));
+const TypewriterAnimation = dynamic(() => import('../components/TypewriterAnimation'));
 
 interface HeaderProps {
   isDarkMode: boolean;
@@ -29,9 +33,7 @@ const Header: React.FC<HeaderProps> = ({ isDarkMode, toggleDarkMode }) => {
         <a onClick={() => scrollToSection('blog')}>Blog</a>
         <a onClick={() => scrollToSection('contact')}>Contact</a>
       </nav>
-      <button onClick={toggleDarkMode} className={styles.modeToggle}>
-        {isDarkMode ? '☀️' : '🌙'}
-      </button>
+      <DarkModeToggle />
     </header>
   );
 };
@@ -51,9 +53,9 @@ const About: React.FC = () => (
     <h2>About Me</h2>
     <div className={styles.aboutContent}>
       <div className={styles.aboutText}>
-        <p>With a background in both the humanities and tech, I bring a unique perspective to digital content. I specialize in SEO strategies, web development, and content creation that bridges the gap between data-driven analysis and creative storytelling.</p>
-        <p>I’ve worked on optimizing website performance, developing SEO strategies, and managing cross-functional teams to ensure high-quality content that aligns with business goals. Currently, I serve as the Content Manager at Fullsteam, overseeing a team of writers and developers to produce engaging, SEO-optimized content.</p>
-        <p>When I’m not immersed in digital strategies, I enjoy playing guitar and piano, exploring classical and jazz music, and training in jiu-jitsu. I also love spending time with my Olde English Bulldogge, Lady, and exploring new academic frontiers with my BA in History and an MA in English.</p>
+        <p>I have a unique perspective on digital content, combining my background in the humanities with technical expertise. I specialize in SEO strategies, web development, and content creation.</p>
+        <p>As the Content Manager at Fullsteam, I lead a team to produce engaging, SEO-optimized content that aligns with business goals.</p>
+        <p>Outside of work, I enjoy music, jiu-jitsu, and spending time with my Olde English Bulldogge, Lady.</p>
       </div>
       <div className={styles.imageContainer}>
         <Image
@@ -74,15 +76,15 @@ const Portfolio: React.FC = () => (
     <div className={styles.projectGrid}>
       <div className={styles.project}>
         <h3>SEO and Web Development for Fullsteam</h3>
-        <p>As SEO Analyst and Web Developer at Fullsteam, I significantly improved visibility and search engine rankings across multiple digital properties by implementing data-driven SEO strategies, optimizing site performance, and ensuring seamless cross-platform functionality. (Link to case study or project details)</p>
+        <p>Improved visibility and search rankings through data-driven SEO strategies and site performance optimization.</p>
       </div>
       <div className={styles.project}>
         <h3>JonathanAaronRocha.com</h3>
-        <p>This personal website is built using Next.js and deployed on Vercel, featuring a dark, modern theme optimized for performance and SEO. It serves as both a portfolio and a digital hub for my professional and personal interests. (You are here!)</p>
+        <p>This personal website, built with Next.js, serves as a portfolio and digital hub for my professional interests.</p>
       </div>
       <div className={styles.project}>
         <h3>Research on Online Free Speech</h3>
-        <p>Explore my academic work on content moderation and online free speech, focusing on the impact of platform censorship on freedom of expression. This project draws heavily on research conducted for ENGL 5374 at Texas A&M University. (Link to research papers)</p>
+        <p>My academic work on content moderation and free speech, focusing on the impact of platform censorship.</p>
       </div>
     </div>
   </section>
@@ -94,23 +96,23 @@ const Resume: React.FC = () => (
     <div className={styles.timeline}>
       <div className={styles.timelineItem}>
         <h3>2024 - Present: Content Manager at Fullsteam</h3>
-        <p>Oversee content creation, SEO strategies, and digital marketing efforts, ensuring alignment with company goals and audience engagement.</p>
+        <p>Oversee content creation and SEO strategies, ensuring alignment with company goals.</p>
       </div>
       <div className={styles.timelineItem}>
         <h3>2023 - 2024: SEO Analyst at Fullsteam</h3>
-        <p>Led SEO efforts to optimize site performance and increase organic search visibility through data-driven strategies.</p>
+        <p>Led SEO efforts to optimize site performance and increase organic visibility.</p>
       </div>
       <div className={styles.timelineItem}>
         <h3>2021 - 2023: Web Developer at Fullsteam</h3>
-        <p>Developed and maintained user-friendly websites and web applications, aligning projects with business objectives and ensuring technical excellence.</p>
+        <p>Developed user-friendly websites and applications, ensuring technical excellence.</p>
       </div>
       <div className={styles.timelineItem}>
         <h3>1999 - 2004: BA in History, Texas A&M University</h3>
-        <p>Focused on research in history, politics, and digital content, laying the groundwork for my later ventures in SEO and digital marketing.</p>
+        <p>Focused on research in history and digital content.</p>
       </div>
       <div className={styles.timelineItem}>
         <h3>2023 - 2024: MA in English, Texas A&M University - Central Texas</h3>
-        <p>Exploring digital rhetoric, content moderation, and free speech in online environments as part of my advanced academic research.</p>
+        <p>Researching digital rhetoric and free speech in online environments.</p>
       </div>
     </div>
   </section>
