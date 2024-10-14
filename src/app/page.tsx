@@ -184,7 +184,7 @@ export default function Home() {
           GitHub
         </a>
         <a
-          href="mailto:jon.rocha@outlook.com"
+          href="mailto:jonX03@pm.me"
         >
           Email Me
         </a>
