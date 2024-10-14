@@ -416,15 +416,13 @@
   padding: 1rem;
   border-radius: 5px;
   background-color: rgba(0, 0, 0, 0.05);
-  white-space: nowrap;
   overflow: hidden;
+  /* Removed white-space: nowrap; */
   border-right: 3px solid var(--primary-color);
-  animation: typing 2s steps(40, end), blink-caret 0.75s step-end infinite;
-  /* Adjusted animation speed */
+  animation: typing 5s steps(40, end), blink-caret 0.75s step-end infinite;
+  /* Increased animation duration */
   max-width: 80%;
-  /* Added max-width for responsiveness */
   margin: 0 auto;
-  /* Centered the text */
 }
 
 @keyframes typing {
@@ -456,6 +454,5 @@
 .typewriterSection {
   margin-top: 2rem;
   margin-bottom: 4rem;
-  /* Adjust margin as needed */
   text-align: center;
 }
