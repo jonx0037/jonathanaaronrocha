@@ -1,3 +1,5 @@
+"use client";
+
 import { useEffect } from 'react';
 import { useDarkMode } from '../../../context/DarkModeContext';
 import DarkModeToggle from '../../components/DarkModeToggle';
