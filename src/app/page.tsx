@@ -54,13 +54,9 @@ export default function Home() {
             <div className={styles.aboutText}>
               <h1 className={styles.title}>Jonathan Aaron Rocha</h1>
               <p className={styles.description}>
-                Web Developer & Digital Marketer
-              </p>
-              <p>
-                Passionate about creating engaging digital experiences and driving online growth. With over 5 years of experience in web development and digital marketing, I specialize in crafting user-friendly websites, implementing effective SEO strategies, and managing high-impact content across multiple platforms.
-              </p>
-              <p>
-                My diverse skill set spans from full-stack development to content strategy, allowing me to bridge the gap between technical implementation and creative marketing solutions. I'm dedicated to staying at the forefront of emerging technologies and industry best practices to deliver innovative digital solutions.
+                As a web developer and marketer with over five years of experience, I excel in full-stack development and SEO strategy. My expertise includes graphic design, UX/UI, and content management systems. I possess diverse skills in web development, digital marketing, and content creation, and I am experienced in data analysis, project management, and leadership, with knowledge of emerging technologies like AI.
+
+                In my most recent role as a Content Manager at Fullsteam, I oversee developing, optimizing, and managing high-quality content across multiple platforms. I collaborate with cross-functional teams to create engaging, SEO-optimized copy, lead a team of writers and editors, and ensure all content aligns with company goals. As an SEO Analyst at Fullsteam, I significantly improved visibility and search engine rankings across multiple digital properties through data-driven SEO strategies.
               </p>
             </div>
             <div className={styles.imageContainer}>
