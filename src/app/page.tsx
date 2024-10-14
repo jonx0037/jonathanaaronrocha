@@ -53,9 +53,7 @@ const About: React.FC = () => (
     <h2>About Me</h2>
     <div className={styles.aboutContent}>
       <div className={styles.aboutText}>
-        <p>I have a unique perspective on digital content, combining my background in the humanities with technical expertise. I specialize in SEO strategies, web development, and content creation.</p>
-        <p>As the Content Manager at Fullsteam, I lead a team to produce engaging, SEO-optimized content that aligns with business goals.</p>
-        <p>Outside of work, I enjoy music, jiu-jitsu, and spending time with my Olde English Bulldogge, Lady.</p>
+        <p>As a web developer and marketer with over five years of experience, I excel in full-stack development and SEO strategy. My expertise includes graphic design, UX/UI, content management systems, digital marketing, and content creation. In my most recent role as a Content Manager at Fullsteam, I oversee developing, optimizing, and managing high-quality content across multiple platforms. As an SEO Analyst at Fullsteam, I significantly improved visibility and search engine rankings through data-driven SEO strategies.</p>
       </div>
       <div className={styles.imageContainer}>
         <Image
@@ -145,6 +143,7 @@ const Blog: React.FC<BlogProps> = ({ visiblePosts, loadMorePosts }) => (
     )}
   </section>
 );
+
 
 const Contact: React.FC = () => (
   <section id="contact" className={styles.section}>
