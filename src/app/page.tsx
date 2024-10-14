@@ -38,8 +38,8 @@ export default function Home() {
       <header className={styles.header}>
         <nav>
           <a onClick={() => scrollToSection('about')}>About</a>
-          <a onClick={() => scrollToSection('projects')}>Projects</a>
-          <a onClick={() => scrollToSection('skills')}>Skills</a>
+          <a onClick={() => scrollToSection('portfolio')}>Portfolio</a>
+          <a onClick={() => scrollToSection('resume')}>Resume</a>
           <a onClick={() => scrollToSection('blog')}>Blog</a>
           <a onClick={() => scrollToSection('contact')}>Contact</a>
         </nav>
@@ -49,13 +49,24 @@ export default function Home() {
       </header>
 
       <main className={styles.main}>
+        <section className={styles.introBanner}>
+          <h1>Hi, I'm Jonathan Rocha.</h1>
+          <p>Web Developer, Content Manager, and Digital Marketing Expert with over 5 years of experience managing online communities, optimizing SEO strategies, and leading content creation across multiple platforms.</p>
+        </section>
+
+        <section className={styles.cta}>
+          <p>Discover my work, explore my thoughts, or get in touch.</p>
+          <Link href="/portfolio" className={styles.btn}>Explore My Portfolio</Link>
+          <Link href="/contact" className={styles.btn}>Contact Me</Link>
+        </section>
+
         <section id="about" className={styles.section}>
+          <h2>About Me</h2>
           <div className={styles.aboutContent}>
             <div className={styles.aboutText}>
-              <h1 className={styles.title}>Jonathan Aaron Rocha</h1>
-              <p className={styles.description}>
-                As a web developer and marketer with over five years of experience, I excel in full-stack development and SEO strategy. My expertise includes graphic design, UX/UI, and content management systems. I possess diverse skills in web development, digital marketing, and content creation, and I am experienced in data analysis, project management, and leadership, with knowledge of emerging technologies like AI. In my most recent role as a Content Manager at Fullsteam, I oversee developing, optimizing, and managing high-quality content across multiple platforms. I collaborate with cross-functional teams to create engaging, SEO-optimized copy, lead a team of writers and editors, and ensure all content aligns with company goals. As an SEO Analyst at Fullsteam, I significantly improved visibility and search engine rankings across multiple digital properties through data-driven SEO strategies.
-              </p>
+              <p>With a background in both the humanities and tech, I bring a unique perspective to digital content. I specialize in SEO strategies, web development, and content creation that bridges the gap between data-driven analysis and creative storytelling.</p>
+              <p>I've worked on optimizing website performance, developing SEO strategies, and managing cross-functional teams to ensure high-quality content that aligns with business goals. Currently, I serve as the Content Manager at Fullsteam, overseeing a team of writers and developers to produce engaging, SEO-optimized content.</p>
+              <p>When I'm not immersed in digital strategies, I enjoy playing guitar and piano, exploring classical and jazz music, and training in jiu-jitsu. I also love spending time with my Olde English Bulldogge, Lady, and exploring new academic frontiers with my BA in History and an MA in English.</p>
             </div>
             <div className={styles.imageContainer}>
               <Image
@@ -70,39 +81,51 @@ export default function Home() {
         </section>
 
         <section className={`${styles.section} ${styles.typewriterSection}`}>
-          <TypewriterAnimation text="Content Editor, Web Developer, Graphic Artist, SEO Professional, Leader, Entrepreneur, Writer, Scholar" />
+          <TypewriterAnimation text="Web Developer, Content Manager, SEO Expert, Digital Marketer, Leader, Musician, Jiu-Jitsu Practitioner, Scholar" />
         </section>
 
-        <section id="projects" className={styles.section}>
-          <h2>Projects</h2>
+        <section id="portfolio" className={styles.section}>
+          <h2>Portfolio</h2>
           <div className={styles.projectGrid}>
             <div className={styles.project}>
-              <h3>E-commerce Platform</h3>
-              <p>Developed a full-stack e-commerce platform using React, Node.js, and MongoDB. Implemented features such as user authentication, product catalog, shopping cart, and payment integration.</p>
+              <h3>SEO and Web Development for Fullsteam</h3>
+              <p>As SEO Analyst and Web Developer at Fullsteam, I significantly improved visibility and search engine rankings across multiple digital properties by implementing data-driven SEO strategies, optimizing site performance, and ensuring seamless cross-platform functionality.</p>
             </div>
             <div className={styles.project}>
-              <h3>SEO Optimization Campaign</h3>
-              <p>Led an SEO optimization campaign for a client&apos;s website, resulting in a 150% increase in organic traffic over 6 months. Implemented technical SEO improvements and created a content strategy.</p>
+              <h3>JonathanAaronRocha.com</h3>
+              <p>This personal website is built using Next.js and deployed on Vercel, featuring a dark, modern theme optimized for performance and SEO. It serves as both a portfolio and a digital hub for my professional and personal interests.</p>
             </div>
             <div className={styles.project}>
-              <h3>Content Management System</h3>
-              <p>Built a custom CMS using Python and Django, allowing non-technical users to easily manage website content. Integrated with a headless CMS for flexible content delivery.</p>
+              <h3>Research on Online Free Speech</h3>
+              <p>Explore my academic work on content moderation and online free speech, focusing on the impact of platform censorship on freedom of expression. This project draws heavily on research conducted for ENGL 5374 at Texas A&M University.</p>
             </div>
           </div>
         </section>
 
-        <section id="skills" className={styles.section}>
-          <h2>Skills</h2>
-          <ul className={styles.skillList}>
-            <li>JavaScript (ES6+)</li>
-            <li>React.js</li>
-            <li>Node.js</li>
-            <li>Python</li>
-            <li>SEO Optimization</li>
-            <li>Content Strategy</li>
-            <li>Digital Marketing</li>
-            <li>HTML5 & CSS3</li>
-          </ul>
+        <section id="resume" className={styles.section}>
+          <h2>Resume</h2>
+          <div className={styles.timeline}>
+            <div className={styles.timelineItem}>
+              <h3>2024 - Present: Content Manager at Fullsteam</h3>
+              <p>Oversee content creation, SEO strategies, and digital marketing efforts, ensuring alignment with company goals and audience engagement.</p>
+            </div>
+            <div className={styles.timelineItem}>
+              <h3>2023 - 2024: SEO Analyst at Fullsteam</h3>
+              <p>Led SEO efforts to optimize site performance and increase organic search visibility through data-driven strategies.</p>
+            </div>
+            <div className={styles.timelineItem}>
+              <h3>2021 - 2023: Web Developer at Fullsteam</h3>
+              <p>Developed and maintained user-friendly websites and web applications, aligning projects with business objectives and ensuring technical excellence.</p>
+            </div>
+            <div className={styles.timelineItem}>
+              <h3>2023 - 2024: MA in English, Texas A&M University - Central Texas</h3>
+              <p>Exploring digital rhetoric, content moderation, and free speech in online environments as part of my advanced academic research.</p>
+            </div>
+            <div className={styles.timelineItem}>
+              <h3>1999 - 2004: BA in History, Texas A&M University</h3>
+              <p>Focused on research in history, politics, and digital content, laying the groundwork for my later ventures in SEO and digital marketing.</p>
+            </div>
+          </div>
         </section>
 
         <section id="blog" className={styles.section}>
@@ -127,24 +150,21 @@ export default function Home() {
         </section>
 
         <section id="contact" className={styles.section}>
-          <h2>Contact Me</h2>
-          <p>Get in touch with me at: jon.rocha@outlook.com</p>
-          <div className={styles.ctas}>
-            <a
-              className={styles.primary}
-              href="mailto:jon.rocha@outlook.com"
-            >
-              Send Email
-            </a>
-            <a
-              href="https://linkedin.com/in/jonathan-rocha-atx/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className={styles.secondary}
-            >
-              LinkedIn Profile
-            </a>
-          </div>
+          <h2>Get in Touch</h2>
+          <p>If you're interested in working together or just want to say hello, feel free to reach out!</p>
+          <form action="/submit-form" method="POST" className={styles.contactForm}>
+            <label htmlFor="name">Name</label>
+            <input type="text" id="name" name="name" required />
+
+            <label htmlFor="email">Email</label>
+            <input type="email" id="email" name="email" required />
+
+            <label htmlFor="message">Message</label>
+            <textarea id="message" name="message" required></textarea>
+
+            <button type="submit">Send Message</button>
+          </form>
+          <p>You can also find me on <a href="https://www.linkedin.com/in/jonathan-rocha-atx/">LinkedIn</a> or check out my projects on <a href="https://github.com/jonx0037">GitHub</a>.</p>
         </section>
       </main>
 
@@ -157,7 +177,7 @@ export default function Home() {
           LinkedIn
         </a>
         <a
-          href="https://github.com/jonx0037/jonx0037.github.io"
+          href="https://github.com/jonx0037"
           target="_blank"
           rel="noopener noreferrer"
         >
