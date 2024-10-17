@@ -2,7 +2,7 @@
 
 import Image from 'next/image';
 import Link from 'next/link';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import styles from "./page.module.css";
 import { blogPosts } from './blogPosts';
 import dynamic from 'next/dynamic';
@@ -17,22 +17,32 @@ interface HeaderProps {
 }
 
 const Header: React.FC<HeaderProps> = ({ isDarkMode, toggleDarkMode }) => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
   const scrollToSection = (sectionId: string) => {
     const section = document.getElementById(sectionId);
     if (section) {
       section.scrollIntoView({ behavior: 'smooth' });
+      setIsMenuOpen(false);
     }
   };
 
   return (
     <header className={styles.header}>
-      <nav>
-        <a onClick={() => scrollToSection('about')}>About</a>
-        <a onClick={() => scrollToSection('portfolio')}>Portfolio</a>
-        <a onClick={() => scrollToSection('skills')}>Skills</a>
-        <a onClick={() => scrollToSection('resume')}>Resume</a>
-        <a onClick={() => scrollToSection('blog')}>Blog</a>
-        <a onClick={() => scrollToSection('contact')}>Contact</a>
+      <button 
+        className={styles.mobileMenuToggle} 
+        onClick={() => setIsMenuOpen(!isMenuOpen)}
+        aria-label={isMenuOpen ? "Close menu" : "Open menu"}
+      >
+        ☰
+      </button>
+      <nav className={`${isMenuOpen ? styles.open : ''}`}>
+        <a onClick={() => scrollToSection('about')} tabIndex={0}>About</a>
+        <a onClick={() => scrollToSection('portfolio')} tabIndex={0}>Portfolio</a>
+        <a onClick={() => scrollToSection('skills')} tabIndex={0}>Skills</a>
+        <a onClick={() => scrollToSection('resume')} tabIndex={0}>Resume</a>
+        <a onClick={() => scrollToSection('blog')} tabIndex={0}>Blog</a>
+        <a onClick={() => scrollToSection('contact')} tabIndex={0}>Contact</a>
       </nav>
       <DarkModeToggle />
     </header>
@@ -54,7 +64,7 @@ const Hero: React.FC = () => (
     <h1>Hi, I'm Jonathan Rocha</h1>
     <TypewriterAnimation texts={["Web Developer", "Content Manager", "Digital Marketing Expert"]} />
     <p>With over 5 years of experience managing online communities, optimizing SEO strategies, and leading content creation across multiple platforms.</p>
-    <button onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}>Get in Touch</button>
+    <button onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })} aria-label="Get in touch">Get in Touch</button>
   </section>
 );
 
@@ -86,19 +96,19 @@ const Portfolio: React.FC = () => (
         <Image src="/fullsteam-project.jpg" alt="Fullsteam project" width={300} height={200} />
         <h3>SEO and Web Development for Fullsteam</h3>
         <p>Improved visibility and search rankings through data-driven SEO strategies and site performance optimization.</p>
-        <button className={styles.viewProjectBtn}>View Project</button>
+        <button className={styles.viewProjectBtn} aria-label="View Fullsteam project">View Project</button>
       </div>
       <div className={styles.project}>
         <Image src="/personal-website.jpg" alt="Personal website" width={300} height={200} />
         <h3>JonathanAaronRocha.com</h3>
         <p>This personal website, built with Next.js, serves as a portfolio and digital hub for my professional interests.</p>
-        <button className={styles.viewProjectBtn}>View Project</button>
+        <button className={styles.viewProjectBtn} aria-label="View personal website project">View Project</button>
       </div>
       <div className={styles.project}>
         <Image src="/research-project.jpg" alt="Research project" width={300} height={200} />
         <h3>Research on Online Free Speech</h3>
         <p>My academic work on content moderation and free speech, focusing on the impact of platform censorship.</p>
-        <button className={styles.viewProjectBtn}>View Project</button>
+        <button className={styles.viewProjectBtn} aria-label="View research project">View Project</button>
       </div>
     </div>
   </section>
@@ -191,7 +201,7 @@ const Blog: React.FC<BlogProps> = ({ visiblePosts, loadMorePosts }) => (
           <p className={styles.postMeta}>Posted on {post.date}</p>
           <p className={styles.postCategory}>{post.category}</p>
           <p>{post.excerpt}</p>
-          <Link href={`/blog/${post.id}`} className={styles.readMore}>
+          <Link href={`/blog/${post.id}`} className={styles.readMore} aria-label={`Read more about ${post.title}`}>
             Read More
           </Link>
         </article>
@@ -199,7 +209,7 @@ const Blog: React.FC<BlogProps> = ({ visiblePosts, loadMorePosts }) => (
     </div>
     {visiblePosts < blogPosts.length && (
       <div className={styles.loadMoreContainer}>
-        <button onClick={loadMorePosts} className={styles.loadMoreBtn}>Load More</button>
+        <button onClick={loadMorePosts} className={styles.loadMoreBtn} aria-label="Load more blog posts">Load More</button>
       </div>
     )}
   </section>
@@ -212,15 +222,15 @@ const Contact: React.FC = () => (
     <form action="/submit-form" method="POST" className={styles.contactForm}>
       <div className={styles.formGroup}>
         <label htmlFor="name">Name</label>
-        <input type="text" id="name" name="name" required />
+        <input type="text" id="name" name="name" required aria-required="true" />
       </div>
       <div className={styles.formGroup}>
         <label htmlFor="email">Email</label>
-        <input type="email" id="email" name="email" required />
+        <input type="email" id="email" name="email" required aria-required="true" />
       </div>
       <div className={styles.formGroup}>
         <label htmlFor="message">Message</label>
-        <textarea id="message" name="message" required></textarea>
+        <textarea id="message" name="message" required aria-required="true"></textarea>
       </div>
       <button type="submit" className={styles.submitBtn}>Send Message</button>
     </form>
@@ -231,10 +241,39 @@ const Contact: React.FC = () => (
 export default function Home() {
   const [isDarkMode, setIsDarkMode] = useState(true);
   const [visiblePosts, setVisiblePosts] = useState(2);
+  const [showScrollTop, setShowScrollTop] = useState(false);
+
+  const sectionRefs = useRef<(HTMLElement | null)[]>([]);
 
   useEffect(() => {
     const storedDarkMode = localStorage.getItem('darkMode');
     setIsDarkMode(storedDarkMode === 'true');
+
+    const handleScroll = () => {
+      setShowScrollTop(window.scrollY > 300);
+
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add(styles.visible);
+            }
+          });
+        },
+        { threshold: 0.1 }
+      );
+
+      sectionRefs.current.forEach((ref) => {
+        if (ref) observer.observe(ref);
+      });
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    handleScroll();
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
   }, []);
 
   const toggleDarkMode = () => {
@@ -245,6 +284,10 @@ export default function Home() {
 
   const loadMorePosts = () => {
     setVisiblePosts(prevVisible => Math.min(prevVisible + 2, blogPosts.length));
+  };
+
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   return (
@@ -260,6 +303,15 @@ export default function Home() {
         <Contact />
       </main>
       <Footer />
+      {showScrollTop && (
+        <button 
+          className={`${styles.scrollToTop} ${styles.visible}`} 
+          onClick={scrollToTop}
+          aria-label="Scroll to top"
+        >
+          ↑
+        </button>
+      )}
     </div>
   );
 }
