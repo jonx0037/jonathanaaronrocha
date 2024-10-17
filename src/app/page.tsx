@@ -93,19 +93,19 @@ const Portfolio: React.FC = () => (
     <h2>Portfolio</h2>
     <div className={styles.projectGrid}>
       <div className={styles.project}>
-        <Image src="/fullsteam-project.jpg" alt="Fullsteam project" width={300} height={200} />
+        <Image src="/fullsteam-project.jpeg" alt="Fullsteam project" width={300} height={200} />
         <h3>SEO and Web Development for Fullsteam</h3>
         <p>Improved visibility and search rankings through data-driven SEO strategies and site performance optimization.</p>
         <button className={styles.viewProjectBtn} aria-label="View Fullsteam project">View Project</button>
       </div>
       <div className={styles.project}>
-        <Image src="/personal-website.jpg" alt="Personal website" width={300} height={200} />
+        <Image src="/personal-website.jpeg" alt="Personal website" width={300} height={200} />
         <h3>JonathanAaronRocha.com</h3>
         <p>This personal website, built with Next.js, serves as a portfolio and digital hub for my professional interests.</p>
         <button className={styles.viewProjectBtn} aria-label="View personal website project">View Project</button>
       </div>
       <div className={styles.project}>
-        <Image src="/research-project.jpg" alt="Research project" width={300} height={200} />
+        <Image src="/research-project.jpeg" alt="Research project" width={300} height={200} />
         <h3>Research on Online Free Speech</h3>
         <p>My academic work on content moderation and free speech, focusing on the impact of platform censorship.</p>
         <button className={styles.viewProjectBtn} aria-label="View research project">View Project</button>
