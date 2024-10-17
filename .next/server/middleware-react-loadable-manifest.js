@@ -1,1 +1,1 @@
-self.__REACT_LOADABLE_MANIFEST="{}";
+self.__REACT_LOADABLE_MANIFEST='{"app/page.tsx -> ../components/DarkModeToggle":{"id":2374,"files":["static/css/888e36056bdb3aab.css","static/chunks/374.755cc20632544044.js"]},"app/page.tsx -> ../components/TypewriterAnimation":{"id":8567,"files":["static/chunks/567.c58a5fd56ff65c67.js"]}}';
