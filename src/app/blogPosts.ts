@@ -4,6 +4,7 @@ export interface BlogPost {
   date: string;
   excerpt: string;
   content: string;
+  category: string;
 }
 
 export const blogPosts: BlogPost[] = [
@@ -25,7 +26,8 @@ export const blogPosts: BlogPost[] = [
       <p>Google's Core Web Vitals have become a key ranking factor. In 2024, website speed, interactivity, and visual stability are more important than ever for both SEO and user experience.</p>
       <h3>Conclusion</h3>
       <p>SEO in 2024 is about creating a holistic online presence that caters to both search engines and users. By staying updated with the latest trends and continuously optimizing your online presence, you can ensure your business stays visible and competitive in the digital landscape.</p>
-    `
+    `,
+    category: "SEO"
   },
   {
     id: "web-dev-trends",
@@ -47,6 +49,7 @@ export const blogPosts: BlogPost[] = [
       <p>Subtle animations and micro-interactions are enhancing user experiences, making websites more engaging and intuitive.</p>
       <h3>Conclusion</h3>
       <p>Staying updated with these trends is crucial for web developers and businesses alike. By embracing these technologies, you can create more efficient, engaging, and future-proof web experiences.</p>
-    `
+    `,
+    category: "Web Development"
   }
 ];
