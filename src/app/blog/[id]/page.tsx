@@ -11,16 +11,19 @@ export default function BlogPost({ params }: { params: { id: string } }) {
   }
 
   return (
-    <div className={styles.blogPost}>
+    <div className={styles.blogPostPage}>
       <h1>{post.title}</h1>
-      <p>{post.date}</p>
+      <p className={styles.postMeta}>{post.date}</p>
       <div dangerouslySetInnerHTML={{ __html: post.content }} />
+      <Link href="/blog">
+        <a className={styles.backToBlog}>Back to Blog</a>
+      </Link>
       <h2>Other Posts</h2>
-      <ul>
+      <ul className={styles.otherPostsList}>
         {otherPosts.map(otherPost => (
           <li key={otherPost.id}>
             <Link href={`/blog/${otherPost.id}`}>
-              <a>{otherPost.title}</a>
+              <a className={styles.otherPostLink}>{otherPost.title}</a>
             </Link>
           </li>
         ))}

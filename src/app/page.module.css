@@ -121,17 +121,17 @@
 }
 
 .title {
-  font-size: 2.5rem;
+  font-size: 3rem; /* Increased for better readability */
   color: var(--primary-color);
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem; /* Increased margin for spacing */
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .description {
-  font-size: 1.1rem;
+  font-size: 1.2rem; /* Slightly increased for readability */
   max-width: 800px;
-  margin: 0 auto 2rem;
-  line-height: 1.6;
+  margin: 0 auto 2.5rem; /* Increased bottom margin */
+  line-height: 1.8; /* Improved line height */
 }
 
 .projectGrid,
@@ -165,8 +165,8 @@
 }
 
 .blogPost h3 {
-  font-size: 1.5rem;
-  margin-bottom: 0.5rem;
+  font-size: 1.75rem; /* Increased for better readability */
+  margin-bottom: 0.75rem; /* Increased margin */
 }
 
 .skillList {
@@ -183,7 +183,7 @@
   color: white;
   padding: 0.5rem 1rem;
   border-radius: 20px;
-  font-size: 0.9rem;
+  font-size: 1rem; /* Slightly increased */
   transition: transform var(--transition-speed);
 }
 
@@ -195,7 +195,7 @@
   display: flex;
   justify-content: center;
   gap: 1rem;
-  margin-top: 1.5rem;
+  margin-top: 2rem; /* Increased margin */
 }
 
 .ctas a,
@@ -242,9 +242,9 @@
 }
 
 .postMeta {
-  font-size: 0.9rem;
+  font-size: 1rem; /* Increased for readability */
   color: #666;
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem; /* Increased margin */
 }
 
 .darkMode .postMeta {
@@ -253,7 +253,7 @@
 
 .loadMoreContainer {
   text-align: center;
-  margin-top: 2rem;
+  margin-top: 2.5rem; /* Increased margin */
 }
 
 /* Blog post page specific styles */
@@ -273,54 +273,54 @@
 }
 
 .blogPostPage h1 {
-  font-size: 2.5rem;
+  font-size: 3rem; /* Increased for better readability */
   color: var(--primary-color);
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem; /* Increased margin */
 }
 
 .blogPostPage .postMeta {
-  font-size: 1rem;
-  margin-bottom: 2rem;
+  font-size: 1.1rem; /* Increased for readability */
+  margin-bottom: 2.5rem; /* Increased margin */
 }
 
 .blogPostContent {
-  font-size: 1.1rem;
+  font-size: 1.2rem; /* Increased for readability */
   line-height: 1.8;
 }
 
 .blogPostContent h2 {
-  font-size: 2rem;
-  margin-top: 2rem;
-  margin-bottom: 1rem;
+  font-size: 2.25rem; /* Increased for better readability */
+  margin-top: 2.5rem; /* Increased margin */
+  margin-bottom: 1.5rem; /* Increased margin */
   color: var(--secondary-color);
 }
 
 .blogPostContent h3 {
-  font-size: 1.5rem;
-  margin-top: 1.5rem;
-  margin-bottom: 0.75rem;
+  font-size: 1.75rem; /* Increased for better readability */
+  margin-top: 2rem; /* Increased margin */
+  margin-bottom: 1rem; /* Increased margin */
   color: var(--secondary-color);
 }
 
 .blogPostContent p {
-  margin-bottom: 1.5rem;
+  margin-bottom: 1.75rem; /* Increased margin */
 }
 
 .backToBlog {
-  margin-top: 2rem;
+  margin-top: 2.5rem; /* Increased margin */
 }
 
 /* Other posts styles */
 .otherPosts {
-  margin-top: 3rem;
+  margin-top: 3.5rem; /* Increased margin */
   width: 100%;
   max-width: 800px;
 }
 
 .otherPosts h2 {
-  font-size: 1.5rem;
+  font-size: 1.75rem; /* Increased for better readability */
   color: var(--primary-color);
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem; /* Increased margin */
 }
 
 .otherPostsList {
@@ -329,7 +329,7 @@
 }
 
 .otherPostsList li {
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.75rem; /* Increased margin */
 }
 
 .otherPostLink {
@@ -400,11 +400,11 @@
   }
 
   .title {
-    font-size: 2rem;
+    font-size: 2.5rem; /* Adjusted for mobile */
   }
 
   .description {
-    font-size: 1rem;
+    font-size: 1.1rem; /* Adjusted for mobile */
   }
 
   .ctas {
@@ -427,19 +427,19 @@
   }
 
   .blogPostPage h1 {
-    font-size: 2rem;
+    font-size: 2.5rem; /* Adjusted for mobile */
   }
 
   .blogPostContent {
-    font-size: 1rem;
+    font-size: 1.1rem; /* Adjusted for mobile */
   }
 
   .blogPostContent h2 {
-    font-size: 1.75rem;
+    font-size: 2rem; /* Adjusted for mobile */
   }
 
   .blogPostContent h3 {
-    font-size: 1.25rem;
+    font-size: 1.5rem; /* Adjusted for mobile */
   }
 }
 
