@@ -1,4 +1,3 @@
-import { useDarkMode } from '../../../context/DarkModeContext';
 import { blogPosts } from '../../blogPosts';
 import styles from '../../page.module.css';
 import Link from 'next/link';
