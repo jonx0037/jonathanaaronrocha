@@ -255,6 +255,7 @@ export default function Home() {
       const observer = new IntersectionObserver(
         (entries) => {
           entries.forEach((entry) => {
+            console.log(entry.isIntersecting); // Debugging statement
             if (entry.isIntersecting) {
               entry.target.classList.add(styles.visible);
             }
