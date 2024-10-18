@@ -1,0 +1,14 @@
+// pages/index.js
+import dynamic from 'next/dynamic';
+
+// Dynamically import the component
+const DynamicComponent = dynamic(() => import('../components/MyComponent'));
+
+const HomePage = () => (
+<div>
+    <h1>Welcome to the Home Page</h1>
+    <DynamicComponent />
+</div>
+);
+
+export default HomePage;

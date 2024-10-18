@@ -1,0 +1,15 @@
+{
+  "app/page.tsx -> ../components/DarkModeToggle": {
+    "id": "app/page.tsx -> ../components/DarkModeToggle",
+    "files": [
+      "static/css/_app-pages-browser_src_components_DarkModeToggle_tsx.css",
+      "static/chunks/_app-pages-browser_src_components_DarkModeToggle_tsx.js"
+    ]
+  },
+  "app/page.tsx -> ../components/TypewriterAnimation": {
+    "id": "app/page.tsx -> ../components/TypewriterAnimation",
+    "files": [
+      "static/chunks/_app-pages-browser_src_components_TypewriterAnimation_tsx.js"
+    ]
+  }
+}
