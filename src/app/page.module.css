@@ -1,26 +1,14 @@
 .page {
-  --primary-color: #3498db;
-  --secondary-color: #2c3e50;
-  --text-color: #333;
-  --background-color: #f4f4f4;
-  --transition-speed: 0.3s;
-
+  font-family: 'Roboto', sans-serif;
+  background-color: #171717;
+  color: #d3d3d3;
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  font-family: var(--font-geist-sans);
-  background-color: var(--background-color);
-  color: var(--text-color);
-  transition: background-color var(--transition-speed), color var(--transition-speed);
-}
-
-.darkMode {
-  --text-color: #f4f4f4;
-  --background-color: #1a2533;
 }
 
 .header {
-  background-color: var(--secondary-color);
+  background-color: #222;
   padding: 1rem;
   position: sticky;
   top: 0;
@@ -28,7 +16,6 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  transition: padding var(--transition-speed);
 }
 
 .header nav {
@@ -37,24 +24,15 @@
 }
 
 .header nav a {
-  color: white;
+  color: #eee;
   text-decoration: none;
   font-weight: bold;
-  transition: color var(--transition-speed), transform var(--transition-speed);
+  transition: color 0.3s ease;
   cursor: pointer;
 }
 
-.modeToggle {
-  background: none;
-  border: none;
+.header nav a:hover {
   color: white;
-  font-size: 1.5rem;
-  cursor: pointer;
-  transition: opacity var(--transition-speed);
-}
-
-.modeToggle:hover {
-  opacity: 0.8;
 }
 
 .main {
@@ -71,7 +49,9 @@
   margin-bottom: 4rem;
   opacity: 0;
   transform: translateY(20px);
-  transition: opacity var(--transition-speed), transform var(--transition-speed);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  width: 100%;
+  padding: 2rem;
 }
 
 .section.visible {
@@ -84,6 +64,7 @@
   align-items: center;
   justify-content: space-between;
   gap: 2rem;
+  margin: 0 auto;
 }
 
 .aboutText {
@@ -108,31 +89,9 @@
   border-radius: 50%;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   object-fit: cover;
-  transition: transform var(--transition-speed);
+  transition: transform 0.3s ease;
 }
 
-.imagePlaceholder {
-  background-color: #ccc;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 1.5rem;
-  color: #666;
-}
-
-.title {
-  font-size: 3rem; /* Increased for better readability */
-  color: var(--primary-color);
-  margin-bottom: 1.5rem; /* Increased margin for spacing */
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-.description {
-  font-size: 1.2rem; /* Slightly increased for readability */
-  max-width: 800px;
-  margin: 0 auto 2.5rem; /* Increased bottom margin */
-  line-height: 1.8; /* Improved line height */
-}
 
 .projectGrid,
 .blogGrid {
@@ -143,30 +102,20 @@
 
 .project,
 .blogPost {
-  background-color: white;
+  background-color: #222;
   padding: 1.5rem;
   border-radius: 8px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  transition: transform var(--transition-speed), box-shadow var(--transition-speed);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
   display: flex;
   flex-direction: column;
-}
-
-.darkMode .project,
-.darkMode .blogPost {
-  background-color: #2c3e50;
-  color: white;
+  color: #eee;
 }
 
 .project:hover,
 .blogPost:hover {
   transform: translateY(-5px);
   box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
-}
-
-.blogPost h3 {
-  font-size: 1.75rem; /* Increased for better readability */
-  margin-bottom: 0.75rem; /* Increased margin */
 }
 
 .skillList {
@@ -179,12 +128,12 @@
 }
 
 .skillList li {
-  background-color: var(--primary-color);
+  background-color: #3498db;
   color: white;
   padding: 0.5rem 1rem;
   border-radius: 20px;
-  font-size: 1rem; /* Slightly increased */
-  transition: transform var(--transition-speed);
+  font-size: 1rem;
+  transition: transform 0.3s ease;
 }
 
 .skillList li:hover {
@@ -195,7 +144,7 @@
   display: flex;
   justify-content: center;
   gap: 1rem;
-  margin-top: 2rem; /* Increased margin */
+  margin-top: 2rem;
 }
 
 .ctas a,
@@ -206,7 +155,7 @@
   border-radius: 5px;
   text-decoration: none;
   font-weight: bold;
-  transition: background-color var(--transition-speed), color var(--transition-speed), transform var(--transition-speed);
+  transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
   cursor: pointer;
   border: none;
   font-size: 1rem;
@@ -216,19 +165,19 @@
 .primary,
 .readMore,
 .loadMoreBtn {
-  background-color: var(--primary-color);
+  background-color: #3498db;
   color: white;
 }
 
 .secondary,
 .backToBlog {
-  background-color: var(--secondary-color);
+  background-color: #2c3e50;
   color: white;
 }
 
 .footer {
-  background-color: var(--secondary-color);
-  color: white;
+  background-color: #222;
+  color: #eee;
   padding: 1.5rem;
   display: flex;
   justify-content: center;
@@ -236,130 +185,27 @@
 }
 
 .footer a {
-  color: white;
+  color: #eee;
   text-decoration: none;
-  transition: color var(--transition-speed);
+  transition: color 0.3s ease;
+}
+
+.footer a:hover {
+  color: white;
 }
 
 .postMeta {
-  font-size: 1rem; /* Increased for readability */
-  color: #666;
-  margin-bottom: 1.5rem; /* Increased margin */
-}
-
-.darkMode .postMeta {
-  color: #bbb;
+  font-size: 1rem;
+  color: #888;
+  margin-bottom: 1.5rem;
 }
 
 .loadMoreContainer {
   text-align: center;
-  margin-top: 2.5rem; /* Increased margin */
+  margin-top: 2.5rem;
 }
 
-/* Blog post page specific styles */
-.blogPostPage {
-  max-width: 800px;
-  width: 100%;
-  margin: 0 auto;
-  padding: 2rem;
-  background-color: white;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  border-radius: 8px;
-}
-
-.darkMode .blogPostPage {
-  background-color: #2c3e50;
-  color: white;
-}
-
-.blogPostPage h1 {
-  font-size: 3rem; /* Increased for better readability */
-  color: var(--primary-color);
-  margin-bottom: 1.5rem; /* Increased margin */
-}
-
-.blogPostPage .postMeta {
-  font-size: 1.1rem; /* Increased for readability */
-  margin-bottom: 2.5rem; /* Increased margin */
-}
-
-.blogPostContent {
-  font-size: 1.2rem; /* Increased for readability */
-  line-height: 1.8;
-}
-
-.blogPostContent h2 {
-  font-size: 2.25rem; /* Increased for better readability */
-  margin-top: 2.5rem; /* Increased margin */
-  margin-bottom: 1.5rem; /* Increased margin */
-  color: var(--secondary-color);
-}
-
-.blogPostContent h3 {
-  font-size: 1.75rem; /* Increased for better readability */
-  margin-top: 2rem; /* Increased margin */
-  margin-bottom: 1rem; /* Increased margin */
-  color: var(--secondary-color);
-}
-
-.blogPostContent p {
-  margin-bottom: 1.75rem; /* Increased margin */
-}
-
-.backToBlog {
-  margin-top: 2.5rem; /* Increased margin */
-}
-
-/* Other posts styles */
-.otherPosts {
-  margin-top: 3.5rem; /* Increased margin */
-  width: 100%;
-  max-width: 800px;
-}
-
-.otherPosts h2 {
-  font-size: 1.75rem; /* Increased for better readability */
-  color: var(--primary-color);
-  margin-bottom: 1.5rem; /* Increased margin */
-}
-
-.otherPostsList {
-  list-style-type: none;
-  padding: 0;
-}
-
-.otherPostsList li {
-  margin-bottom: 0.75rem; /* Increased margin */
-}
-
-.otherPostLink {
-  color: var(--secondary-color);
-  text-decoration: none;
-  transition: color var(--transition-speed);
-}
-
-.darkMode .otherPostLink {
-  color: var(--primary-color);
-}
-
-.otherPostLink:hover {
-  color: var(--primary-color);
-  text-decoration: underline;
-}
-
-@media (hover: hover) and (pointer: fine) {
-  .header nav a:hover,
-  .primary:hover,
-  .secondary:hover,
-  .footer a:hover,
-  .readMore:hover,
-  .backToBlog:hover,
-  .loadMoreBtn:hover {
-    opacity: 0.8;
-    transform: translateY(-2px);
-  }
-}
-
+/* Responsive styles */
 @media (max-width: 768px) {
   .header {
     padding: 0.5rem;
@@ -370,12 +216,12 @@
     top: 60px;
     left: 0;
     right: 0;
-    background-color: var(--secondary-color);
+    background-color: #222;
     flex-direction: column;
     align-items: center;
     padding: 1rem;
     transform: translateY(-100%);
-    transition: transform var(--transition-speed);
+    transition: transform 0.3s ease;
   }
 
   .header nav.open {
@@ -399,14 +245,6 @@
     text-align: center;
   }
 
-  .title {
-    font-size: 2.5rem; /* Adjusted for mobile */
-  }
-
-  .description {
-    font-size: 1.1rem; /* Adjusted for mobile */
-  }
-
   .ctas {
     flex-direction: column;
   }
@@ -421,151 +259,48 @@
   .blogGrid {
     grid-template-columns: 1fr;
   }
-
-  .blogPostPage {
-    padding: 1rem;
-  }
-
-  .blogPostPage h1 {
-    font-size: 2.5rem; /* Adjusted for mobile */
-  }
-
-  .blogPostContent {
-    font-size: 1.1rem; /* Adjusted for mobile */
-  }
-
-  .blogPostContent h2 {
-    font-size: 2rem; /* Adjusted for mobile */
-  }
-
-  .blogPostContent h3 {
-    font-size: 1.5rem; /* Adjusted for mobile */
-  }
 }
 
-/* Typewriter Animation Styles */
-.typewriter {
-  font-family: var(--font-geist-mono);
-  font-size: 1.2rem;
-  color: var(--primary-color);
-  margin-top: 1rem;
-  padding: 1rem;
-  border-radius: 5px;
-  background-color: rgba(0, 0, 0, 0.05);
-  overflow: hidden;
-  border-right: 3px solid var(--primary-color);
-  animation: typing 5s steps(40, end), blink-caret 0.75s step-end infinite;
-  max-width: 80%;
-  margin: 0 auto;
+/* Added hover effects */
+.header nav a:hover,
+.primary:hover,
+.secondary:hover,
+.footer a:hover,
+.readMore:hover,
+.backToBlog:hover,
+.loadMoreBtn:hover,
+.skillList li:hover {
+  opacity: 0.8;
+  transform: translateY(-2px);
 }
 
-@keyframes typing {
-  0% { width: 0 }
-  100% { width: 100% }
-}
-
-@keyframes blink-caret {
-  from, to { border-color: transparent }
-  50% { border-color: var(--primary-color) }
-}
-
-.darkMode .typewriter {
-  background-color: rgba(255, 255, 255, 0.05);
-}
-
-.typewriterSection {
-  margin-top: 2rem;
+/* Added margin to sections */
+.hero {
   margin-bottom: 4rem;
-  text-align: center;
 }
 
-/* Resume Timeline Styles */
-.timeline {
-  border-left: 3px solid var(--primary-color);
-  padding: 1rem 0;
-  position: relative;
+.about {
+  margin-bottom: 4rem;
 }
 
-.timelineItem {
-  position: relative;
-  padding-left: 2rem;
-  margin-bottom: 2rem;
+.portfolio {
+  margin-bottom: 4rem;
 }
 
-.timelineItem::before {
-  content: '';
-  position: absolute;
-  left: -10px;
-  top: 0;
-  width: 15px;
-  height: 15px;
-  border-radius: 50%;
-  background-color: var(--primary-color);
+.skills {
+  margin-bottom: 4rem;
 }
 
-.timelineItem h3 {
-  font-size: 1.2rem;
-  margin-bottom: 0.5rem;
+.resume {
+  margin-bottom: 4rem;
 }
 
-/* Contact Form Styles */
-.contactForm {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  max-width: 500px;
+.blog {
+  margin-bottom: 4rem;
 }
 
-.contactForm label {
-  margin-bottom: 0.5rem;
+.contact {
+  margin-bottom: 4rem;
 }
 
-.contactForm input,
-.contactForm textarea {
-  padding: 0.5rem;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  margin-bottom: 1rem;
-}
-
-.contactForm button {
-  padding: 0.75rem 1.5rem;
-  border: none;
-  border-radius: 5px;
-  background-color: var(--primary-color);
-  color: white;
-  font-weight: bold;
-  cursor: pointer;
-  transition: background-color var(--transition-speed);
-}
-
-.contactForm button:hover {
-  background-color: darken(var(--primary-color), 10%);
-}
-
-/* Scroll to Top Button */
-.scrollToTop {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  background-color: var(--primary-color);
-  color: white;
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  cursor: pointer;
-  opacity: 0;
-  transition: opacity var(--transition-speed), transform var(--transition-speed);
-  z-index: 1000;
-}
-
-.scrollToTop.visible {
-  opacity: 1;
-}
-
-.scrollToTop:hover {
-  transform: translateY(-5px);
-}
+/* Removed max-width from .section */

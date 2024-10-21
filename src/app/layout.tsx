@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
-import { DarkModeProvider } from '../context/DarkModeContext';
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -23,9 +22,6 @@ export const metadata: Metadata = {
 // Create a new Client Component
 import { ReactNode } from 'react';
 
-const ClientDarkModeProvider = ({ children }: { children: ReactNode }) => {
-  return <DarkModeProvider>{children}</DarkModeProvider>;
-};
 
 export default function RootLayout({
   children
@@ -35,9 +31,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
-        <ClientDarkModeProvider>
           {children}
-        </ClientDarkModeProvider>
       </body>
     </html>
   );
