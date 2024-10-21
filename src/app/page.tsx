@@ -174,11 +174,11 @@ const Skills: React.FC = () => (
           <li>Project Management</li>
           <li>Team Leadership</li>
           <li>Communication</li>
+          <li>Problem Solving</li>
+          <li>Adaptability</li>
+        </ul>
       </div>
     </div>
-  </section>
-);
-
 const Resume: React.FC = () => (
   <section id="resume" className={styles.section}>
     <h2>Resume</h2>
