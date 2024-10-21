@@ -11,9 +11,6 @@ import dynamic from 'next/dynamic';
 const DarkModeToggle = dynamic(() => import('../components/DarkModeToggle'));
 const TypewriterAnimation = dynamic(() => import('../components/TypewriterAnimation'));
 
-// Add a version number for cache busting
-const VERSION = '1.0.1';
-
 interface HeaderProps {
   isDarkMode: boolean;
   toggleDarkMode: () => void;
@@ -80,7 +77,7 @@ const About: React.FC = () => (
       </div>
       <div className={styles.imageContainer}>
         <Image
-          src={`/profile-image.jpg?v=${VERSION}`}
+          src="/profile-image.jpg"
           alt="Jonathan Aaron Rocha smiling in a blue shirt and black tie"
           width={300}
           height={300}
@@ -96,46 +93,19 @@ const Portfolio: React.FC = () => (
     <h2>Portfolio</h2>
     <div className={styles.projectGrid}>
       <div className={styles.project}>
-        <Image 
-          src={`/fullsteam-project.jpeg?v=${VERSION}`}
-          alt="Fullsteam project" 
-          width={300} 
-          height={200} 
-          onError={(e) => {
-            e.currentTarget.src = `/placeholder-image.jpg?v=${VERSION}`
-            e.currentTarget.alt = 'Placeholder image'
-          }}
-        />
+        <Image src="/fullsteam-project.jpeg" alt="Fullsteam project" width={300} height={200} />
         <h3>SEO and Web Development for Fullsteam</h3>
         <p>Improved visibility and search rankings through data-driven SEO strategies and site performance optimization.</p>
         <button className={styles.viewProjectBtn} aria-label="View Fullsteam project">View Project</button>
       </div>
       <div className={styles.project}>
-        <Image 
-          src={`/personal-website.jpeg?v=${VERSION}`}
-          alt="Personal website" 
-          width={300} 
-          height={200} 
-          onError={(e) => {
-            e.currentTarget.src = `/placeholder-image.jpg?v=${VERSION}`
-            e.currentTarget.alt = 'Placeholder image'
-          }}
-        />
+        <Image src="/personal-website.jpeg" alt="Personal website" width={300} height={200} />
         <h3>JonathanAaronRocha.com</h3>
         <p>This personal website, built with Next.js, serves as a portfolio and digital hub for my professional interests.</p>
         <button className={styles.viewProjectBtn} aria-label="View personal website project">View Project</button>
       </div>
       <div className={styles.project}>
-        <Image 
-          src={`/research-project.jpeg?v=${VERSION}`}
-          alt="Research project" 
-          width={300} 
-          height={200} 
-          onError={(e) => {
-            e.currentTarget.src = `/placeholder-image.jpg?v=${VERSION}`
-            e.currentTarget.alt = 'Placeholder image'
-          }}
-        />
+        <Image src="/research-project.jpeg" alt="Research project" width={300} height={200} />
         <h3>Research on Online Free Speech</h3>
         <p>My academic work on content moderation and free speech, focusing on the impact of platform censorship.</p>
         <button className={styles.viewProjectBtn} aria-label="View research project">View Project</button>
@@ -179,6 +149,9 @@ const Skills: React.FC = () => (
         </ul>
       </div>
     </div>
+  </section>
+);
+
 const Resume: React.FC = () => (
   <section id="resume" className={styles.section}>
     <h2>Resume</h2>
@@ -223,18 +196,7 @@ const Blog: React.FC<BlogProps> = ({ visiblePosts, loadMorePosts }) => (
     <div className={styles.blogGrid}>
       {blogPosts.slice(0, visiblePosts).map((post) => (
         <article key={post.id} className={styles.blogPost}>
-          <div className={styles.blogImageContainer}>
-            <Image 
-              src={`/blog-${post.id}.jpg`} 
-              alt={post.title} 
-              width={300} 
-              height={200} 
-              onError={(e) => {
-                e.currentTarget.src = '/placeholder-image.jpg'
-                e.currentTarget.alt = 'Placeholder image'
-              }}
-            />
-          </div>
+          <Image src={`/blog-${post.id}.jpg`} alt={post.title} width={300} height={200} />
           <h3>{post.title}</h3>
           <p className={styles.postMeta}>Posted on {post.date}</p>
           <p className={styles.postCategory}>{post.category}</p>
@@ -293,6 +255,7 @@ export default function Home() {
       const observer = new IntersectionObserver(
         (entries) => {
           entries.forEach((entry) => {
+            console.log(entry.isIntersecting); // Debugging statement
             if (entry.isIntersecting) {
               entry.target.classList.add(styles.visible);
             }
