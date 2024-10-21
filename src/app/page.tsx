@@ -8,15 +8,9 @@ import { blogPosts } from './blogPosts';
 import dynamic from 'next/dynamic';
 
 // Dynamically import components
-const DarkModeToggle = dynamic(() => import('../components/DarkModeToggle'));
 const TypewriterAnimation = dynamic(() => import('../components/TypewriterAnimation'));
 
-interface HeaderProps {
-  isDarkMode: boolean;
-  toggleDarkMode: () => void;
-}
-
-const Header: React.FC<HeaderProps> = ({ isDarkMode, toggleDarkMode }) => {
+const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const scrollToSection = (sectionId: string) => {
@@ -44,7 +38,6 @@ const Header: React.FC<HeaderProps> = ({ isDarkMode, toggleDarkMode }) => {
         <a onClick={() => scrollToSection('blog')} tabIndex={0}>Blog</a>
         <a onClick={() => scrollToSection('contact')} tabIndex={0}>Contact</a>
       </nav>
-      <DarkModeToggle />
     </header>
   );
 };
@@ -239,23 +232,18 @@ const Contact: React.FC = () => (
 );
 
 export default function Home() {
-  const [isDarkMode, setIsDarkMode] = useState(true);
   const [visiblePosts, setVisiblePosts] = useState(2);
   const [showScrollTop, setShowScrollTop] = useState(false);
 
   const sectionRefs = useRef<(HTMLElement | null)[]>([]);
 
   useEffect(() => {
-    const storedDarkMode = localStorage.getItem('darkMode');
-    setIsDarkMode(storedDarkMode === 'true');
-
     const handleScroll = () => {
       setShowScrollTop(window.scrollY > 300);
 
       const observer = new IntersectionObserver(
         (entries) => {
           entries.forEach((entry) => {
-            console.log(entry.isIntersecting); // Debugging statement
             if (entry.isIntersecting) {
               entry.target.classList.add(styles.visible);
             }
@@ -277,12 +265,6 @@ export default function Home() {
     };
   }, []);
 
-  const toggleDarkMode = () => {
-    const newDarkMode = !isDarkMode;
-    setIsDarkMode(newDarkMode);
-    localStorage.setItem('darkMode', newDarkMode.toString());
-  };
-
   const loadMorePosts = () => {
     setVisiblePosts(prevVisible => Math.min(prevVisible + 2, blogPosts.length));
   };
@@ -292,8 +274,8 @@ export default function Home() {
   };
 
   return (
-    <div className={`${styles.page} ${isDarkMode ? styles.darkMode : ''}`}>
-      <Header isDarkMode={isDarkMode} toggleDarkMode={toggleDarkMode} />
+    <div className={styles.page}>
+      <Header />
       <main className={styles.main}>
         <Hero />
         <About />
