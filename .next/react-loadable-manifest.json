@@ -1,15 +1,15 @@
 {
   "app/page.tsx -> ../components/DarkModeToggle": {
-    "id": 2374,
+    "id": "app/page.tsx -> ../components/DarkModeToggle",
     "files": [
-      "static/css/888e36056bdb3aab.css",
-      "static/chunks/374.755cc20632544044.js"
+      "static/css/_app-pages-browser_src_components_DarkModeToggle_tsx.css",
+      "static/chunks/_app-pages-browser_src_components_DarkModeToggle_tsx.js"
     ]
   },
   "app/page.tsx -> ../components/TypewriterAnimation": {
-    "id": 8567,
+    "id": "app/page.tsx -> ../components/TypewriterAnimation",
     "files": [
-      "static/chunks/567.c58a5fd56ff65c67.js"
+      "static/chunks/_app-pages-browser_src_components_TypewriterAnimation_tsx.js"
     ]
   }
 }
