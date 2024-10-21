@@ -11,6 +11,9 @@ import dynamic from 'next/dynamic';
 const DarkModeToggle = dynamic(() => import('../components/DarkModeToggle'));
 const TypewriterAnimation = dynamic(() => import('../components/TypewriterAnimation'));
 
+// Add a version number for cache busting
+const VERSION = '1.0.1';
+
 interface HeaderProps {
   isDarkMode: boolean;
   toggleDarkMode: () => void;
@@ -77,7 +80,7 @@ const About: React.FC = () => (
       </div>
       <div className={styles.imageContainer}>
         <Image
-          src="/profile-image.jpg"
+          src={`/profile-image.jpg?v=${VERSION}`}
           alt="Jonathan Aaron Rocha smiling in a blue shirt and black tie"
           width={300}
           height={300}
@@ -94,12 +97,12 @@ const Portfolio: React.FC = () => (
     <div className={styles.projectGrid}>
       <div className={styles.project}>
         <Image 
-          src="/fullsteam-project.jpeg" 
+          src={`/fullsteam-project.jpeg?v=${VERSION}`}
           alt="Fullsteam project" 
           width={300} 
           height={200} 
           onError={(e) => {
-            e.currentTarget.src = '/placeholder-image.jpg'
+            e.currentTarget.src = `/placeholder-image.jpg?v=${VERSION}`
             e.currentTarget.alt = 'Placeholder image'
           }}
         />
@@ -109,12 +112,12 @@ const Portfolio: React.FC = () => (
       </div>
       <div className={styles.project}>
         <Image 
-          src="/personal-website.jpeg" 
+          src={`/personal-website.jpeg?v=${VERSION}`}
           alt="Personal website" 
           width={300} 
           height={200} 
           onError={(e) => {
-            e.currentTarget.src = '/placeholder-image.jpg'
+            e.currentTarget.src = `/placeholder-image.jpg?v=${VERSION}`
             e.currentTarget.alt = 'Placeholder image'
           }}
         />
@@ -124,12 +127,12 @@ const Portfolio: React.FC = () => (
       </div>
       <div className={styles.project}>
         <Image 
-          src="/research-project.jpeg" 
+          src={`/research-project.jpeg?v=${VERSION}`}
           alt="Research project" 
           width={300} 
           height={200} 
           onError={(e) => {
-            e.currentTarget.src = '/placeholder-image.jpg'
+            e.currentTarget.src = `/placeholder-image.jpg?v=${VERSION}`
             e.currentTarget.alt = 'Placeholder image'
           }}
         />
@@ -171,9 +174,6 @@ const Skills: React.FC = () => (
           <li>Project Management</li>
           <li>Team Leadership</li>
           <li>Communication</li>
-          <li>Problem Solving</li>
-          <li>Adaptability</li>
-        </ul>
       </div>
     </div>
   </section>
