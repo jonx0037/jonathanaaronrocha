@@ -3,14 +3,45 @@
 import React, { useEffect, useState } from 'react'
 import Link from 'next/link'
 import { useTheme } from 'next-themes'
-import { SunIcon, MoonIcon } from '@heroicons/react/24/outline'
+import { SunIcon, MoonIcon, Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
+
+const navLinks = [
+  { name: 'Education', href: '#education' },
+  { name: 'Projects', href: '#projects' },
+  { name: 'Blog', href: '#blog' },
+  { name: 'Skills', href: '#skills' },
+  { name: 'Experience', href: '#experience' },
+  { name: 'Contact', href: '#contact' },
+]
 
 export default function Navbar() {
   const [mounted, setMounted] = useState(false)
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const { theme, setTheme } = useTheme()
 
   // After mounting, we have access to the theme
   useEffect(() => setMounted(true), [])
+
+  // Add smooth scrolling behavior
+  useEffect(() => {
+    const handleClick = (e: MouseEvent) => {
+      const target = e.target as HTMLElement
+      if (target.tagName === 'A') {
+        const link = target as HTMLAnchorElement
+        if (link.hash) {
+          e.preventDefault()
+          const element = document.querySelector(link.hash)
+          if (element) {
+            element.scrollIntoView({ behavior: 'smooth' })
+            setMobileMenuOpen(false)
+          }
+        }
+      }
+    }
+
+    document.addEventListener('click', handleClick)
+    return () => document.removeEventListener('click', handleClick)
+  }, [])
 
   if (!mounted) {
     return (
@@ -35,7 +66,17 @@ export default function Navbar() {
             JAR
           </Link>
           
-          <div className="flex items-center space-x-4">
+          {/* Desktop Navigation */}
+          <div className="hidden md:flex items-center space-x-6">
+            {navLinks.map((link) => (
+              <a
+                key={link.name}
+                href={link.href}
+                className="text-sm text-gray-600 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white transition-colors"
+              >
+                {link.name}
+              </a>
+            ))}
             <button
               onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
               className="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
@@ -48,7 +89,50 @@ export default function Navbar() {
               )}
             </button>
           </div>
+
+          {/* Mobile Navigation Button */}
+          <div className="flex md:hidden items-center space-x-2">
+            <button
+              onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
+              className="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
+              aria-label="Toggle theme"
+            >
+              {theme === 'dark' ? (
+                <SunIcon className="h-5 w-5 text-gray-100" />
+              ) : (
+                <MoonIcon className="h-5 w-5 text-gray-900" />
+              )}
+            </button>
+            <button
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              className="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
+              aria-label="Toggle mobile menu"
+            >
+              {mobileMenuOpen ? (
+                <XMarkIcon className="h-6 w-6 text-gray-900 dark:text-gray-100" />
+              ) : (
+                <Bars3Icon className="h-6 w-6 text-gray-900 dark:text-gray-100" />
+              )}
+            </button>
+          </div>
         </div>
+
+        {/* Mobile Menu */}
+        {mobileMenuOpen && (
+          <div className="md:hidden py-4 border-t border-gray-200 dark:border-gray-700">
+            <div className="flex flex-col space-y-4">
+              {navLinks.map((link) => (
+                <a
+                  key={link.name}
+                  href={link.href}
+                  className="text-sm text-gray-600 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white transition-colors"
+                >
+                  {link.name}
+                </a>
+              ))}
+            </div>
+          </div>
+        )}
       </div>
     </nav>
   )
