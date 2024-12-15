@@ -2,7 +2,7 @@ import React from 'react'
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import { Providers } from './providers'
-import Navbar from '@/components/layout/Navbar'
+import Navbar from '../components/layout/Navbar'
 import './globals.css'
 
 const inter = Inter({ subsets: ['latin'] })
@@ -22,7 +22,14 @@ export const metadata: Metadata = {
     type: 'website',
   },
   icons: {
-    icon: '/favicon.ico'
+    icon: [
+      {
+        url: '/images/favicon.png',
+        type: 'image/png',
+      }
+    ],
+    shortcut: '/images/favicon.png',
+    apple: '/images/favicon.png',
   },
 }
 
