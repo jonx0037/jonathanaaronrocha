@@ -71,7 +71,7 @@ export default function Home() {
                   className="flex items-start space-x-3"
                 >
                   <span className="text-blue-500">🎓</span>
-                  <p className="text-gray-600 dark:text-gray-300">Graduating with MA in English from TAMUCT in December 2024</p>
+                  <p className="text-gray-600 dark:text-gray-300">Graduated with an MA in English from TAMUCT in December 2024</p>
                 </MotionDiv>
                 <MotionDiv
                   initial={{ x: -20, opacity: 0 }}
