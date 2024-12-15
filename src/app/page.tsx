@@ -1,8 +1,8 @@
 import React from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
-import { MotionDiv } from '@/components/motion/MotionDiv'
-import SocialLinks from '@/components/social/SocialLinks'
+import { MotionDiv } from '../components/motion/MotionDiv'
+import SocialLinks from '../components/social/SocialLinks'
 
 export default function Home() {
   return (
@@ -15,6 +15,17 @@ export default function Home() {
           transition={{ duration: 0.5 }}
           className="space-y-4"
         >
+          <div className="mb-8">
+            <div className="relative w-48 h-48 mx-auto mb-6 rounded-full overflow-hidden">
+              <Image
+                src="/images/headshot.jpeg"
+                alt="Jonathan Rocha"
+                fill
+                style={{ objectFit: 'cover' }}
+                priority
+              />
+            </div>
+          </div>
           <h1 className="text-5xl md:text-6xl font-bold text-gray-900 dark:text-white mb-4">
             Jonathan Aaron Rocha
           </h1>
@@ -105,6 +116,15 @@ export default function Home() {
             Get in Touch
           </h2>
           <div className="bg-white dark:bg-gray-800 p-8 rounded-xl shadow-lg">
+            <div className="relative w-32 h-32 mx-auto mb-6">
+              <Image
+                src="/images/avatar-blue.jpg"
+                alt="Artistic Avatar"
+                fill
+                style={{ objectFit: 'contain' }}
+                priority
+              />
+            </div>
             <p className="text-lg text-gray-600 dark:text-gray-300 mb-6 text-center">
               I'm always interested in connecting with fellow academics, technology professionals, and potential collaborators.
             </p>
