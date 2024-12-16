@@ -118,7 +118,7 @@ export default function Home() {
               </p>
             </div>
             <div className="bg-white dark:bg-gray-800 p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow">
-              <h3 className="text-2xl font-semibold mb-3">Masters of Arts in English</h3>
+              <h3 className="text-2xl font-semibold mb-3">Master of Arts, English</h3>
               <p className="text-lg text-gray-600 dark:text-gray-300 mb-2">
                 Texas A&M University - Central Texas
               </p>
@@ -127,7 +127,7 @@ export default function Home() {
               </p>
             </div>
             <div className="bg-white dark:bg-gray-800 p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow">
-              <h3 className="text-2xl font-semibold mb-3">Bachelor of Arts in History</h3>
+              <h3 className="text-2xl font-semibold mb-3">Bachelor of Arts, History</h3>
               <p className="text-lg text-gray-600 dark:text-gray-300 mb-2">
                 Texas A&M University
               </p>
