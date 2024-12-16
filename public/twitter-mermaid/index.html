@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Twitter Platform Governance Visualization | Jonathan Rocha</title>
+    <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        .diagram-container {
+            background: white;
+            border-radius: 8px;
+            padding: 1rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
+        .mermaid {
+            background: white;
+            padding: 1rem;
+            border-radius: 4px;
+        }
+        .source-popover {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+            max-width: 90vw;
+            max-height: 90vh;
+            overflow-y: auto;
+        }
+        .source-popover.active {
+            display: block;
+        }
+        .overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 999;
+        }
+        .overlay.active {
+            display: block;
+        }
+        .source-code {
+            background: #f8f9fa;
+            padding: 1rem;
+            border-radius: 4px;
+            font-family: monospace;
+            white-space: pre-wrap;
+            margin-top: 1rem;
+            overflow-x: auto;
+        }
+        @media (prefers-color-scheme: dark) {
+            body {
+                background-color: #1a1a1a;
+                color: #ffffff;
+            }
+            .source-popover {
+                background: #2d2d2d;
+                color: #ffffff;
+            }
+            .source-code {
+                background: #1a1a1a;
+                color: #ffffff;
+            }
+        }
+    </style>
+</head>
+<body class="bg-gray-100 dark:bg-gray-900 min-h-screen">
+    <div id="overlay" class="overlay"></div>
+    <div id="source-popover" class="source-popover">
+        <div class="flex justify-between items-center">
+            <h3 class="text-xl font-semibold" id="popover-title">Source Code</h3>
+            <button onclick="closePopover()" class="text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                </svg>
+            </button>
+        </div>
+        <div id="source-code" class="source-code"></div>
+    </div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <header class="text-center mb-12">
+            <h1 class="text-4xl font-bold text-gray-900 dark:text-white mb-4">Twitter Platform Governance Visualization</h1>
+            <p class="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+                A collection of Mermaid diagrams exploring the complexities and evolution of platform governance on Twitter,
+                including the tensions between free speech and moderation, and democratic approaches to platform governance.
+            </p>
+        </header>
+
+        <div class="grid grid-cols-1 gap-8">
+            <!-- Democratic Platform Governance -->
+            <div class="diagram-container">
+                <div class="flex justify-between items-center mb-4">
+                    <h2 class="text-2xl font-semibold text-gray-900 dark:text-white">Democratic Platform Governance</h2>
+                    <button onclick="showSource('democratic-platform-governance')" class="px-3 py-1 bg-blue-500 text-white rounded hover:bg-blue-600 text-sm">
+                        View Source
+                    </button>
+                </div>
+                <div class="mermaid" id="democratic-platform-governance"></div>
+            </div>
+
+            <!-- Free Speech vs Moderation -->
+            <div class="diagram-container">
+                <div class="flex justify-between items-center mb-4">
+                    <h2 class="text-2xl font-semibold text-gray-900 dark:text-white">Free Speech Absolutism vs Practical Moderation</h2>
+                    <button onclick="showSource('tension-between-free-speech-absolutism-and-practical-moderation')" class="px-3 py-1 bg-blue-500 text-white rounded hover:bg-blue-600 text-sm">
+                        View Source
+                    </button>
+                </div>
+                <div class="mermaid" id="tension-between-free-speech-absolutism-and-practical-moderation"></div>
+            </div>
+        </div>
+
+        <footer class="mt-16 text-center">
+            <p class="text-gray-600 dark:text-gray-400">
+                Created by Jonathan Rocha
+            </p>
+            <a href="/" class="text-blue-500 hover:text-blue-600 dark:text-blue-400 dark:hover:text-blue-300 mt-2 inline-block">
+                ← Back to Portfolio
+            </a>
+        </footer>
+    </div>
+
+    <script>
+        mermaid.initialize({
+            startOnLoad: true,
+            theme: 'default',
+            securityLevel: 'loose',
+            fontFamily: 'arial',
+        });
+
+        // Store diagram content
+        const diagramContent = {
+            'democratic-platform-governance': `graph TD
+    Center[Democratic Platform Governance]
+    T[Transparency]
+    A[Accountability]
+    U[User Agency]
+    
+    T --> Center
+    A --> Center
+    U --> Center
+    
+    T --> A
+    A --> T
+    A --> U
+    U --> A
+    U --> T
+    T --> U`,
+            'tension-between-free-speech-absolutism-and-practical-moderation': `graph TD
+    A[Free Speech Absolutism] --> B[Platform Reality]
+    
+    A --> A1[Rhetorical Claims]
+    A1 --> A2[Unrestricted Expression]
+    A1 --> A3[Minimal Intervention]
+    A1 --> A4[Market of Ideas]
+    
+    B --> B1[Practical Constraints]
+    B1 --> B2[Content Moderation]
+    B1 --> B3[Algorithmic Filtering]
+    B1 --> B4[Economic Imperatives]
+    
+    B2 --> C[Governance Paradox]
+    B3 --> C
+    B4 --> C
+    
+    C --> D[Freedom of Speech vs. Freedom of Reach]
+    
+    style A fill:#f96,stroke:#333
+    style B fill:#69f,stroke:#333
+    style C fill:#f69,stroke:#333
+    style D fill:#6f9,stroke:#333`
+        };
+
+        // Function to render Mermaid content
+        function renderMermaid(elementId) {
+            const content = diagramContent[elementId];
+            if (content) {
+                const element = document.getElementById(elementId);
+                element.textContent = content;
+                mermaid.init(undefined, element);
+            }
+        }
+
+        // Function to show source code popover
+        function showSource(diagramId) {
+            const popover = document.getElementById('source-popover');
+            const overlay = document.getElementById('overlay');
+            const sourceCode = document.getElementById('source-code');
+            const popoverTitle = document.getElementById('popover-title');
+
+            // Get the source code
+            const code = diagramContent[diagramId];
+            if (!code) return;
+
+            // Update popover content
+            popoverTitle.textContent = `Source Code: ${diagramId}`;
+            sourceCode.textContent = code;
+
+            // Show popover and overlay
+            popover.classList.add('active');
+            overlay.classList.add('active');
+
+            // Close popover when clicking outside
+            overlay.onclick = closePopover;
+        }
+
+        // Function to close source code popover
+        function closePopover() {
+            const popover = document.getElementById('source-popover');
+            const overlay = document.getElementById('overlay');
+            popover.classList.remove('active');
+            overlay.classList.remove('active');
+        }
+
+        // Load all diagrams
+        const diagrams = [
+            'democratic-platform-governance',
+            'tension-between-free-speech-absolutism-and-practical-moderation'
+        ];
+
+        diagrams.forEach(diagram => {
+            renderMermaid(diagram);
+        });
+
+        // Close popover with Escape key
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                closePopover();
+            }
+        });
+    </script>
+</body>
+</html>
