@@ -171,7 +171,7 @@ export default function Home() {
             >
               <h3 className="text-2xl font-semibold mb-3">ENGL 5374 Final Project</h3>
               <p className="text-lg text-gray-600 dark:text-gray-300 mb-4">
-                A Vite-React website showcasing advanced web development techniques and academic research presentation.
+                A Vite-React website exploring Twitter's platform governance, featuring interactive diagrams. View the <Link href="/twitter-mermaid" className="text-blue-500 hover:text-blue-600">governance visualizations</Link>.
               </p>
               <p className="text-blue-500 dark:text-blue-400 inline-flex items-center">
                 View Project <span className="ml-2">→</span>
