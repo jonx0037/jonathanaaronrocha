@@ -151,6 +151,20 @@ export default function Home() {
           </h2>
           <div className="grid md:grid-cols-2 gap-8">
             <Link 
+              href="/mermaid-visualization"
+              target="_blank"
+              className="block bg-white dark:bg-gray-800 p-8 rounded-xl shadow-lg hover:shadow-xl transition-all hover:-translate-y-1"
+            >
+              <h3 className="text-2xl font-semibold mb-3">Statistics Visualization</h3>
+              <p className="text-lg text-gray-600 dark:text-gray-300 mb-4">
+                A collection of Mermaid diagrams visualizing complex statistical concepts for Data Science education.
+              </p>
+              <p className="text-blue-500 dark:text-blue-400 inline-flex items-center">
+                View Project <span className="ml-2">→</span>
+              </p>
+            </Link>
+
+            <Link 
               href="https://jonx0037.github.io/presentation/"
               target="_blank"
               className="block bg-white dark:bg-gray-800 p-8 rounded-xl shadow-lg hover:shadow-xl transition-all hover:-translate-y-1"
