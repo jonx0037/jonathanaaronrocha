@@ -132,7 +132,7 @@
         // Function to fetch and render Mermaid content
         async function fetchAndRenderMermaid(filename, elementId) {
             try {
-                const response = await fetch(`/mermaid/${filename}.mermaid`);
+                const response = await fetch(`../mermaid/${filename}.mermaid`);
                 const text = await response.text();
                 document.getElementById(elementId).textContent = text;
                 mermaid.init(undefined, `#${elementId}`);
