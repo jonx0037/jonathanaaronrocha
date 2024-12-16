@@ -1,0 +1,57 @@
+graph TD
+    Tidyverse[Tidyverse Ecosystem] --> Dplyr[dplyr]
+    Tidyverse --> Tidyr[tidyr]
+    Tidyverse --> Readr[readr]
+    Tidyverse --> Purrr[purrr]
+    
+    %% dplyr workflows
+    Dplyr --> DplyrVerbs[Main Verbs]
+    DplyrVerbs --> Select["select(): Column Selection"]
+    DplyrVerbs --> Filter["filter(): Row Filtering"]
+    DplyrVerbs --> Mutate["mutate(): New Variables"]
+    DplyrVerbs --> Arrange["arrange(): Sorting"]
+    DplyrVerbs --> Group["group_by(): Grouping"]
+    DplyrVerbs --> Summarise["summarise(): Aggregation"]
+    
+    %% tidyr workflows
+    Tidyr --> TidyrFuncs[Data Reshaping]
+    TidyrFuncs --> Pivot["pivot_longer()/pivot_wider()"]
+    TidyrFuncs --> Separate["separate(): Split Columns"]
+    TidyrFuncs --> Unite["unite(): Combine Columns"]
+    TidyrFuncs --> Nest["nest()/unnest()"]
+    
+    %% readr workflows
+    Readr --> DataImport[Data Import]
+    DataImport --> ReadCSV["read_csv()"]
+    DataImport --> ReadDelim["read_delim()"]
+    DataImport --> ReadFwf["read_fwf()"]
+    
+    %% purrr workflows
+    Purrr --> Functional[Functional Programming]
+    Functional --> Map["map(): Apply Functions"]
+    Functional --> Reduce["reduce(): Combine Elements"]
+    Functional --> Walk["walk(): Side Effects"]
+    
+    %% Additional packages
+    Stats[Statistics Packages] --> Modelr[modelr]
+    Stats --> Broom[broom]
+    Stats --> InferPackage[infer]
+    
+    Modelr --> ModelFunc[Modeling Functions]
+    ModelFunc --> AddPred["add_predictions()"]
+    ModelFunc --> AddRes["add_residuals()"]
+    
+    Broom --> TidyStats[Tidy Statistics]
+    TidyStats --> TidyM["tidy(): Model Summary"]
+    TidyStats --> Glance["glance(): Model Statistics"]
+    TidyStats --> Augment["augment(): Model Data"]
+    
+    InferPackage --> InferSteps[Statistical Inference]
+    InferSteps --> Specify["specify(): Variable Roles"]
+    InferSteps --> Hypothesize["hypothesize(): Null"]
+    InferSteps --> Generate["generate(): Resamples"]
+    
+    classDef ecosystem fill:#f9f,stroke:#333,stroke-width:2px
+    classDef package fill:#bbf,stroke:#333,stroke-width:2px
+    class Tidyverse,Stats ecosystem
+    class Dplyr,Tidyr,Readr,Purrr,Modelr,Broom,InferPackage package

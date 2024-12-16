@@ -1,0 +1,68 @@
+graph TD
+    R[R for Statistics] --> Basic[Base R Functions]
+    R --> Packages[Essential Packages]
+    R --> Viz[Visualization Packages]
+    
+    %% Base R Functions
+    Basic --> DescriptiveB[Descriptive Stats]
+    Basic --> InferentialB[Inferential Stats]
+    
+    DescriptiveB --> Mean[mean&#40;&#41;]
+    DescriptiveB --> Median[median&#40;&#41;]
+    DescriptiveB --> SD[sd&#40;&#41;]
+    DescriptiveB --> Summary[summary&#40;&#41;]
+    DescriptiveB --> Table[table&#40;&#41;]
+    
+    InferentialB --> TTest[t.test&#40;&#41;]
+    InferentialB --> ChiSq[chisq.test&#40;&#41;]
+    InferentialB --> Correlation[cor.test&#40;&#41;]
+    InferentialB --> LinearReg[lm&#40;&#41;]
+    InferentialB --> Anova[aov&#40;&#41;]
+    
+    %% Essential Packages
+    Packages --> Stats[stats]
+    Packages --> Dplyr[dplyr]
+    Packages --> Tidyr[tidyr]
+    
+    Stats --> Distribution[Distributions]
+    Distribution --> Normal[rnorm&#40;&#41;/dnorm&#40;&#41;]
+    Distribution --> Binomial[rbinom&#40;&#41;/dbinom&#40;&#41;]
+    Distribution --> Poisson[rpois&#40;&#41;/dpois&#40;&#41;]
+    
+    Dplyr --> DataMan[Data Manipulation]
+    DataMan --> Filter[filter&#40;&#41;]
+    DataMan --> Select[select&#40;&#41;]
+    DataMan --> Group[group_by&#40;&#41;]
+    DataMan --> Summarize[summarize&#40;&#41;]
+    
+    Tidyr --> DataClean[Data Cleaning]
+    DataClean --> Gather[gather&#40;&#41;]
+    DataClean --> Spread[spread&#40;&#41;]
+    DataClean --> Separate[separate&#40;&#41;]
+    
+    %% Visualization Packages
+    Viz --> GGplot[ggplot2]
+    Viz --> Plotly[plotly]
+    
+    GGplot --> BasicPlots[Basic Plots]
+    BasicPlots --> Scatter[geom_point&#40;&#41;]
+    BasicPlots --> Line[geom_line&#40;&#41;]
+    BasicPlots --> Bar[geom_bar&#40;&#41;]
+    
+    GGplot --> StatPlots[Statistical Plots]
+    StatPlots --> Box[geom_boxplot&#40;&#41;]
+    StatPlots --> Histogram[geom_histogram&#40;&#41;]
+    StatPlots --> Density[geom_density&#40;&#41;]
+    
+    Plotly --> Interactive[Interactive Plots]
+    Interactive --> PlotlyScatter[plot_ly scatter]
+    Interactive --> PlotlyBox[plot_ly box]
+    Interactive --> PlotlyHist[plot_ly histogram]
+    
+    %% Styling
+    classDef main fill:#f9f,stroke:#333,stroke-width:2px
+    classDef package fill:#bbf,stroke:#333,stroke-width:2px
+    classDef function fill:#ddf,stroke:#333,stroke-width:1px
+    class R main
+    class Basic,Packages,Viz package
+    class Mean,Median,SD,Summary,Table,TTest,ChiSq,Correlation,LinearReg,Anova function

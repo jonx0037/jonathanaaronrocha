@@ -1,0 +1,43 @@
+graph TD
+    Stats[Statistics in Data Science] --> Descriptive[Descriptive Statistics]
+    Stats --> Inferential[Inferential Statistics]
+    
+    %% Descriptive Statistics Branch
+    Descriptive --> CentralTendency[Central Tendency]
+    Descriptive --> Dispersion[Measures of Dispersion]
+    Descriptive --> Distribution[Distribution Analysis]
+    
+    CentralTendency --> Mean[Mean]
+    CentralTendency --> Median[Median]
+    CentralTendency --> Mode[Mode]
+    
+    Dispersion --> Variance[Variance]
+    Dispersion --> StdDev[Standard Deviation]
+    Dispersion --> IQR[Interquartile Range]
+    
+    Distribution --> Skewness[Skewness]
+    Distribution --> Kurtosis[Kurtosis]
+    Distribution --> DistTypes[Distribution Types]
+    
+    %% Inferential Statistics Branch
+    Inferential --> Hypothesis[Hypothesis Testing]
+    Inferential --> Probability[Probability Theory]
+    Inferential --> Regression[Regression Analysis]
+    
+    Hypothesis --> Tests[Statistical Tests]
+    Hypothesis --> PValue[P-Value]
+    Hypothesis --> ConfidenceInt[Confidence Intervals]
+    
+    Probability --> ProbDist[Probability Distributions]
+    Probability --> BayesTheorem[Bayes Theorem]
+    Probability --> CLT[Central Limit Theorem]
+    
+    Regression --> Linear[Linear Regression]
+    Regression --> Multiple[Multiple Regression]
+    Regression --> Logistic[Logistic Regression]
+
+    %% Styling
+    classDef concept fill:#f9f,stroke:#333,stroke-width:2px
+    classDef branch fill:#bbf,stroke:#333,stroke-width:2px
+    class Stats concept
+    class Descriptive,Inferential branch

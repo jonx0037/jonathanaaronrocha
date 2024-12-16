@@ -1,0 +1,61 @@
+graph TD
+    Viz[R Visualization] --> GGplot[ggplot2]
+    Viz --> Plotly[plotly]
+    Viz --> Other[Other Packages]
+    
+    %% ggplot2 section
+    GGplot --> Univariate[Univariate Plots]
+    GGplot --> Bivariate[Bivariate Plots]
+    GGplot --> Multivariate[Multivariate Plots]
+    
+    Univariate --> Hist["Histogram
+    ggplot(data, aes(x)) +
+    geom_histogram()"]
+    Univariate --> Density["Density Plot
+    ggplot(data, aes(x)) +
+    geom_density()"]
+    Univariate --> Box["Box Plot
+    ggplot(data, aes(x)) +
+    geom_boxplot()"]
+    
+    Bivariate --> Scatter["Scatter Plot
+    ggplot(data, aes(x, y)) +
+    geom_point()"]
+    Bivariate --> Line["Line Plot
+    ggplot(data, aes(x, y)) +
+    geom_line()"]
+    Bivariate --> Bar["Bar Plot
+    ggplot(data, aes(x, y)) +
+    geom_bar(stat='identity')"]
+    
+    Multivariate --> Facet["Faceted Plots
+    ... +
+    facet_wrap(~variable)"]
+    Multivariate --> Color["Color Mapping
+    ... +
+    aes(color=variable)"]
+    Multivariate --> Size["Size Mapping
+    ... +
+    aes(size=variable)"]
+    
+    %% plotly section
+    Plotly --> Interactive[Interactive Plots]
+    Interactive --> PlotlyScatter["plot_ly(data, x, y,
+    type = 'scatter')"]
+    Interactive --> PlotlyBox["plot_ly(data, y,
+    type = 'box')"]
+    Interactive --> Plot3D["plot_ly(data, x, y, z,
+    type = 'scatter3d')"]
+    
+    %% Other packages
+    Other --> Corrplot["corrplot: Correlation
+    corrplot(cor(data))"]
+    Other --> Heatmap["pheatmap: Heatmaps
+    pheatmap(matrix_data)"]
+    Other --> Network["igraph: Networks
+    plot(graph_object)"]
+    
+    classDef package fill:#f9f,stroke:#333,stroke-width:2px
+    classDef function fill:#bbf,stroke:#333,stroke-width:2px
+    class Viz,GGplot,Plotly,Other package
+    class Hist,Density,Box,Scatter,Line,Bar,PlotlyScatter,PlotlyBox,Plot3D,Corrplot,Heatmap,Network function

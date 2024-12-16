@@ -1,0 +1,28 @@
+graph TD
+    All[Probability Distributions] --> Discrete[Discrete Distributions]
+    All --> Continuous[Continuous Distributions]
+    
+    Discrete --> Bernoulli[Bernoulli]
+    Bernoulli --> Binomial[Binomial]
+    Binomial --> Poisson[Poisson]
+    Discrete --> Geometric[Geometric]
+    
+    Continuous --> Normal[Normal/Gaussian]
+    Normal --> StandardNormal[Standard Normal]
+    Normal --> StudentT[Student's t]
+    
+    Continuous --> Uniform[Uniform]
+    Continuous --> Exponential[Exponential]
+    Exponential --> Gamma[Gamma]
+    Gamma --> ChiSquare[Chi-Square]
+    Gamma --> Beta[Beta]
+    
+    %% Special relationships
+    Binomial -.->|Limit| Poisson
+    Normal -.->|Special Case| StandardNormal
+    
+    %% Styling
+    classDef mainType fill:#f9f,stroke:#333,stroke-width:2px
+    classDef subType fill:#bbf,stroke:#333,stroke-width:2px
+    class All,Discrete,Continuous mainType
+    class Bernoulli,Binomial,Normal,Uniform,Exponential subType

@@ -1,0 +1,69 @@
+graph TD
+    IS[Inferential Statistics] --> Sampling[Sampling Theory]
+    IS --> Estimation[Estimation Theory]
+    IS --> Testing[Hypothesis Testing]
+    IS --> Modeling[Statistical Modeling]
+    
+    %% Sampling Theory Branch
+    Sampling --> SampMethods[Sampling Methods]
+    Sampling --> SampDist[Sampling Distributions]
+    
+    SampMethods --> Random[Random Sampling]
+    Random --> SRS[Simple Random]
+    Random --> Systematic[Systematic]
+    Random --> Stratified[Stratified]
+    Random --> Cluster[Cluster]
+    
+    SampDist --> CLT[Central Limit Theorem]
+    SampDist --> SE[Standard Error]
+    SampDist --> SampVar[Sampling Variance]
+    
+    %% Estimation Theory Branch
+    Estimation --> Point[Point Estimation]
+    Estimation --> Interval[Interval Estimation]
+    
+    Point --> MLE[Maximum Likelihood]
+    Point --> MME[Method of Moments]
+    Point --> Bayesian[Bayesian Estimation]
+    
+    Interval --> CI[Confidence Intervals]
+    Interval --> PI[Prediction Intervals]
+    Interval --> TI[Tolerance Intervals]
+    
+    %% Hypothesis Testing Branch
+    Testing --> Types[Test Types]
+    Testing --> Errors[Error Types]
+    Testing --> Power[Power Analysis]
+    
+    Types --> Parametric[Parametric Tests]
+    Types --> NonParam[Non-Parametric Tests]
+    
+    Errors --> Type1[Type I Error α]
+    Errors --> Type2[Type II Error β]
+    
+    Power --> EffectSize[Effect Size]
+    Power --> SampleSize[Sample Size]
+    Power --> Alpha[Significance Level]
+    
+    %% Statistical Modeling Branch
+    Modeling --> Regression[Regression Analysis]
+    Modeling --> Anova[ANOVA]
+    Modeling --> GLM[Generalized Linear Models]
+    
+    Regression --> Simple[Simple Linear]
+    Regression --> Multiple[Multiple Linear]
+    Regression --> Logistic[Logistic]
+    
+    Anova --> OneWay[One-Way ANOVA]
+    Anova --> TwoWay[Two-Way ANOVA]
+    Anova --> MANOVA[MANOVA]
+    
+    GLM --> PoissonReg[Poisson Regression]
+    GLM --> NegBin[Negative Binomial]
+    GLM --> GEE[GEE Models]
+    
+    %% Styling
+    classDef mainBranch fill:#f9f,stroke:#333,stroke-width:2px
+    classDef subBranch fill:#bbf,stroke:#333,stroke-width:2px
+    class IS mainBranch
+    class Sampling,Estimation,Testing,Modeling subBranch

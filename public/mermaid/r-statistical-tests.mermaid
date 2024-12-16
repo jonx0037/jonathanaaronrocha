@@ -1,0 +1,51 @@
+flowchart TD
+    Start([Statistical Test Selection]) --> DataType{What type of data?}
+    
+    DataType -->|Numerical| NumTests[Numerical Tests]
+    DataType -->|Categorical| CatTests[Categorical Tests]
+    DataType -->|Relationships| RelTests[Relationship Tests]
+    
+    %% Numerical Tests
+    NumTests --> CompType1{Comparison Type?}
+    CompType1 -->|One Sample| OneSamp[One Sample t-test]
+    CompType1 -->|Two Samples| TwoSamp[Two Sample Tests]
+    CompType1 -->|Multiple Samples| MultiSamp[Multiple Sample Tests]
+    
+    OneSamp --> OneSampCode["t.test(x, mu = value)
+    # Example:
+    t.test(data$height, mu = 170)"]
+    
+    TwoSamp --> IndepT["# Independent t-test
+    t.test(group1, group2, paired = FALSE)
+    # Example:
+    t.test(height ~ gender, data = data)"]
+    
+    TwoSamp --> PairedT["# Paired t-test
+    t.test(group1, group2, paired = TRUE)
+    # Example:
+    t.test(pre, post, paired = TRUE)"]
+    
+    MultiSamp --> AnovaCode["# One-way ANOVA
+    aov(value ~ group, data = data)
+    # Example:
+    aov(height ~ group, data = data)"]
+    
+    %% Categorical Tests
+    CatTests --> CompType2{Number of Variables?}
+    CompType2 -->|One Variable| GoodFit["# Goodness of Fit
+    chisq.test(x)"]
+    CompType2 -->|Two Variables| IndepTest["# Independence Test
+    chisq.test(table(var1, var2))"]
+    
+    %% Relationship Tests
+    RelTests --> RelType{Relationship Type?}
+    RelType -->|Correlation| CorTest["# Correlation Test
+    cor.test(x, y, method = 'pearson')"]
+    RelType -->|Linear Regression| RegTest["# Linear Regression
+    lm(y ~ x, data = data)
+    summary(model)"]
+    
+    classDef decision fill:#f9f,stroke:#333,stroke-width:2px
+    classDef code fill:#bbf,stroke:#333,stroke-width:2px
+    class DataType,CompType1,CompType2,RelType decision
+    class OneSampCode,IndepT,PairedT,AnovaCode,GoodFit,IndepTest,CorTest,RegTest code

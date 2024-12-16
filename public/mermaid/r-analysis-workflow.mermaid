@@ -1,0 +1,31 @@
+flowchart TD
+    Start([Start]) --> Import[Import Data]
+    Import -->|read.csv&#40;&#41;/read_csv&#40;&#41;| Clean[Data Cleaning]
+    
+    Clean -->|dplyr & tidyr| EDA[Exploratory Data Analysis]
+    
+    EDA -->|summary&#40;&#41;| Descriptive[Descriptive Statistics]
+    EDA -->|ggplot2| Visualization[Data Visualization]
+    
+    Descriptive --> Analysis{Analysis Type}
+    Visualization --> Analysis
+    
+    Analysis -->|Categorical| CatAnalysis[Categorical Analysis]
+    Analysis -->|Numerical| NumAnalysis[Numerical Analysis]
+    Analysis -->|Relationships| RelAnalysis[Relationship Analysis]
+    
+    CatAnalysis -->|table&#40;&#41;/chisq.test&#40;&#41;| CatResults[Categorical Results]
+    NumAnalysis -->|t.test&#40;&#41;/aov&#40;&#41;| NumResults[Numerical Results]
+    RelAnalysis -->|cor.test&#40;&#41;/lm&#40;&#41;| RelResults[Relationship Results]
+    
+    CatResults & NumResults & RelResults --> Interpret[Interpret Results]
+    
+    Interpret -->|ggplot2/plotly| Visualize[Visualize Results]
+    Visualize --> Report[Generate Report]
+    Report -->|rmarkdown| End([End])
+    
+    %% Styling
+    style Start fill:#f9f,stroke:#333,stroke-width:2px
+    style End fill:#f9f,stroke:#333,stroke-width:2px
+    classDef process fill:#bbf,stroke:#333,stroke-width:2px
+    class Analysis process

@@ -1,0 +1,60 @@
+graph TD
+    DS[Descriptive Statistics] --> NumSum[Numerical Summaries]
+    DS --> Visual[Visual Summaries]
+    DS --> Shape[Shape Analysis]
+    
+    %% Numerical Summaries Branch
+    NumSum --> Central[Central Tendency]
+    NumSum --> Spread[Spread/Dispersion]
+    NumSum --> Position[Position Measures]
+    
+    Central --> Mean[Mean Types]
+    Mean --> AM[Arithmetic Mean]
+    Mean --> GM[Geometric Mean]
+    Mean --> HM[Harmonic Mean]
+    Mean --> WM[Weighted Mean]
+    
+    Central --> Med[Median]
+    Central --> Mode[Mode]
+    
+    Spread --> Var[Variance]
+    Spread --> SD[Standard Deviation]
+    Spread --> Range[Range Measures]
+    Range --> IQR[Interquartile Range]
+    Range --> TR[Total Range]
+    
+    Position --> Percentiles[Percentiles]
+    Position --> Quartiles[Quartiles]
+    Position --> Deciles[Deciles]
+    
+    %% Visual Summaries Branch
+    Visual --> Basic[Basic Plots]
+    Visual --> Advanced[Advanced Plots]
+    
+    Basic --> Histogram[Histogram]
+    Basic --> BoxPlot[Box Plot]
+    Basic --> ScatterPlot[Scatter Plot]
+    
+    Advanced --> Violin[Violin Plot]
+    Advanced --> Density[Density Plot]
+    Advanced --> HeatMap[Heat Map]
+    
+    %% Shape Analysis Branch
+    Shape --> Center[Center Analysis]
+    Shape --> Spread[Spread Analysis]
+    Shape --> Form[Form Analysis]
+    
+    Form --> Skew[Skewness]
+    Skew --> PositiveSkew[Positive Skew]
+    Skew --> NegativeSkew[Negative Skew]
+    
+    Form --> Kurt[Kurtosis]
+    Kurt --> Platykurtic[Platykurtic]
+    Kurt --> Mesokurtic[Mesokurtic]
+    Kurt --> Leptokurtic[Leptokurtic]
+    
+    %% Styling
+    classDef mainBranch fill:#f9f,stroke:#333,stroke-width:2px
+    classDef subBranch fill:#bbf,stroke:#333,stroke-width:2px
+    class DS mainBranch
+    class NumSum,Visual,Shape subBranch

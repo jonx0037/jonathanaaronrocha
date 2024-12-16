@@ -1,0 +1,25 @@
+flowchart TD
+    Start([Start]) --> FormulateH[Formulate Hypotheses]
+    FormulateH --> H0[H0: Null Hypothesis]
+    FormulateH --> H1[H1: Alternative Hypothesis]
+    
+    H0 & H1 --> SelectAlpha[Select Significance Level α]
+    SelectAlpha --> CollectData[Collect Data]
+    CollectData --> SelectTest[Select Appropriate Test]
+    
+    SelectTest --> CalcTestStat[Calculate Test Statistic]
+    CalcTestStat --> CalcPValue[Calculate p-value]
+    
+    CalcPValue --> Decision{p-value < α?}
+    Decision -->|Yes| RejectH0[Reject H0]
+    Decision -->|No| FailReject[Fail to Reject H0]
+    
+    RejectH0 --> InterResults[Interpret Results]
+    FailReject --> InterResults
+    
+    InterResults --> Report[Report Findings]
+    Report --> End([End])
+    
+    style Start fill:#f9f,stroke:#333,stroke-width:2px
+    style End fill:#f9f,stroke:#333,stroke-width:2px
+    style Decision fill:#bbf,stroke:#333,stroke-width:2px

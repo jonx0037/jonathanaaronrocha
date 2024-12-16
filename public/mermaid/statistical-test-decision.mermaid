@@ -1,0 +1,35 @@
+flowchart TD
+    Start([Start]) --> DataType{What type of data?}
+    
+    DataType -->|Categorical| NumGroups{How many groups?}
+    DataType -->|Numerical| Distribution{Normal Distribution?}
+    
+    NumGroups -->|Two Groups| Independent{Independent Groups?}
+    NumGroups -->|More than two| CatMore{Independent Groups?}
+    
+    Independent -->|Yes| ChiSquare[Chi-Square Test]
+    Independent -->|No| McNemar[McNemar's Test]
+    
+    CatMore -->|Yes| ChiSquareM[Chi-Square Test]
+    CatMore -->|No| Cochran[Cochran's Q Test]
+    
+    Distribution -->|Yes| NumGroupsN{How many groups?}
+    Distribution -->|No| NonPara{How many groups?}
+    
+    NumGroupsN -->|One| OneSample[One Sample t-test]
+    NumGroupsN -->|Two| TwoGroups{Independent Groups?}
+    NumGroupsN -->|More than two| Anova{Independent Groups?}
+    
+    TwoGroups -->|Yes| IndependentT[Independent t-test]
+    TwoGroups -->|No| PairedT[Paired t-test]
+    
+    Anova -->|Yes| OneWayAnova[One-way ANOVA]
+    Anova -->|No| RmAnova[RM ANOVA]
+    
+    NonPara -->|One| WilcoxonSigned[Wilcoxon Signed-Rank]
+    NonPara -->|Two| MannWhitney[Mann-Whitney U Test]
+    NonPara -->|More than two| KruskalWallis[Kruskal-Wallis Test]
+    
+    style Start fill:#f9f,stroke:#333,stroke-width:2px
+    classDef decision fill:#bbf,stroke:#333,stroke-width:2px
+    class DataType,NumGroups,Independent,CatMore,Distribution,NumGroupsN,TwoGroups,Anova,NonPara decision

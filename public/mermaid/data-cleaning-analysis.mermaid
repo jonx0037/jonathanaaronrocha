@@ -1,0 +1,29 @@
+flowchart TD
+    Start([Start]) --> Import[Import Raw Data]
+    
+    Import --> InitialCheck{Initial Data Check}
+    InitialCheck -->|Missing Values| HandleMissing[Handle Missing Data]
+    InitialCheck -->|Duplicates| RemoveDup[Remove Duplicates]
+    InitialCheck -->|Outliers| HandleOutliers[Handle Outliers]
+    
+    HandleMissing & RemoveDup & HandleOutliers --> DataTypes[Check/Convert Data Types]
+    
+    DataTypes --> Feature{Feature Engineering}
+    Feature -->|Scale| Scaling[Scale/Normalize Data]
+    Feature -->|Transform| Transform[Transform Variables]
+    Feature -->|Create| CreateFeatures[Create New Features]
+    
+    Scaling & Transform & CreateFeatures --> EDA[Exploratory Data Analysis]
+    
+    EDA --> Univariate[Univariate Analysis]
+    EDA --> Bivariate[Bivariate Analysis]
+    EDA --> Multivariate[Multivariate Analysis]
+    
+    Univariate & Bivariate & Multivariate --> Insights[Generate Insights]
+    Insights --> Documentation[Document Process]
+    Documentation --> End([End])
+    
+    style Start fill:#f9f,stroke:#333,stroke-width:2px
+    style End fill:#f9f,stroke:#333,stroke-width:2px
+    classDef process fill:#bbf,stroke:#333,stroke-width:2px
+    class InitialCheck,Feature process
