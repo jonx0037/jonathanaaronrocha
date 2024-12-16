@@ -13,21 +13,83 @@
             padding: 1rem;
             margin-bottom: 1.5rem;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            position: relative;
         }
         .mermaid {
             background: white;
             padding: 1rem;
             border-radius: 4px;
         }
+        .source-popover {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+            max-width: 90vw;
+            max-height: 90vh;
+            overflow-y: auto;
+        }
+        .source-popover.active {
+            display: block;
+        }
+        .overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 999;
+        }
+        .overlay.active {
+            display: block;
+        }
+        .source-code {
+            background: #f8f9fa;
+            padding: 1rem;
+            border-radius: 4px;
+            font-family: monospace;
+            white-space: pre-wrap;
+            margin-top: 1rem;
+            overflow-x: auto;
+        }
         @media (prefers-color-scheme: dark) {
             body {
                 background-color: #1a1a1a;
+                color: #ffffff;
+            }
+            .source-popover {
+                background: #2d2d2d;
+                color: #ffffff;
+            }
+            .source-code {
+                background: #1a1a1a;
                 color: #ffffff;
             }
         }
     </style>
 </head>
 <body class="bg-gray-100 dark:bg-gray-900 min-h-screen">
+    <div id="overlay" class="overlay"></div>
+    <div id="source-popover" class="source-popover">
+        <div class="flex justify-between items-center">
+            <h3 class="text-xl font-semibold" id="popover-title">Source Code</h3>
+            <button onclick="closePopover()" class="text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                </svg>
+            </button>
+        </div>
+        <div id="source-code" class="source-code"></div>
+    </div>
+
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <header class="text-center mb-12">
             <h1 class="text-4xl font-bold text-gray-900 dark:text-white mb-4">Statistics Visualization Project</h1>
@@ -40,73 +102,133 @@
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
             <!-- Statistics Overview -->
             <div class="diagram-container">
-                <h2 class="text-2xl font-semibold mb-4 text-gray-900 dark:text-white">Statistics Overview</h2>
+                <div class="flex justify-between items-center mb-4">
+                    <h2 class="text-2xl font-semibold text-gray-900 dark:text-white">Statistics Overview</h2>
+                    <button onclick="showSource('statistics-overview')" class="px-3 py-1 bg-blue-500 text-white rounded hover:bg-blue-600 text-sm">
+                        View Source
+                    </button>
+                </div>
                 <div class="mermaid" id="statistics-overview"></div>
             </div>
 
             <!-- Descriptive Statistics -->
             <div class="diagram-container">
-                <h2 class="text-2xl font-semibold mb-4 text-gray-900 dark:text-white">Descriptive Statistics</h2>
+                <div class="flex justify-between items-center mb-4">
+                    <h2 class="text-2xl font-semibold text-gray-900 dark:text-white">Descriptive Statistics</h2>
+                    <button onclick="showSource('descriptive-statistics-detailed')" class="px-3 py-1 bg-blue-500 text-white rounded hover:bg-blue-600 text-sm">
+                        View Source
+                    </button>
+                </div>
                 <div class="mermaid" id="descriptive-statistics-detailed"></div>
             </div>
 
             <!-- Inferential Statistics -->
             <div class="diagram-container">
-                <h2 class="text-2xl font-semibold mb-4 text-gray-900 dark:text-white">Inferential Statistics</h2>
+                <div class="flex justify-between items-center mb-4">
+                    <h2 class="text-2xl font-semibold text-gray-900 dark:text-white">Inferential Statistics</h2>
+                    <button onclick="showSource('inferential-statistics-detailed')" class="px-3 py-1 bg-blue-500 text-white rounded hover:bg-blue-600 text-sm">
+                        View Source
+                    </button>
+                </div>
                 <div class="mermaid" id="inferential-statistics-detailed"></div>
             </div>
 
             <!-- Probability Distributions -->
             <div class="diagram-container">
-                <h2 class="text-2xl font-semibold mb-4 text-gray-900 dark:text-white">Probability Distributions</h2>
+                <div class="flex justify-between items-center mb-4">
+                    <h2 class="text-2xl font-semibold text-gray-900 dark:text-white">Probability Distributions</h2>
+                    <button onclick="showSource('probability-distributions')" class="px-3 py-1 bg-blue-500 text-white rounded hover:bg-blue-600 text-sm">
+                        View Source
+                    </button>
+                </div>
                 <div class="mermaid" id="probability-distributions"></div>
             </div>
 
             <!-- R Analysis Workflow -->
             <div class="diagram-container">
-                <h2 class="text-2xl font-semibold mb-4 text-gray-900 dark:text-white">R Analysis Workflow</h2>
+                <div class="flex justify-between items-center mb-4">
+                    <h2 class="text-2xl font-semibold text-gray-900 dark:text-white">R Analysis Workflow</h2>
+                    <button onclick="showSource('r-analysis-workflow')" class="px-3 py-1 bg-blue-500 text-white rounded hover:bg-blue-600 text-sm">
+                        View Source
+                    </button>
+                </div>
                 <div class="mermaid" id="r-analysis-workflow"></div>
             </div>
 
             <!-- R Package Workflows -->
             <div class="diagram-container">
-                <h2 class="text-2xl font-semibold mb-4 text-gray-900 dark:text-white">R Package Workflows</h2>
+                <div class="flex justify-between items-center mb-4">
+                    <h2 class="text-2xl font-semibold text-gray-900 dark:text-white">R Package Workflows</h2>
+                    <button onclick="showSource('r-package-workflows')" class="px-3 py-1 bg-blue-500 text-white rounded hover:bg-blue-600 text-sm">
+                        View Source
+                    </button>
+                </div>
                 <div class="mermaid" id="r-package-workflows"></div>
             </div>
 
             <!-- R Statistical Tests -->
             <div class="diagram-container">
-                <h2 class="text-2xl font-semibold mb-4 text-gray-900 dark:text-white">R Statistical Tests</h2>
+                <div class="flex justify-between items-center mb-4">
+                    <h2 class="text-2xl font-semibold text-gray-900 dark:text-white">R Statistical Tests</h2>
+                    <button onclick="showSource('r-statistical-tests')" class="px-3 py-1 bg-blue-500 text-white rounded hover:bg-blue-600 text-sm">
+                        View Source
+                    </button>
+                </div>
                 <div class="mermaid" id="r-statistical-tests"></div>
             </div>
 
             <!-- R Statistics Functions -->
             <div class="diagram-container">
-                <h2 class="text-2xl font-semibold mb-4 text-gray-900 dark:text-white">R Statistics Functions</h2>
+                <div class="flex justify-between items-center mb-4">
+                    <h2 class="text-2xl font-semibold text-gray-900 dark:text-white">R Statistics Functions</h2>
+                    <button onclick="showSource('r-statistics-functions')" class="px-3 py-1 bg-blue-500 text-white rounded hover:bg-blue-600 text-sm">
+                        View Source
+                    </button>
+                </div>
                 <div class="mermaid" id="r-statistics-functions"></div>
             </div>
 
             <!-- Statistical Test Decision -->
             <div class="diagram-container">
-                <h2 class="text-2xl font-semibold mb-4 text-gray-900 dark:text-white">Statistical Test Decision</h2>
+                <div class="flex justify-between items-center mb-4">
+                    <h2 class="text-2xl font-semibold text-gray-900 dark:text-white">Statistical Test Decision</h2>
+                    <button onclick="showSource('statistical-test-decision')" class="px-3 py-1 bg-blue-500 text-white rounded hover:bg-blue-600 text-sm">
+                        View Source
+                    </button>
+                </div>
                 <div class="mermaid" id="statistical-test-decision"></div>
             </div>
 
             <!-- Data Cleaning Analysis -->
             <div class="diagram-container">
-                <h2 class="text-2xl font-semibold mb-4 text-gray-900 dark:text-white">Data Cleaning Analysis</h2>
+                <div class="flex justify-between items-center mb-4">
+                    <h2 class="text-2xl font-semibold text-gray-900 dark:text-white">Data Cleaning Analysis</h2>
+                    <button onclick="showSource('data-cleaning-analysis')" class="px-3 py-1 bg-blue-500 text-white rounded hover:bg-blue-600 text-sm">
+                        View Source
+                    </button>
+                </div>
                 <div class="mermaid" id="data-cleaning-analysis"></div>
             </div>
 
             <!-- Hypothesis Testing Workflow -->
             <div class="diagram-container">
-                <h2 class="text-2xl font-semibold mb-4 text-gray-900 dark:text-white">Hypothesis Testing Workflow</h2>
+                <div class="flex justify-between items-center mb-4">
+                    <h2 class="text-2xl font-semibold text-gray-900 dark:text-white">Hypothesis Testing Workflow</h2>
+                    <button onclick="showSource('hypothesis-testing-workflow')" class="px-3 py-1 bg-blue-500 text-white rounded hover:bg-blue-600 text-sm">
+                        View Source
+                    </button>
+                </div>
                 <div class="mermaid" id="hypothesis-testing-workflow"></div>
             </div>
 
             <!-- R Visualization Guide -->
             <div class="diagram-container">
-                <h2 class="text-2xl font-semibold mb-4 text-gray-900 dark:text-white">R Visualization Guide</h2>
+                <div class="flex justify-between items-center mb-4">
+                    <h2 class="text-2xl font-semibold text-gray-900 dark:text-white">R Visualization Guide</h2>
+                    <button onclick="showSource('r-visualization-guide')" class="px-3 py-1 bg-blue-500 text-white rounded hover:bg-blue-600 text-sm">
+                        View Source
+                    </button>
+                </div>
                 <div class="mermaid" id="r-visualization-guide"></div>
             </div>
         </div>
@@ -129,6 +251,9 @@
             fontFamily: 'arial',
         });
 
+        // Store fetched source code
+        const sourceCodeCache = {};
+
         // Function to fetch and render Mermaid content
         async function fetchAndRenderMermaid(filename, elementId) {
             try {
@@ -136,9 +261,51 @@
                 const text = await response.text();
                 document.getElementById(elementId).textContent = text;
                 mermaid.init(undefined, `#${elementId}`);
+                // Cache the source code
+                sourceCodeCache[filename] = text;
             } catch (error) {
                 console.error(`Error loading ${filename}:`, error);
             }
+        }
+
+        // Function to show source code popover
+        async function showSource(filename) {
+            const popover = document.getElementById('source-popover');
+            const overlay = document.getElementById('overlay');
+            const sourceCode = document.getElementById('source-code');
+            const popoverTitle = document.getElementById('popover-title');
+
+            // Get the source code from cache or fetch it
+            let code = sourceCodeCache[filename];
+            if (!code) {
+                try {
+                    const response = await fetch(`../mermaid/${filename}.mermaid`);
+                    code = await response.text();
+                    sourceCodeCache[filename] = code;
+                } catch (error) {
+                    console.error(`Error loading source code for ${filename}:`, error);
+                    return;
+                }
+            }
+
+            // Update popover content
+            popoverTitle.textContent = `Source Code: ${filename}`;
+            sourceCode.textContent = code;
+
+            // Show popover and overlay
+            popover.classList.add('active');
+            overlay.classList.add('active');
+
+            // Close popover when clicking outside
+            overlay.onclick = closePopover;
+        }
+
+        // Function to close source code popover
+        function closePopover() {
+            const popover = document.getElementById('source-popover');
+            const overlay = document.getElementById('overlay');
+            popover.classList.remove('active');
+            overlay.classList.remove('active');
         }
 
         // Load all diagrams
@@ -159,6 +326,13 @@
 
         diagrams.forEach(diagram => {
             fetchAndRenderMermaid(diagram, diagram);
+        });
+
+        // Close popover with Escape key
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                closePopover();
+            }
         });
     </script>
 </body>
