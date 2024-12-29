@@ -71,7 +71,7 @@ export default function Home() {
                   className="flex items-start space-x-3"
                 >
                   <span className="text-blue-500">🎓</span>
-                  <p className="text-gray-600 dark:text-gray-300">Graduated with an MA in English from TAMUCT in December 2024</p>
+                  <p className="text-gray-600 dark:text-gray-300">Graduated with an MA in English from TAMUCT on December 13, 2024</p>
                 </MotionDiv>
                 <MotionDiv
                   initial={{ x: -20, opacity: 0 }}
@@ -122,9 +122,17 @@ export default function Home() {
               <p className="text-lg text-gray-600 dark:text-gray-300 mb-2">
                 Texas A&M University - Central Texas
               </p>
-              <p className="text-gray-500 dark:text-gray-400">
+              <p className="text-gray-500 dark:text-gray-400 mb-4">
                 Graduated December 2024
               </p>
+              <Link 
+                href="/images/TAMUCT-MA-ENGL-DIPLOMA.pdf"
+                target="_blank"
+                className="inline-flex items-center text-blue-500 hover:text-blue-600"
+              >
+                <span>View Digital Diploma</span>
+                <span className="ml-2">→</span>
+              </Link>
             </div>
             <div className="bg-white dark:bg-gray-800 p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow">
               <h3 className="text-2xl font-semibold mb-3">Bachelor of Arts, History</h3>
@@ -171,7 +179,7 @@ export default function Home() {
             >
               <h3 className="text-2xl font-semibold mb-3">ENGL 5374 Final Project</h3>
               <p className="text-lg text-gray-600 dark:text-gray-300 mb-4">
-                A Vite-React website exploring Twitter's platform governance, featuring interactive diagrams. View the <Link href="/twitter-mermaid" className="text-blue-500 hover:text-blue-600">governance visualizations</Link>.
+                A Vite-React website exploring Twitter's platform governance, featuring interactive diagrams.
               </p>
               <p className="text-blue-500 dark:text-blue-400 inline-flex items-center">
                 View Project <span className="ml-2">→</span>
