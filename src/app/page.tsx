@@ -80,7 +80,7 @@ export default function Home() {
                   className="flex items-start space-x-3"
                 >
                   <span className="text-blue-500">📚</span>
-                  <p className="text-gray-600 dark:text-gray-300">Starting Master of Data Science at SMU in Spring 2025</p>
+                  <p className="text-gray-600 dark:text-gray-300">Starting MS in Data Science at SMU in Spring 2025</p>
                 </MotionDiv>
                 <MotionDiv
                   initial={{ x: -20, opacity: 0 }}
@@ -109,7 +109,7 @@ export default function Home() {
           </h2>
           <div className="grid md:grid-cols-2 gap-8">
             <div className="bg-white dark:bg-gray-800 p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow">
-              <h3 className="text-2xl font-semibold mb-3">Master of Data Science</h3>
+              <h3 className="text-2xl font-semibold mb-3">Master of Science, Data Science</h3>
               <p className="text-lg text-gray-600 dark:text-gray-300 mb-2">
                 Southern Methodist University
               </p>
