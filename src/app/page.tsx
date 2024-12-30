@@ -201,7 +201,7 @@ export default function Home() {
           </h2>
           <div className="grid md:grid-cols-2 gap-8">
             <Link 
-              href="/blog/building-better-web-apps-with-react"
+              href="/blog/building-better-web-apps-with-react/"
               className="block bg-white dark:bg-gray-800 p-8 rounded-xl shadow-lg hover:shadow-xl transition-all hover:-translate-y-1"
             >
               <h3 className="text-2xl font-semibold mb-3">Building Better Web Apps with React</h3>
@@ -214,7 +214,7 @@ export default function Home() {
             </Link>
 
             <Link 
-              href="/blog/combining-english-ma-with-technical-writing"
+              href="/blog/combining-english-ma-with-technical-writing/"
               className="block bg-white dark:bg-gray-800 p-8 rounded-xl shadow-lg hover:shadow-xl transition-all hover:-translate-y-1"
             >
               <h3 className="text-2xl font-semibold mb-3">Combining English MA Skills with Technical Writing</h3>
@@ -227,7 +227,7 @@ export default function Home() {
             </Link>
 
             <Link 
-              href="/blog/from-history-to-data-science"
+              href="/blog/from-history-to-data-science/"
               className="block bg-white dark:bg-gray-800 p-8 rounded-xl shadow-lg hover:shadow-xl transition-all hover:-translate-y-1"
             >
               <h3 className="text-2xl font-semibold mb-3">From History to Data Science</h3>
@@ -240,7 +240,7 @@ export default function Home() {
             </Link>
 
             <Link 
-              href="/blog/seo-best-practices-from-analytics-manager"
+              href="/blog/seo-best-practices-from-analytics-manager/"
               className="block bg-white dark:bg-gray-800 p-8 rounded-xl shadow-lg hover:shadow-xl transition-all hover:-translate-y-1"
             >
               <h3 className="text-2xl font-semibold mb-3">SEO Best Practices I Learned as an Analytics Manager</h3>
@@ -253,7 +253,7 @@ export default function Home() {
             </Link>
 
             <Link 
-              href="/blog/visualizing-complex-statistics"
+              href="/blog/visualizing-complex-statistics/"
               className="block bg-white dark:bg-gray-800 p-8 rounded-xl shadow-lg hover:shadow-xl transition-all hover:-translate-y-1"
             >
               <h3 className="text-2xl font-semibold mb-3">Visualizing Statistics: Making Complex Concepts Accessible</h3>

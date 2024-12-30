@@ -1,5 +1,5 @@
 import React from 'react'
-import { MotionDiv } from '../../components/motion/MotionDiv'
+import { MotionDiv } from '../../../components/motion/MotionDiv'
 import { readFileSync } from 'fs'
 import { join } from 'path'
 import { marked } from 'marked'
@@ -19,7 +19,10 @@ export default function FromHistoryToDataScience() {
         <h1 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white">
           From History to Data Science: My Academic Journey
         </h1>
-        <div dangerouslySetInnerHTML={{ __html: html }} />
+        <div 
+          className="prose prose-lg dark:prose-invert max-w-none"
+          dangerouslySetInnerHTML={{ __html: html }} 
+        />
       </MotionDiv>
     </main>
   )
