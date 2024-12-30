@@ -199,14 +199,71 @@ export default function Home() {
           <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-8">
             Blog
           </h2>
-          <div className="bg-white dark:bg-gray-800 p-8 rounded-xl shadow-lg text-center">
-            <div className="animate-pulse mb-4">
-              <span className="text-4xl">✍️</span>
-            </div>
-            <h3 className="text-2xl font-semibold mb-4 text-gray-900 dark:text-white">Coming Soon</h3>
-            <p className="text-gray-600 dark:text-gray-300">
-              Exciting content about web development, digital marketing, and technology trends coming your way!
-            </p>
+          <div className="grid md:grid-cols-2 gap-8">
+            <Link 
+              href="/blog/building-better-web-apps-with-react"
+              className="block bg-white dark:bg-gray-800 p-8 rounded-xl shadow-lg hover:shadow-xl transition-all hover:-translate-y-1"
+            >
+              <h3 className="text-2xl font-semibold mb-3">Building Better Web Apps with React</h3>
+              <p className="text-lg text-gray-600 dark:text-gray-300 mb-4">
+                Lessons learned from building complex web applications with React.
+              </p>
+              <p className="text-blue-500 dark:text-blue-400 inline-flex items-center">
+                Read More <span className="ml-2">→</span>
+              </p>
+            </Link>
+
+            <Link 
+              href="/blog/combining-english-ma-with-technical-writing"
+              className="block bg-white dark:bg-gray-800 p-8 rounded-xl shadow-lg hover:shadow-xl transition-all hover:-translate-y-1"
+            >
+              <h3 className="text-2xl font-semibold mb-3">Combining English MA Skills with Technical Writing</h3>
+              <p className="text-lg text-gray-600 dark:text-gray-300 mb-4">
+                How my academic background in English has influenced my technical writing.
+              </p>
+              <p className="text-blue-500 dark:text-blue-400 inline-flex items-center">
+                Read More <span className="ml-2">→</span>
+              </p>
+            </Link>
+
+            <Link 
+              href="/blog/from-history-to-data-science"
+              className="block bg-white dark:bg-gray-800 p-8 rounded-xl shadow-lg hover:shadow-xl transition-all hover:-translate-y-1"
+            >
+              <h3 className="text-2xl font-semibold mb-3">From History to Data Science</h3>
+              <p className="text-lg text-gray-600 dark:text-gray-300 mb-4">
+                My academic journey from a BA in History to an MS in Data Science.
+              </p>
+              <p className="text-blue-500 dark:text-blue-400 inline-flex items-center">
+                Read More <span className="ml-2">→</span>
+              </p>
+            </Link>
+
+            <Link 
+              href="/blog/seo-best-practices-from-analytics-manager"
+              className="block bg-white dark:bg-gray-800 p-8 rounded-xl shadow-lg hover:shadow-xl transition-all hover:-translate-y-1"
+            >
+              <h3 className="text-2xl font-semibold mb-3">SEO Best Practices I Learned as an Analytics Manager</h3>
+              <p className="text-lg text-gray-600 dark:text-gray-300 mb-4">
+                Insights on effective SEO strategies from my experience in digital analytics.
+              </p>
+              <p className="text-blue-500 dark:text-blue-400 inline-flex items-center">
+                Read More <span className="ml-2">→</span>
+              </p>
+            </Link>
+
+            <Link 
+              href="/blog/visualizing-complex-statistics"
+              className="block bg-white dark:bg-gray-800 p-8 rounded-xl shadow-lg hover:shadow-xl transition-all hover:-translate-y-1"
+            >
+              <h3 className="text-2xl font-semibold mb-3">Visualizing Statistics: Making Complex Concepts Accessible</h3>
+              <p className="text-lg text-gray-600 dark:text-gray-300 mb-4">
+                How I used Mermaid diagrams to create engaging visualizations for statistics education.
+              </p>
+              <p className="text-blue-500 dark:text-blue-400 inline-flex items-center">
+                Read More <span className="ml-2">→</span>
+              </p>
+            </Link>
           </div>
         </MotionDiv>
       </section>
