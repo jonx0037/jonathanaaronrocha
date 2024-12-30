@@ -18,7 +18,7 @@ const homeNavLinks = [
 
 const blogNavLinks = [
   { name: 'Home', href: '/' },
-  { name: 'All Posts', href: '/#blog' },
+  { name: 'All Posts', href: '/blog/' },
 ]
 
 export default function Navbar() {
