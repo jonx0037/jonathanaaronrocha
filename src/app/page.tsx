@@ -30,7 +30,7 @@ export default function Home() {
             Jonathan A. Rocha
           </h1>
           <p className="text-xl md:text-2xl text-gray-600 dark:text-gray-300">
-            Web Developer, Digital Marketer, & aspiring Data Scientist
+            Web Developer, Digital Marketer, & Data Scientist
           </p>
         </MotionDiv>
       </section>
