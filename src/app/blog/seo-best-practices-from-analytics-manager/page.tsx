@@ -3,6 +3,7 @@ import { MotionDiv } from '../../../components/motion/MotionDiv'
 import { readFileSync } from 'fs'
 import { join } from 'path'
 import { marked } from 'marked'
+import BlogNavigation from '../../../components/blog/BlogNavigation'
 
 export default function SEOBestPracticesFromAnalyticsManager() {
   const blogContent = readFileSync(join(process.cwd(), 'public', 'blog-posts', 'SEO Best Practices I Learned as an Analytics Manager'), 'utf8')
@@ -23,6 +24,7 @@ export default function SEOBestPracticesFromAnalyticsManager() {
           className="prose prose-lg dark:prose-invert max-w-none"
           dangerouslySetInnerHTML={{ __html: html }} 
         />
+        <BlogNavigation />
       </MotionDiv>
     </main>
   )

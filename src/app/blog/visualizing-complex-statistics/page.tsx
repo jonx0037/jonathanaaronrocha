@@ -3,6 +3,7 @@ import { MotionDiv } from '../../../components/motion/MotionDiv'
 import { readFileSync } from 'fs'
 import { join } from 'path'
 import { marked } from 'marked'
+import BlogNavigation from '../../../components/blog/BlogNavigation'
 
 export default function VisualizingComplexStatistics() {
   const blogContent = readFileSync(join(process.cwd(), 'public', 'blog-posts', 'Visualizing Statistics: Making Complex Concepts Accessible'), 'utf8')
@@ -23,6 +24,7 @@ export default function VisualizingComplexStatistics() {
           className="prose prose-lg dark:prose-invert max-w-none"
           dangerouslySetInnerHTML={{ __html: html }} 
         />
+        <BlogNavigation />
       </MotionDiv>
     </main>
   )

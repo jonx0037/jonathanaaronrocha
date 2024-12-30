@@ -5,7 +5,9 @@ import Link from 'next/link'
 import { useTheme } from 'next-themes'
 import { SunIcon, MoonIcon, Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 
-const navLinks = [
+import { usePathname } from 'next/navigation'
+
+const homeNavLinks = [
   { name: 'Education', href: '#education' },
   { name: 'Projects', href: '#projects' },
   { name: 'Blog', href: '#blog' },
@@ -14,10 +16,18 @@ const navLinks = [
   { name: 'Contact', href: '#contact' },
 ]
 
+const blogNavLinks = [
+  { name: 'Home', href: '/' },
+  { name: 'All Posts', href: '/#blog' },
+]
+
 export default function Navbar() {
   const [mounted, setMounted] = useState(false)
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const { theme, setTheme } = useTheme()
+  const pathname = usePathname()
+  const isBlogPost = pathname?.includes('/blog/')
+  const navLinks = isBlogPost ? blogNavLinks : homeNavLinks
 
   // After mounting, we have access to the theme
   useEffect(() => setMounted(true), [])

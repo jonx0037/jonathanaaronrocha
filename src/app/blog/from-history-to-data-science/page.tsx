@@ -3,6 +3,7 @@ import { MotionDiv } from '../../../components/motion/MotionDiv'
 import { readFileSync } from 'fs'
 import { join } from 'path'
 import { marked } from 'marked'
+import BlogNavigation from '../../../components/blog/BlogNavigation'
 
 export default function FromHistoryToDataScience() {
   const blogContent = readFileSync(join(process.cwd(), 'public', 'blog-posts', 'From History to Data Science: My Academic Journey'), 'utf8')
@@ -23,6 +24,7 @@ export default function FromHistoryToDataScience() {
           className="prose prose-lg dark:prose-invert max-w-none"
           dangerouslySetInnerHTML={{ __html: html }} 
         />
+        <BlogNavigation />
       </MotionDiv>
     </main>
   )
