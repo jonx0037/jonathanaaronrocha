@@ -8,17 +8,17 @@ const blogPosts = [
   {
     title: 'Building Better Web Apps with React',
     slug: 'building-better-web-apps-with-react',
-    publishDate: '2024-01-15'
+    publishDate: '2024-05-15'
   },
   {
     title: 'Combining English MA with Technical Writing',
     slug: 'combining-english-ma-with-technical-writing',
-    publishDate: '2024-01-08'
+    publishDate: '2024-12-15'
   },
   {
     title: 'From History to Data Science',
     slug: 'from-history-to-data-science',
-    publishDate: '2024-01-02'
+    publishDate: '2025-01-02'
   },
   {
     title: 'SEO Best Practices from Analytics Manager',
