@@ -7,23 +7,28 @@ import { ChevronLeftIcon, ChevronRightIcon } from '@heroicons/react/24/outline'
 const blogPosts = [
   {
     title: 'Building Better Web Apps with React',
-    slug: 'building-better-web-apps-with-react'
+    slug: 'building-better-web-apps-with-react',
+    publishDate: '2024-01-15'
   },
   {
     title: 'Combining English MA with Technical Writing',
-    slug: 'combining-english-ma-with-technical-writing'
+    slug: 'combining-english-ma-with-technical-writing',
+    publishDate: '2024-01-08'
   },
   {
     title: 'From History to Data Science',
-    slug: 'from-history-to-data-science'
+    slug: 'from-history-to-data-science',
+    publishDate: '2024-01-02'
   },
   {
     title: 'SEO Best Practices from Analytics Manager',
-    slug: 'seo-best-practices-from-analytics-manager'
+    slug: 'seo-best-practices-from-analytics-manager',
+    publishDate: '2024-01-22'
   },
   {
     title: 'Visualizing Complex Statistics',
-    slug: 'visualizing-complex-statistics'
+    slug: 'visualizing-complex-statistics',
+    publishDate: '2024-01-29'
   }
 ]
 
@@ -58,6 +63,15 @@ export default function BlogNavigation() {
   return (
     <nav className="mt-12 border-t border-gray-200 dark:border-gray-700 pt-8">
       <div className="flex justify-between items-center">
+        <Link 
+          href="/blog"
+          className="text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white transition-colors"
+        >
+          <div className="text-sm text-gray-500 dark:text-gray-400">
+            View All
+          </div>
+          <div className="text-base font-medium">Blog Posts</div>
+        </Link>
         {prevPost ? (
           <NavigationLink post={prevPost} direction="prev" />
         ) : (
