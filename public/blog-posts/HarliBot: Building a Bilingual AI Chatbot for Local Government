@@ -1,0 +1,57 @@
+# HarliBot: Building a Bilingual AI Chatbot for Local Government
+
+In early 2026, I had the opportunity to design and build **HarliBot** (now formally known as **Harlí**) — a bilingual AI chatbot for the City of Harlingen, Texas. This post walks through the architecture, the challenges of building a truly bilingual system, and the lessons learned from taking a RAG-based chatbot to production.
+
+## The Challenge
+
+The City of Harlingen serves a predominantly bilingual (English/Spanish) community in South Texas. Residents needed a way to quickly find information about city services — utility payments, building permits, public works schedules — without navigating a complex municipal website. The solution needed to:
+
+1. Work equally well in **English and Spanish**
+2. Provide **verified, source-cited answers** (not hallucinations)
+3. Be **embedded directly** on the city's existing website
+4. Maintain **data sovereignty** — no sensitive city data leaving controlled infrastructure
+
+## Architecture: RAG Over Hallucination
+
+I chose a Retrieval-Augmented Generation (RAG) architecture to ensure every response is grounded in verified city content rather than relying on the LLM's general knowledge.
+
+**The pipeline:**
+- **Crawl & Process**: A TypeScript pipeline scrapes and processes the `harlingentx.gov` website
+- **Embed**: A Python FastAPI service (deployed as an AWS Lambda container) generates multilingual embeddings using `paraphrase-multilingual-mpnet-base-v2`
+- **Index**: ChromaDB Cloud stores 2,100+ vector-indexed chunks across both languages
+- **Generate**: Google Gemini 1.5 Flash produces responses with source citations
+
+## The Bilingual Challenge
+
+Building bilingual support was more nuanced than "just translate everything." Key challenges included:
+
+- **Embedding quality**: The multilingual model needed to embed semantically equivalent English and Spanish content near each other in vector space — careful model selection was critical
+- **Index integrity**: During early re-embedding of Spanish content I discovered it was inadvertently *overwriting* English vectors. I implemented a merge-and-index workflow with normalized metadata filtering (lowercase `en`/`es` tags) to prevent this
+- **Dynamic language switching**: The entire site UI synchronizes language through a global `LanguageProvider`, so toggling between EN/ES updates both the chat persona and the surrounding website content
+
+## Production Deployment
+
+The production stack runs across multiple services:
+
+- **Frontend**: Next.js 14 deployed on **Vercel** with SSE streaming for low-latency responses
+- **Embedding Service**: AWS Lambda (container image) for scalable, serverless embeddings
+- **Vector DB**: ChromaDB Cloud (HTTP API)
+- **Analytics**: Vercel Analytics for user rating tracking and performance monitoring
+
+Getting to production involved solving several interesting problems: API Gateway route mismatches (403s), Lambda read-only filesystem errors (solved by model bundling), Vercel monorepo configuration, and a cascade of environment variable issues across the proxy layer.
+
+## Results
+
+HarliBot is live at [harli-bot.vercel.app](https://harli-bot.vercel.app) and features:
+
+- **2,100+ bilingual knowledge chunks** covering core municipal services
+- **Full RAG retrieval path** with source citations and no demo fallback
+- **A premium UI** with glassmorphism, animated gradients, and Montserrat typography
+- **PWA support** with offline resilience via a custom service worker
+- **WCAG accessibility** foundations including ARIA landmarks and keyboard navigation
+
+## Lessons Learned
+
+The biggest takeaway was the importance of the **Hybrid Indexing** strategy. Pure automated web scraping misses edge cases — we discovered that Harlí couldn't answer questions about City Hall despite the underlying data being present. The solution was combining automated scraping with curated JSON entries and supplemental fact injection to ensure mission-critical information is always reachable in the vector space.
+
+For anyone building RAG systems for production: invest heavily in your content pipeline. The quality of your retrieval is everything — the LLM can only be as good as the context it receives.

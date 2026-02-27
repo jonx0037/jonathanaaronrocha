@@ -8,14 +8,14 @@ import './globals.css'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'Jonathan Aaron Rocha',
-  description: 'Personal website and portfolio of Jonathan Aaron Rocha - MA in English graduate and incoming Masters of Data Science student',
-  keywords: ['Jonathan Rocha', 'MA English', 'Data Science', 'Academic', 'Technology', 'Portfolio'],
+  title: 'Jonathan Aaron Rocha — Data Scientist · AI/ML Engineer · Full-Stack Developer',
+  description: 'Data Scientist, AI/ML Engineer, and Full-Stack Web Developer with 10+ years of experience. Currently pursuing an M.S. in Data Science at SMU. Specializing in NLP, ensemble transformers, and cloud AI systems.',
+  keywords: ['Jonathan Rocha', 'Data Scientist', 'AI Engineer', 'Machine Learning', 'NLP', 'AWS', 'Full-Stack Developer', 'React', 'Python', 'SMU', 'Portfolio'],
   authors: [{ name: 'Jonathan Aaron Rocha' }],
   metadataBase: new URL('https://jonathanaaronrocha.com'),
   openGraph: {
-    title: 'Jonathan Aaron Rocha',
-    description: 'Personal website and portfolio of Jonathan Aaron Rocha',
+    title: 'Jonathan Aaron Rocha — Data Scientist · AI/ML Engineer',
+    description: 'Data Scientist, AI/ML Engineer, and Full-Stack Web Developer. Building intelligent systems at AWS and pursuing an M.S. in Data Science at SMU.',
     url: 'https://jonathanaaronrocha.com',
     siteName: 'Jonathan Aaron Rocha',
     locale: 'en_US',

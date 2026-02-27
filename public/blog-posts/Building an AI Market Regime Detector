@@ -1,0 +1,39 @@
+# Building an AI Market Regime Detector
+
+As part of my M.S. in Data Science capstone at Southern Methodist University, I built the **Cross-Asset Sentiment Regime Detector** — an automated system that detects market regime transitions (Risk-On, Risk-Off, Transition) through cross-asset sentiment analysis.
+
+## The Problem
+
+Financial markets cycle through regimes — periods of risk appetite ("Risk-On") and risk aversion ("Risk-Off"). Traditional detection relies on lagging indicators like the VIX after sharp moves have already occurred. What if we could detect these transitions *before* they fully materialize, using the collective sentiment of market participants across asset classes?
+
+## The Approach
+
+The system aggregates sentiment analysis from financial social media, news, and forum data spanning equities, crypto, forex, and commodities. The core pipeline includes:
+
+- **Ensemble Transformer Models**: A combination of FinBERT (fine-tuned for financial text) and RoBERTa, ensembled to produce robust sentiment scores across varied financial language
+- **Time-Series Integration**: Sentiment signals are combined with the ECB's Composite Indicator of Systemic Stress (CISS) using GARCH-MIDAS volatility modeling
+- **Statistical Jump Model**: A regime-switching model that identifies transition points between Risk-On, Risk-Off, and Transition states
+
+## Key Findings
+
+The system was backtested across major market events including the COVID-19 crash and the GameStop short squeeze, achieving approximately **85% average accuracy** in regime classification.
+
+The most interesting finding so far involves the lead-time analysis: testing whether cross-asset sentiment leads VIX-based regime detection by 1–5 days. Early results suggest sentiment divergence between asset classes may serve as a reliable early warning signal for regime shifts.
+
+## Technical Stack
+
+- **Python** for the entire pipeline
+- **Hugging Face Transformers** for FinBERT and RoBERTa
+- **pandas / NumPy** for data engineering on 1.6M+ records
+- **statsmodels** for GARCH-MIDAS and statistical testing
+- **Rényi Transfer Entropy** for measuring information flow between sentiment and volatility
+
+## What I Learned
+
+This project pushed me to think about the intersection of NLP and quantitative finance in ways I hadn't before. Building a pipeline that processes over 1.6 million text records while maintaining data integrity taught me as much about robust engineering as it did about machine learning.
+
+The most valuable lesson was about ensemble design — combining models with different strengths (FinBERT's financial domain knowledge + RoBERTa's general language understanding) produced significantly more stable results than either model alone.
+
+## What's Next
+
+The final phase involves scaling from the validation corpus to the full 2.66M text dataset and formalizing the lead-time metric across all detected regime transitions. I'm also exploring Sentiment Connectedness networks and transfer entropy measures to better understand how sentiment flows between asset classes before major market moves.

@@ -1,34 +1,7 @@
 import React from 'react'
 import Link from 'next/link'
 import { MotionDiv } from '../../components/motion/MotionDiv'
-
-const blogPosts = [
-    {
-        title: 'Building Better Web Apps with React',
-        slug: 'building-better-web-apps-with-react',
-        publishDate: '2024-05-15'
-    },
-    {
-        title: 'Combining English MA with Technical Writing',
-        slug: 'combining-english-ma-with-technical-writing',
-        publishDate: '2024-12-15'
-    },
-    {
-        title: 'From History to Data Science',
-        slug: 'from-history-to-data-science',
-        publishDate: '2025-01-02'
-    },
-    {
-        title: 'SEO Best Practices from Analytics Manager',
-        slug: 'seo-best-practices-from-analytics-manager',
-        publishDate: '2024-01-22'
-    },
-    {
-        title: 'Visualizing Complex Statistics',
-        slug: 'visualizing-complex-statistics',
-        publishDate: '2024-01-29'
-    }
-].sort((a, b) => new Date(b.publishDate).getTime() - new Date(a.publishDate).getTime())
+import { blogPosts } from '../../data/siteData'
 
 export default function BlogIndex() {
   return (
@@ -49,17 +22,20 @@ export default function BlogIndex() {
                 {new Date(post.publishDate).toLocaleDateString('en-US', {
                   year: 'numeric',
                   month: 'long',
-                  day: 'numeric'
+                  day: 'numeric',
                 })}
               </div>
               <h2 className="text-2xl font-bold">
-                <Link 
+                <Link
                   href={`/blog/${post.slug}`}
                   className="text-gray-900 dark:text-white hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
                 >
                   {post.title}
                 </Link>
               </h2>
+              <p className="text-gray-600 dark:text-gray-300">
+                {post.excerpt}
+              </p>
             </article>
           ))}
         </div>
