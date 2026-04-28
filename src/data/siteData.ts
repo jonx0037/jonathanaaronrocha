@@ -66,25 +66,24 @@ export interface Experience {
 
 export const experience: Experience[] = [
     {
-        title: 'Artificial Intelligence Engineer',
-        company: 'Amazon Web Services (AWS)',
-        period: 'April 2024 – Present',
+        title: 'Founder & Principal Consultant',
+        company: 'DataSalt LLC',
+        period: 'February 2025 – Present',
         description:
-            'Designs, develops, and implements AI systems across various AWS product platforms. Applies ML engineering principles to optimize AI system deployments in cloud infrastructure.',
+            'Founded a boutique AI/ML consultancy serving South Texas businesses. Publishes technical content and builds applied ML platforms across retail, agriculture, legal, and healthcare verticals.',
         bullets: [
-            'Tests capabilities of platform products and services to ensure quality and performance standards',
-            'Provides data-driven recommendations to leadership on the continual improvement of platform products',
+            'Built formalml.com, an educational mathematics and ML platform (Astro 5, React 18, D3.js, KaTeX) with completed tracks on Topology & TDA and Linear Algebra',
+            'Developed finrag.io, a multimodal financial RAG system using Gemini Embeddings, Qdrant, FastAPI, and Claude Sonnet for synthesis',
         ],
     },
     {
-        title: 'Full-Stack Web Developer',
+        title: 'Senior Full-Stack Web Developer',
         company: 'Fullsteam Marketing',
-        period: 'March 2016 – April 2024',
+        period: 'January 2016 – April 2024',
         description:
-            'Developed and maintained React-based web applications aligned with the company\'s digital strategy. Managed database systems and cloud infrastructure on AWS.',
+            'Architected and maintained React-based web applications. Executed full-stack development in JavaScript, Python, and AWS cloud infrastructure.',
         bullets: [
-            'Performed full front-end and back-end development using HTML, CSS, JavaScript, and Python',
-            'Collaborated with cross-functional teams to deliver data-driven, user-centered products',
+            'Contributed to digital growth strategy through data-informed development decisions and cross-team collaboration',
         ],
     },
     {
@@ -92,7 +91,7 @@ export const experience: Experience[] = [
         company: 'Self-Employed',
         period: '2015 – Present',
         description:
-            'Delivers custom web development solutions for diverse clients across multiple industries. Specializes in React applications, responsive design, UX/UI, and content management systems.',
+            'Delivers end-to-end custom web solutions specializing in React, responsive design, and UX/UI across multiple industries.',
     },
 ]
 

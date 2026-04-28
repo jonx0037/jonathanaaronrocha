@@ -14,7 +14,7 @@ export default function HeroSection() {
                 <div className="mb-8">
                     <div className="relative w-48 h-48 mx-auto mb-6 rounded-full overflow-hidden ring-4 ring-blue-500/20">
                         <Image
-                            src="/images/2025-jon-a.jpeg"
+                            src="/images/corp-headshot-blue-suit-jon.jpg"
                             alt="Jonathan Rocha"
                             fill
                             style={{ objectFit: 'cover' }}
