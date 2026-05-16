@@ -192,7 +192,6 @@ export interface Project {
     liveLink?: { url: string; label: string }
     repoLink?: { url: string; label: string }
     stack?: string[]
-    tags?: string[]
 }
 
 export const projects: Project[] = [
@@ -205,7 +204,6 @@ export const projects: Project[] = [
         audience: 'both',
         liveLink: { url: 'https://market-sentiment.io', label: 'market-sentiment.io' },
         stack: ['Python', 'BERT', 'GARCH', 'Statistical Jump Model', 'RAG'],
-        tags: ['Capstone', 'NLP', 'Time-Series', 'Finance'],
     },
     {
         title: 'finrag.io — Multimodal Financial RAG',
@@ -216,7 +214,6 @@ export const projects: Project[] = [
         audience: 'both',
         liveLink: { url: 'https://finrag.io', label: 'finrag.io' },
         stack: ['Gemini', 'Qdrant', 'FastAPI', 'Claude Sonnet', 'Next.js'],
-        tags: ['RAG', 'Multimodal', 'Finance'],
     },
     {
         title: 'CounselOS — Multi-Agent Legal Intake',
@@ -227,7 +224,6 @@ export const projects: Project[] = [
         audience: 'industry',
         repoLink: { url: 'https://github.com/jonx0037/counselos', label: 'github.com/jonx0037/counselos' },
         stack: ['FastAPI', 'Next.js', 'Multi-Agent', 'Railway', 'Vercel'],
-        tags: ['Agents', 'Orchestration', 'Production'],
     },
     {
         title: 'HarliBot — Bilingual Municipal AI Chatbot',
@@ -238,7 +234,6 @@ export const projects: Project[] = [
         audience: 'industry',
         liveLink: { url: 'https://harli-bot.vercel.app', label: 'harli-bot.vercel.app' },
         stack: ['React', 'Next.js', 'RAG', 'AWS Lambda'],
-        tags: ['RAG', 'Bilingual', 'Production'],
     },
     {
         title: 'DataSalt.ai — Consultancy Platform',
@@ -249,7 +244,6 @@ export const projects: Project[] = [
         audience: 'industry',
         liveLink: { url: 'https://datasalt.ai', label: 'datasalt.ai' },
         stack: ['Next.js 14', 'Tailwind CSS', 'Vercel'],
-        tags: ['Consultancy', 'Case Studies', 'AI Chatbot'],
     },
     {
         title: 'Persistent Homology for Financial Regime Detection',
@@ -259,7 +253,6 @@ export const projects: Project[] = [
         external: true,
         audience: 'academic',
         stack: ['Python', 'GUDHI', 'Ripser', 'giotto-tda'],
-        tags: ['TDA', 'Topology', 'Finance'],
     },
     {
         title: 'Statistics Visualization',
@@ -268,7 +261,6 @@ export const projects: Project[] = [
         href: '/mermaid-visualization',
         audience: 'academic',
         stack: ['Mermaid.js'],
-        tags: ['Data Viz', 'Education'],
     },
     {
         title: 'ENGL 5374 Final Project',
@@ -278,7 +270,6 @@ export const projects: Project[] = [
         external: true,
         audience: 'academic',
         stack: ['React', 'Vite'],
-        tags: ['Digital Humanities'],
     },
 ]
 

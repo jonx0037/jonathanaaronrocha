@@ -3,7 +3,7 @@
 import React, { useState, useMemo } from 'react'
 import Link from 'next/link'
 import { motion, AnimatePresence, LayoutGroup } from 'framer-motion'
-import { ArrowTopRightOnSquareIcon, CodeBracketIcon } from '@heroicons/react/24/outline'
+import { ArrowTopRightOnSquareIcon, ArrowRightIcon, CodeBracketIcon } from '@heroicons/react/24/outline'
 import { projects, type ProjectAudience } from '../../data/siteData'
 
 type Filter = 'all' | ProjectAudience
@@ -131,7 +131,11 @@ export default function ProjectsSection() {
                                                     rel={project.external ? 'noopener noreferrer' : undefined}
                                                     className="inline-flex items-center gap-1 text-blue-600 dark:text-blue-400 hover:underline font-medium"
                                                 >
-                                                    <ArrowTopRightOnSquareIcon className="h-4 w-4" aria-hidden="true" />
+                                                    {project.external ? (
+                                                        <ArrowTopRightOnSquareIcon className="h-4 w-4" aria-hidden="true" />
+                                                    ) : (
+                                                        <ArrowRightIcon className="h-4 w-4" aria-hidden="true" />
+                                                    )}
                                                     View project
                                                 </Link>
                                             )}
