@@ -8,11 +8,11 @@ import { SunIcon, MoonIcon, Bars3Icon, XMarkIcon } from '@heroicons/react/24/out
 import { usePathname } from 'next/navigation'
 
 const homeNavLinks = [
-  { name: 'Education', href: '#education' },
+  { name: 'Formal Series', href: '#formal-series' },
   { name: 'Projects', href: '#projects' },
-  { name: 'Blog', href: '#blog' },
-  { name: 'Skills', href: '#skills' },
   { name: 'Experience', href: '#experience' },
+  { name: 'Education', href: '#education' },
+  { name: 'Blog', href: '#blog' },
   { name: 'Contact', href: '#contact' },
 ]
 
