@@ -1,27 +1,30 @@
 import React from 'react'
-import { BriefcaseIcon, AcademicCapIcon, ArrowDownTrayIcon, ArrowRightIcon } from '@heroicons/react/24/outline'
+import Image from 'next/image'
+import { ArrowDownTrayIcon, ArrowRightIcon } from '@heroicons/react/24/outline'
 import { MotionDiv } from '../motion/MotionDiv'
 import { profile } from '../../data/siteData'
 
 interface TrackCardProps {
-    icon: React.ReactNode
+    portraitSrc: string
+    portraitAlt: string
     heading: string
     pitch: string
     anchors: { href: string; label: string }[]
     ctaHref: string
     ctaLabel: string
-    accentClass: string
+    accentRingClass: string
     side: 'left' | 'right'
 }
 
 function TrackCard({
-    icon,
+    portraitSrc,
+    portraitAlt,
     heading,
     pitch,
     anchors,
     ctaHref,
     ctaLabel,
-    accentClass,
+    accentRingClass,
     side,
 }: TrackCardProps) {
     return (
@@ -32,8 +35,8 @@ function TrackCard({
             transition={{ duration: 0.5, delay: side === 'left' ? 0 : 0.1 }}
             className="bg-white dark:bg-gray-800 p-8 rounded-xl shadow-lg flex flex-col h-full"
         >
-            <div className={`w-12 h-12 rounded-lg flex items-center justify-center mb-5 ${accentClass}`}>
-                {icon}
+            <div className={`relative w-[72px] h-[72px] rounded-full overflow-hidden mb-5 ring-4 ${accentRingClass}`}>
+                <Image src={portraitSrc} alt={portraitAlt} fill style={{ objectFit: 'cover' }} />
             </div>
             <h3 className="text-2xl font-semibold text-gray-900 dark:text-white mb-3">
                 {heading}
@@ -73,9 +76,10 @@ export default function AudienceSplitSection() {
             <div className="grid md:grid-cols-2 gap-6 md:gap-8">
                 <TrackCard
                     side="left"
-                    icon={<BriefcaseIcon className="h-6 w-6 text-blue-600 dark:text-blue-300" />}
-                    accentClass="bg-blue-100 dark:bg-blue-900/40"
-                    heading="For Industry Recruiters"
+                    portraitSrc="/images/headshots/audience-industry.webp"
+                    portraitAlt={profile.fullName}
+                    accentRingClass="ring-blue-200 dark:ring-blue-700"
+                    heading="Shipping Production ML"
                     pitch={profile.pitchIndustry}
                     anchors={[
                         { href: '#projects', label: 'Production projects (finrag.io, CounselOS, HarliBot)' },
@@ -87,9 +91,10 @@ export default function AudienceSplitSection() {
                 />
                 <TrackCard
                     side="right"
-                    icon={<AcademicCapIcon className="h-6 w-6 text-purple-600 dark:text-purple-300" />}
-                    accentClass="bg-purple-100 dark:bg-purple-900/40"
-                    heading="For Academic Programs"
+                    portraitSrc="/images/headshots/audience-academic.webp"
+                    portraitAlt={profile.fullName}
+                    accentRingClass="ring-purple-200 dark:ring-purple-700"
+                    heading="Pursuing the PhD"
                     pitch={profile.pitchAcademic}
                     anchors={[
                         { href: '#formal-series', label: 'Formal series — 130+ topics across 29 tracks' },

@@ -32,10 +32,7 @@ export default function ResumeCtaButtons({
                 aria-label="Download industry resume (PDF)"
             >
                 <ArrowDownTrayIcon className="h-5 w-5" aria-hidden="true" />
-                <span>
-                    Download Resume
-                    <span className="ml-1 font-normal opacity-90">(Industry)</span>
-                </span>
+                <span>Resume</span>
             </a>
             <a
                 href={profile.cvUrl}
@@ -44,10 +41,7 @@ export default function ResumeCtaButtons({
                 aria-label="Download academic CV (PDF)"
             >
                 <ArrowDownTrayIcon className="h-5 w-5" aria-hidden="true" />
-                <span>
-                    Download CV
-                    <span className="ml-1 font-normal opacity-90">(Academic)</span>
-                </span>
+                <span>CV</span>
             </a>
         </div>
     )

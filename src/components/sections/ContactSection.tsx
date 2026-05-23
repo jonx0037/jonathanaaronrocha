@@ -21,7 +21,7 @@ export default function ContactSection() {
                 <div className="bg-white dark:bg-gray-800 p-8 rounded-xl shadow-lg">
                     <div className="relative w-28 h-28 mx-auto mb-6 rounded-full overflow-hidden">
                         <Image
-                            src="/images/corp-headshot-blue-suit-transparent-background-jon.jpg"
+                            src="/images/headshots/contact.webp"
                             alt={profile.fullName}
                             fill
                             style={{ objectFit: 'cover' }}

@@ -1,8 +1,9 @@
 import React from 'react'
+import Image from 'next/image'
 import Link from 'next/link'
 import { ArrowTopRightOnSquareIcon } from '@heroicons/react/24/outline'
 import { MotionDiv } from '../motion/MotionDiv'
-import { education } from '../../data/siteData'
+import { education, profile } from '../../data/siteData'
 
 export default function EducationSection() {
     return (
@@ -13,9 +14,19 @@ export default function EducationSection() {
                 viewport={{ once: true, amount: 0.1 }}
                 transition={{ duration: 0.5 }}
             >
-                <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-8">
-                    Education
-                </h2>
+                <div className="flex items-center justify-between mb-8">
+                    <h2 className="text-3xl font-bold text-gray-900 dark:text-white">
+                        Education
+                    </h2>
+                    <div className="relative w-14 h-14 rounded-full overflow-hidden ring-2 ring-purple-200 dark:ring-purple-900/60 flex-shrink-0">
+                        <Image
+                            src="/images/headshots/education.webp"
+                            alt={profile.fullName}
+                            fill
+                            style={{ objectFit: 'cover' }}
+                        />
+                    </div>
+                </div>
                 <div className="grid md:grid-cols-2 gap-6 md:gap-8">
                     {education.map((edu) => (
                         <div

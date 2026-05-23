@@ -31,3 +31,9 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# High-res headshot sources (optimized versions live in public/images/headshots/)
+/headshot-sources/
+
+# Claude Code machine-local settings (shared configs like launch.json stay tracked)
+.claude/settings.local.json
