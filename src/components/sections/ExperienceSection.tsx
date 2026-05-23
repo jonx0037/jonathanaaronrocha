@@ -21,6 +21,7 @@ export default function ExperienceSection() {
                             src="/images/headshots/experience.webp"
                             alt={profile.fullName}
                             fill
+                            sizes="56px"
                             style={{ objectFit: 'cover' }}
                         />
                     </div>

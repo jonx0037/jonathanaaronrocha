@@ -24,6 +24,7 @@ export default function ContactSection() {
                             src="/images/headshots/contact.webp"
                             alt={profile.fullName}
                             fill
+                            sizes="112px"
                             style={{ objectFit: 'cover' }}
                         />
                     </div>

@@ -24,6 +24,7 @@ export default function BlogSection() {
                             src="/images/headshots/blog.webp"
                             alt={profile.fullName}
                             fill
+                            sizes="56px"
                             style={{ objectFit: 'cover' }}
                         />
                     </div>

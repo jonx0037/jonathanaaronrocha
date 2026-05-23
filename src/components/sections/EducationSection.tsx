@@ -23,6 +23,7 @@ export default function EducationSection() {
                             src="/images/headshots/education.webp"
                             alt={profile.fullName}
                             fill
+                            sizes="56px"
                             style={{ objectFit: 'cover' }}
                         />
                     </div>

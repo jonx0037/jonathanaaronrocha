@@ -8,7 +8,7 @@ export default function HeroSection() {
         <section className="relative overflow-hidden text-center mb-16 pt-16">
             <div
                 aria-hidden="true"
-                className="pointer-events-none absolute inset-x-0 top-0 -z-0 mx-auto h-[460px] max-w-md opacity-[0.12] dark:opacity-[0.08]"
+                className="pointer-events-none absolute inset-x-0 top-0 z-0 mx-auto h-[460px] max-w-md opacity-[0.12] dark:opacity-[0.08]"
                 style={{
                     maskImage: 'linear-gradient(to bottom, black 0%, black 35%, transparent 85%)',
                     WebkitMaskImage: 'linear-gradient(to bottom, black 0%, black 35%, transparent 85%)',
@@ -34,6 +34,7 @@ export default function HeroSection() {
                             src="/images/headshots/hero.webp"
                             alt={profile.fullName}
                             fill
+                            sizes="192px"
                             style={{ objectFit: 'cover' }}
                             priority
                         />
