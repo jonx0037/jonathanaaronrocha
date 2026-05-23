@@ -1,6 +1,7 @@
 import React from 'react'
+import Image from 'next/image'
 import { MotionDiv } from '../motion/MotionDiv'
-import { experience } from '../../data/siteData'
+import { experience, profile } from '../../data/siteData'
 
 export default function ExperienceSection() {
     return (
@@ -11,9 +12,20 @@ export default function ExperienceSection() {
                 viewport={{ once: true, amount: 0.1 }}
                 transition={{ duration: 0.5 }}
             >
-                <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-8">
-                    Experience
-                </h2>
+                <div className="flex items-center justify-between mb-8">
+                    <h2 className="text-3xl font-bold text-gray-900 dark:text-white">
+                        Experience
+                    </h2>
+                    <div className="relative w-14 h-14 rounded-full overflow-hidden ring-2 ring-blue-200 dark:ring-blue-900/60 flex-shrink-0">
+                        <Image
+                            src="/images/headshots/experience.webp"
+                            alt={profile.fullName}
+                            fill
+                            sizes="56px"
+                            style={{ objectFit: 'cover' }}
+                        />
+                    </div>
+                </div>
                 <ol className="relative border-l-2 border-blue-200 dark:border-blue-900/60 ml-3 md:ml-5 space-y-10">
                     {experience.map((job, index) => (
                         <MotionDiv

@@ -1,7 +1,8 @@
 import React from 'react'
+import Image from 'next/image'
 import Link from 'next/link'
 import { MotionDiv } from '../motion/MotionDiv'
-import { blogPosts } from '../../data/siteData'
+import { blogPosts, profile } from '../../data/siteData'
 
 export default function BlogSection() {
     // Show only the latest 4 posts on the homepage
@@ -14,13 +15,22 @@ export default function BlogSection() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.5 }}
             >
-                <div className="flex items-center justify-between mb-8">
+                <div className="flex items-center gap-4 mb-8">
                     <h2 className="text-3xl font-bold text-gray-900 dark:text-white">
                         Blog
                     </h2>
+                    <div className="relative w-14 h-14 rounded-full overflow-hidden ring-2 ring-gray-200 dark:ring-gray-700 flex-shrink-0">
+                        <Image
+                            src="/images/headshots/blog.webp"
+                            alt={profile.fullName}
+                            fill
+                            sizes="56px"
+                            style={{ objectFit: 'cover' }}
+                        />
+                    </div>
                     <Link
                         href="/blog"
-                        className="text-blue-500 dark:text-blue-400 hover:underline text-sm font-medium"
+                        className="ml-auto text-blue-500 dark:text-blue-400 hover:underline text-sm font-medium"
                     >
                         View All Posts →
                     </Link>

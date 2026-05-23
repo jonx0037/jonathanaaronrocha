@@ -41,22 +41,19 @@ export const metadata: Metadata = {
     siteName: 'Jonathan Aaron Rocha',
     locale: 'en_US',
     type: 'website',
+    images: [{ url: '/images/headshots/og-image.jpg', width: 1200, height: 630 }],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Jonathan Aaron Rocha — Data Scientist · AI/ML Engineer',
     description:
       'Applied ML in industry. Doctoral research in topology-aware deep learning and time-series data mining.',
+    images: ['/images/headshots/og-image.jpg'],
   },
   icons: {
-    icon: [
-      {
-        url: '/images/favicon.png',
-        type: 'image/png',
-      },
-    ],
-    shortcut: '/images/favicon.png',
-    apple: '/images/favicon.png',
+    icon: [{ url: '/images/headshots/favicon-32.png', sizes: '32x32', type: 'image/png' }],
+    shortcut: '/images/headshots/favicon-32.png',
+    apple: '/images/headshots/apple-touch-icon.png',
   },
 }
 
