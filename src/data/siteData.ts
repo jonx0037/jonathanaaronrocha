@@ -8,12 +8,9 @@ export interface Profile {
     shortName: string
     tagline: string
     email: string
-    phone: string
     location: string
     linkedin: string
     github: string
-    resumeUrl: string
-    cvUrl: string
     pitchCombined: string
     pitchIndustry: string
     pitchAcademic: string
@@ -23,19 +20,16 @@ export const profile: Profile = {
     fullName: 'Jonathan A. Rocha',
     shortName: 'Jonathan Rocha',
     tagline: 'Data Scientist · AI/ML Engineer · Full-Stack Developer',
-    email: 'jarocha@smu.edu',
-    phone: '737-397-0800',
+    email: 'jonx0037@gmail.com',
     location: 'Austin, TX',
     linkedin: 'https://www.linkedin.com/in/jonathan-rocha-ai',
     github: 'https://github.com/jonx0037',
-    resumeUrl: '/documents/JR-Resume-2026.pdf',
-    cvUrl: '/documents/JR-CV-2026.pdf',
     pitchCombined:
-        'Building applied ML systems in industry. Pursuing doctoral research in topology-aware deep learning and time-series data mining.',
+        'Building applied ML systems in industry. Independent research in topology-aware deep learning and time-series data mining.',
     pitchIndustry:
-        '20+ years of full-stack engineering experience across financial services (Wells Fargo), automotive retail, marketing technology, and AI/ML consulting. Currently shipping production ML systems — multimodal RAG, multi-agent pipelines, sentiment-driven market intelligence — while completing an M.S. in Data Science at SMU.',
+        '20+ years of full-stack engineering experience across financial services (Wells Fargo), automotive retail, marketing technology, and AI/ML consulting. Currently shipping production ML systems — multimodal RAG, multi-agent pipelines, sentiment-driven market intelligence — backed by an M.S. in Data Science from SMU.',
     pitchAcademic:
-        'Pursuing a PhD in data science, computer science, or mathematics with research interests in topology-aware deep learning, time-series data mining, and NLP applied to financial markets. Author of the Formal educational platform series (130+ topics across 29 tracks) and the Applied NLP for Finance book manuscript.',
+        'Independent research in topology-aware deep learning, time-series data mining, and NLP applied to financial markets. Author of the Formal educational platform series (180+ topics across 39 tracks) and the Applied NLP for Finance book manuscript.',
 }
 
 // --- What's New ---
@@ -47,7 +41,7 @@ export interface Announcement {
 export const announcements: Announcement[] = [
     {
         emoji: '🎓',
-        text: 'Pursuing a PhD in data science, computer science, or mathematics — research focus on topology-aware deep learning and time-series data mining',
+        text: 'Completed the M.S. in Data Science at SMU (August 2026) — capstone on sentiment-based market regime detection',
     },
     {
         emoji: '📘',
@@ -74,9 +68,10 @@ export const education: Education[] = [
     {
         degree: 'Master of Science, Data Science',
         school: 'Southern Methodist University (SMU)',
-        status: 'Expected Graduation: August 2026 · GPA: 3.63',
+        status: 'Graduated August 2026 · GPA: 3.8',
         advisor: 'Dr. Lin',
         liveLink: { url: 'https://market-sentiment.io', label: 'market-sentiment.io' },
+        diplomaLink: '/images/SMU-MS-DSCI-DIPLOMA.pdf',
         details: [
             'Capstone: Sentiment-based market regime detection using ensemble transformer models (BERT-family + GARCH(1,1) + Statistical Jump Model)',
             'Coursework: Artificial Intelligence, Database Management Systems, Applied Statistics I & II, Machine Learning II',
@@ -111,7 +106,7 @@ export const experience: Experience[] = [
     {
         title: 'Founder & Chief Executive Officer',
         company: 'DataSalt.ai',
-        period: 'February 2025 – Present',
+        period: 'January 2026 – Present',
         location: 'Austin, TX',
         mode: 'Hybrid',
         current: true,
@@ -119,43 +114,42 @@ export const experience: Experience[] = [
             'Founded a boutique AI/ML consultancy serving small and mid-sized Texas businesses. Lead all data science engagements: retrieve and analyze sensitive client data across retail, agriculture, legal, healthcare, and other verticals; transform inputs into actionable insights through intuitive data storytelling.',
         bullets: [
             'Built finrag.io, a multimodal financial RAG system (Gemini Embeddings 2, Qdrant, Cloudflare R2, FastAPI on Fly.io, Claude Sonnet, Next.js on Vercel)',
-            'Created the Formal educational platform series — formalml.com, formalstatistics.com, formalcalculus.com — Astro 5 / React 18 / MDX / Tailwind CSS / D3.js / KaTeX with 130+ published topics across 29 curriculum tracks',
+            'Created the Formal educational platform series — formalml.com, formalstatistics.com, formalcalculus.com, formalrag.com — Astro / React / MDX / Tailwind CSS / D3.js / KaTeX with 180+ published topics across 39 curriculum tracks',
             'Published portfolio of 10 case studies and 7 technical blog posts at datasalt.ai; built SaltyDog, an AI chatbot with custom avatar',
         ],
     },
     {
         title: 'Senior Web Developer & Full-Stack Engineer',
-        company: 'Fullsteam / Fullsteam Marketing',
-        period: 'January 2015 – December 2025',
+        company: 'Fullsteam',
+        period: 'June 2021 – December 2025',
         location: 'Austin, TX',
         mode: 'Remote',
-        current: true,
         description:
-            '11-year tenure across three role transitions: Web Developer (Jan 2015) → Full-Stack Engineer at Fullsteam Marketing (Jan 2016, concurrent) → promoted to Senior Web Developer (Jan 2019). Architected and maintained React-based web applications aligned with company digital strategy.',
+            'Architected and maintained 150+ React web applications aligned with company digital strategy, building front and back end across JavaScript, Python, Go, HTML, and CSS.',
         bullets: [
-            'Executed full-stack development with HTML, CSS, JavaScript, and Python; managed database systems and AWS cloud infrastructure',
-            'Optimized site performance for SEO and user experience, significantly boosting visibility and search rankings of Fullsteam digital properties',
-            'Contributed to digital growth strategy through data-informed development decisions and cross-functional collaboration',
+            'Built the client sales-reporting pipeline — a nightly Python runner reconciling POS transactions, Google Analytics, and Google/Facebook ad-spend APIs into a single reporting view across 100+ accounts, reclaiming roughly 20 analyst hours per week',
+            'Engineered explicit partial-data detection into that pipeline: upstream provider lag made backfill impossible, so incomplete days were flagged rather than silently reported as complete',
+            'Replaced a $1,500+/yr SaaS dependency with in-house Python NLP and analytics services (pandas, scikit-learn, TF-IDF, text embeddings); integrated Cohere/LLM tooling and e-commerce chatbots into 40+ client properties',
+            'Managed database systems and AWS cloud infrastructure; performance work cut median page load 400% and lifted search visibility 125% across managed properties',
         ],
     },
     {
-        title: 'Independent Web Development Consultant',
-        company: 'Self-Employed',
-        period: '2004 – Present',
+        title: 'Web Developer',
+        company: 'DRS',
+        period: 'February 2017 – June 2021',
         location: 'Austin, TX',
-        mode: 'Hybrid',
-        current: true,
         description:
-            'Two decades of end-to-end custom web solutions specializing in React, responsive design, and UX/UI for clients ranging from startups to enterprises.',
+            'Front-end and full-stack engineering for e-commerce clients, building storefront interfaces and the back-end services behind them.',
         bullets: [
-            'Manage every stage of the project lifecycle: requirements gathering, technical architecture, full-stack development, API integration, performance optimization, accessibility, ongoing maintenance',
-            'Translate complex business needs into clear technical solutions; provide strategic guidance on best practices to non-technical stakeholders',
+            'Built Bootstrap- and React-based storefront interfaces for 100+ e-commerce clients',
+            'Delivered full-stack work across JavaScript, Python, and Go on AWS; maintained production databases and REST integrations',
+            'Built responsive, mobile-first layouts wired to back-end services over REST APIs',
         ],
     },
     {
         title: 'Senior Web Developer',
         company: 'Amaru Motors LP dba Charlie Clark Nissan',
-        period: 'March 2009 – January 2015',
+        period: 'March 2009 – January 2017',
         location: 'Harlingen, TX',
         mode: 'Onsite',
         description:
@@ -176,6 +170,19 @@ export const experience: Experience[] = [
         bullets: [
             'Worked across the stack with a back-end focus using HTML, CSS, JavaScript, and Python; built reliable, high-performing features under banking-grade security standards',
             'Collaborated with product, design, and security teams to ensure regulatory compliance while optimizing backend services for response time, stability, and usability',
+        ],
+    },
+    {
+        title: 'Independent Web Development Consultant',
+        company: 'Self-Employed',
+        period: '2004 – Present',
+        location: 'Austin, TX',
+        mode: 'Hybrid',
+        description:
+            'Two decades of end-to-end custom web solutions specializing in React, responsive design, and UX/UI for clients ranging from startups to enterprises.',
+        bullets: [
+            'Manage every stage of the project lifecycle: requirements gathering, technical architecture, full-stack development, API integration, performance optimization, accessibility, ongoing maintenance',
+            'Translate complex business needs into clear technical solutions; provide strategic guidance on best practices to non-technical stakeholders',
         ],
     },
 ]
@@ -350,6 +357,28 @@ export const formalSeries: FormalSite[] = [
             'Calculus and analysis curriculum spanning single-variable through functional analysis essentials.',
         liveUrl: 'https://formalcalculus.com',
         repoUrl: 'https://github.com/jonx0037/formalCalculus',
+    },
+    {
+        domain: 'formalrag.com',
+        name: 'Formal RAG',
+        topicCount: 51,
+        trackCount: 10,
+        tracks: [
+            'Retrieval Foundations',
+            'Embedding-Space Geometry',
+            'Probabilistic IR',
+            'Vector Quantization',
+            'ANN Index Structures',
+            'Neural & Learned Retrieval',
+            'Ranking, Fusion & Reranking',
+            'Retrieval & RAG Evaluation',
+            'Generation & Grounding',
+            'Information Theory of RAG',
+        ],
+        description:
+            'The mathematics of retrieval-augmented generation — retrieval geometry, ANN algorithms, probabilistic IR, ranking, and evaluation. Rigor-first and systems-aware rather than a build tutorial.',
+        liveUrl: 'https://formalrag.com',
+        repoUrl: 'https://github.com/jonx0037/formalRAG',
     },
 ]
 

@@ -10,7 +10,7 @@ const inter = Inter({ subsets: ['latin'] })
 export const metadata: Metadata = {
   title: 'Jonathan Aaron Rocha — Data Scientist · AI/ML Engineer · Full-Stack Developer',
   description:
-    'Data Scientist, AI/ML Engineer, and full-stack developer with 20+ years of experience. Currently completing an M.S. in Data Science at SMU and pursuing a PhD in topology-aware deep learning and time-series data mining. Founder of DataSalt.ai and author of the Applied NLP for Finance book and Formal educational platform series.',
+    'Data Scientist, AI/ML Engineer, and full-stack developer with 20+ years of experience. Holds an M.S. in Data Science from SMU, with independent research in topology-aware deep learning and time-series data mining. Founder of DataSalt.ai and author of the Applied NLP for Finance book and Formal educational platform series.',
   keywords: [
     'Jonathan Rocha',
     'Data Scientist',
@@ -28,7 +28,6 @@ export const metadata: Metadata = {
     'SMU',
     'DataSalt',
     'formalml.com',
-    'PhD',
     'Portfolio',
   ],
   authors: [{ name: 'Jonathan Aaron Rocha' }],
@@ -36,7 +35,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Jonathan Aaron Rocha — Data Scientist · AI/ML Engineer',
     description:
-      'Building applied ML systems in industry and pursuing doctoral research in topology-aware deep learning and time-series data mining. Founder of DataSalt.ai. SMU MSDS, August 2026.',
+      'Building applied ML systems in industry with independent research in topology-aware deep learning and time-series data mining. Founder of DataSalt.ai. SMU MSDS, August 2026.',
     url: 'https://jonathanaaronrocha.com',
     siteName: 'Jonathan Aaron Rocha',
     locale: 'en_US',
@@ -47,7 +46,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Jonathan Aaron Rocha — Data Scientist · AI/ML Engineer',
     description:
-      'Applied ML in industry. Doctoral research in topology-aware deep learning and time-series data mining.',
+      'Applied ML in industry. Independent research in topology-aware deep learning and time-series data mining.',
     images: ['/images/headshots/og-image.jpg'],
   },
   icons: {

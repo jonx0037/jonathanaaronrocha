@@ -29,7 +29,7 @@ export default function HeroSection() {
                 className="relative z-10 space-y-6"
             >
                 <div className="mb-8">
-                    <div className="relative w-48 h-48 mx-auto mb-6 rounded-full overflow-hidden ring-4 ring-blue-500/20">
+                    <div className="relative w-48 h-48 mx-auto mb-6 rounded-3xl overflow-hidden ring-4 ring-blue-500/20">
                         <Image
                             src="/images/headshots/hero.webp"
                             alt={profile.fullName}

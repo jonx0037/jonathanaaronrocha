@@ -15,9 +15,9 @@ export default function ResearchInterestsSection() {
                     Research Interests
                 </h2>
                 <p className="text-lg text-gray-600 dark:text-gray-300 mb-6 leading-relaxed">
-                    Pursuing a PhD in data science, computer science, or mathematics. Research is anchored in
-                    topology-aware deep learning and time-series data mining, with applied threads in financial
-                    NLP and sentiment-based regime detection.
+                    Research is anchored in topology-aware deep learning and time-series data mining, with
+                    applied threads in financial NLP and sentiment-based regime detection. This work continues
+                    through the Formal series and the Applied NLP for Finance manuscript.
                 </p>
                 <div className="flex flex-wrap gap-2">
                     {researchInterests.map((interest, index) => (
