@@ -1,6 +1,6 @@
 import React from 'react'
 import Image from 'next/image'
-import { ArrowDownTrayIcon, ArrowRightIcon } from '@heroicons/react/24/outline'
+import { EnvelopeIcon, ArrowRightIcon } from '@heroicons/react/24/outline'
 import { MotionDiv } from '../motion/MotionDiv'
 import { profile } from '../../data/siteData'
 
@@ -59,10 +59,9 @@ function TrackCard({
             </ul>
             <a
                 href={ctaHref}
-                download
                 className="inline-flex items-center justify-center gap-2 rounded-lg px-5 py-2.5 bg-blue-600 text-white font-semibold hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-400 transition-colors text-sm"
             >
-                <ArrowDownTrayIcon className="h-4 w-4" aria-hidden="true" />
+                <EnvelopeIcon className="h-4 w-4" aria-hidden="true" />
                 {ctaLabel}
             </a>
         </MotionDiv>
@@ -86,23 +85,23 @@ export default function AudienceSplitSection() {
                         { href: '#experience', label: '20+ years of full-stack engineering' },
                         { href: '#skills', label: 'Stack and ML tooling' },
                     ]}
-                    ctaHref={profile.resumeUrl}
-                    ctaLabel="Download Resume"
+                    ctaHref={`mailto:${profile.email}`}
+                    ctaLabel="Email me about roles"
                 />
                 <TrackCard
                     side="right"
                     portraitSrc="/images/headshots/audience-academic.webp"
                     portraitAlt={profile.fullName}
                     accentRingClass="ring-purple-200 dark:ring-purple-700"
-                    heading="Pursuing the PhD"
+                    heading="Research & Applied Science"
                     pitch={profile.pitchAcademic}
                     anchors={[
                         { href: '#formal-series', label: 'Formal series — 130+ topics across 29 tracks' },
-                        { href: '#research-interests', label: 'Research interests and PhD direction' },
+                        { href: '#research-interests', label: 'Research interests and current directions' },
                         { href: '#education', label: 'SMU MSDS Capstone (advised by Dr. Lin)' },
                     ]}
-                    ctaHref={profile.cvUrl}
-                    ctaLabel="Download CV"
+                    ctaHref={`mailto:${profile.email}`}
+                    ctaLabel="Email me about research"
                 />
             </div>
         </section>

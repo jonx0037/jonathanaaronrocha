@@ -67,6 +67,7 @@ export default function EducationSection() {
                                     <Link
                                         href={edu.diplomaLink}
                                         target="_blank"
+                                        rel="noopener noreferrer"
                                         className="inline-flex items-center gap-1 text-sm text-blue-600 dark:text-blue-400 hover:underline font-medium"
                                     >
                                         <span>View digital diploma</span>

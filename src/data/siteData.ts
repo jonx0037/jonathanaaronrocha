@@ -8,12 +8,9 @@ export interface Profile {
     shortName: string
     tagline: string
     email: string
-    phone: string
     location: string
     linkedin: string
     github: string
-    resumeUrl: string
-    cvUrl: string
     pitchCombined: string
     pitchIndustry: string
     pitchAcademic: string
@@ -23,19 +20,16 @@ export const profile: Profile = {
     fullName: 'Jonathan A. Rocha',
     shortName: 'Jonathan Rocha',
     tagline: 'Data Scientist · AI/ML Engineer · Full-Stack Developer',
-    email: 'jarocha@smu.edu',
-    phone: '737-397-0800',
+    email: 'jonx0037@gmail.com',
     location: 'Austin, TX',
     linkedin: 'https://www.linkedin.com/in/jonathan-rocha-ai',
     github: 'https://github.com/jonx0037',
-    resumeUrl: '/documents/JR-Resume-2026.pdf',
-    cvUrl: '/documents/JR-CV-2026.pdf',
     pitchCombined:
-        'Building applied ML systems in industry. Pursuing doctoral research in topology-aware deep learning and time-series data mining.',
+        'Building applied ML systems in industry. Independent research in topology-aware deep learning and time-series data mining.',
     pitchIndustry:
-        '20+ years of full-stack engineering experience across financial services (Wells Fargo), automotive retail, marketing technology, and AI/ML consulting. Currently shipping production ML systems — multimodal RAG, multi-agent pipelines, sentiment-driven market intelligence — while completing an M.S. in Data Science at SMU.',
+        '20+ years of full-stack engineering experience across financial services (Wells Fargo), automotive retail, marketing technology, and AI/ML consulting. Currently shipping production ML systems — multimodal RAG, multi-agent pipelines, sentiment-driven market intelligence — backed by an M.S. in Data Science from SMU.',
     pitchAcademic:
-        'Pursuing a PhD in data science, computer science, or mathematics with research interests in topology-aware deep learning, time-series data mining, and NLP applied to financial markets. Author of the Formal educational platform series (130+ topics across 29 tracks) and the Applied NLP for Finance book manuscript.',
+        'Independent research in topology-aware deep learning, time-series data mining, and NLP applied to financial markets. Author of the Formal educational platform series (130+ topics across 29 tracks) and the Applied NLP for Finance book manuscript.',
 }
 
 // --- What's New ---
@@ -47,7 +41,7 @@ export interface Announcement {
 export const announcements: Announcement[] = [
     {
         emoji: '🎓',
-        text: 'Pursuing a PhD in data science, computer science, or mathematics — research focus on topology-aware deep learning and time-series data mining',
+        text: 'Completed the M.S. in Data Science at SMU (August 2026) — capstone on sentiment-based market regime detection',
     },
     {
         emoji: '📘',
@@ -74,9 +68,10 @@ export const education: Education[] = [
     {
         degree: 'Master of Science, Data Science',
         school: 'Southern Methodist University (SMU)',
-        status: 'Expected Graduation: August 2026 · GPA: 3.63',
+        status: 'Graduated August 2026 · GPA: 3.63',
         advisor: 'Dr. Lin',
         liveLink: { url: 'https://market-sentiment.io', label: 'market-sentiment.io' },
+        diplomaLink: '/images/SMU-MS-DSCI-DIPLOMA.pdf',
         details: [
             'Capstone: Sentiment-based market regime detection using ensemble transformer models (BERT-family + GARCH(1,1) + Statistical Jump Model)',
             'Coursework: Artificial Intelligence, Database Management Systems, Applied Statistics I & II, Machine Learning II',
