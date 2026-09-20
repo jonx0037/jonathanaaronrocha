@@ -127,9 +127,10 @@ export const experience: Experience[] = [
         description:
             'Architected and maintained 150+ React web applications aligned with company digital strategy, building front and back end across JavaScript, Python, Go, HTML, and CSS.',
         bullets: [
-            'Executed full-stack development with HTML, CSS, JavaScript, and Python; managed database systems and AWS cloud infrastructure',
-            'Optimized site performance for SEO and user experience, significantly boosting visibility and search rankings of Fullsteam digital properties',
-            'Contributed to digital growth strategy through data-informed development decisions and cross-functional collaboration',
+            'Built the client sales-reporting pipeline — a nightly Python runner reconciling POS transactions, Google Analytics, and Google/Facebook ad-spend APIs into a single reporting view across 100+ accounts, reclaiming roughly 20 analyst hours per week',
+            'Engineered explicit partial-data detection into that pipeline: upstream provider lag made backfill impossible, so incomplete days were flagged rather than silently reported as complete',
+            'Replaced a $1,500+/yr SaaS dependency with in-house Python NLP and analytics services (pandas, scikit-learn, TF-IDF, text embeddings); integrated Cohere/LLM tooling and e-commerce chatbots into 40+ client properties',
+            'Managed database systems and AWS cloud infrastructure; performance work cut median page load 400% and lifted search visibility 125% across managed properties',
         ],
     },
     {
