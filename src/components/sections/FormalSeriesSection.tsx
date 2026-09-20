@@ -19,7 +19,7 @@ export default function FormalSeriesSection() {
                     Formal Educational Platform Series
                 </h2>
                 <p className="text-gray-600 dark:text-gray-300 mb-8 font-mono text-sm">
-                    {totalTopics}+ topics · {totalTracks} curriculum tracks · Astro 5 · React 18 · MDX · D3.js · KaTeX
+                    {totalTopics}+ topics · {totalTracks} curriculum tracks · Astro · React · MDX · D3.js · KaTeX
                 </p>
                 <div className="grid md:grid-cols-3 gap-6 md:gap-8">
                     {formalSeries.map((site, index) => (

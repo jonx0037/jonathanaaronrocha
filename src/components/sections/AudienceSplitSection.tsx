@@ -96,7 +96,7 @@ export default function AudienceSplitSection() {
                     heading="Research & Applied Science"
                     pitch={profile.pitchAcademic}
                     anchors={[
-                        { href: '#formal-series', label: 'Formal series — 130+ topics across 29 tracks' },
+                        { href: '#formal-series', label: 'Formal series — 180+ topics across 39 tracks' },
                         { href: '#research-interests', label: 'Research interests and current directions' },
                         { href: '#education', label: 'SMU MSDS Capstone (advised by Dr. Lin)' },
                     ]}

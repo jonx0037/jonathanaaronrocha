@@ -29,7 +29,7 @@ export const profile: Profile = {
     pitchIndustry:
         '20+ years of full-stack engineering experience across financial services (Wells Fargo), automotive retail, marketing technology, and AI/ML consulting. Currently shipping production ML systems — multimodal RAG, multi-agent pipelines, sentiment-driven market intelligence — backed by an M.S. in Data Science from SMU.',
     pitchAcademic:
-        'Independent research in topology-aware deep learning, time-series data mining, and NLP applied to financial markets. Author of the Formal educational platform series (130+ topics across 29 tracks) and the Applied NLP for Finance book manuscript.',
+        'Independent research in topology-aware deep learning, time-series data mining, and NLP applied to financial markets. Author of the Formal educational platform series (180+ topics across 39 tracks) and the Applied NLP for Finance book manuscript.',
 }
 
 // --- What's New ---
@@ -114,7 +114,7 @@ export const experience: Experience[] = [
             'Founded a boutique AI/ML consultancy serving small and mid-sized Texas businesses. Lead all data science engagements: retrieve and analyze sensitive client data across retail, agriculture, legal, healthcare, and other verticals; transform inputs into actionable insights through intuitive data storytelling.',
         bullets: [
             'Built finrag.io, a multimodal financial RAG system (Gemini Embeddings 2, Qdrant, Cloudflare R2, FastAPI on Fly.io, Claude Sonnet, Next.js on Vercel)',
-            'Created the Formal educational platform series — formalml.com, formalstatistics.com, formalcalculus.com — Astro 5 / React 18 / MDX / Tailwind CSS / D3.js / KaTeX with 130+ published topics across 29 curriculum tracks',
+            'Created the Formal educational platform series — formalml.com, formalstatistics.com, formalcalculus.com, formalrag.com — Astro / React / MDX / Tailwind CSS / D3.js / KaTeX with 180+ published topics across 39 curriculum tracks',
             'Published portfolio of 10 case studies and 7 technical blog posts at datasalt.ai; built SaltyDog, an AI chatbot with custom avatar',
         ],
     },
@@ -357,6 +357,28 @@ export const formalSeries: FormalSite[] = [
             'Calculus and analysis curriculum spanning single-variable through functional analysis essentials.',
         liveUrl: 'https://formalcalculus.com',
         repoUrl: 'https://github.com/jonx0037/formalCalculus',
+    },
+    {
+        domain: 'formalrag.com',
+        name: 'Formal RAG',
+        topicCount: 51,
+        trackCount: 10,
+        tracks: [
+            'Retrieval Foundations',
+            'Embedding-Space Geometry',
+            'Probabilistic IR',
+            'Vector Quantization',
+            'ANN Index Structures',
+            'Neural & Learned Retrieval',
+            'Ranking, Fusion & Reranking',
+            'Retrieval & RAG Evaluation',
+            'Generation & Grounding',
+            'Information Theory of RAG',
+        ],
+        description:
+            'The mathematics of retrieval-augmented generation — retrieval geometry, ANN algorithms, probabilistic IR, ranking, and evaluation. Rigor-first and systems-aware rather than a build tutorial.',
+        liveUrl: 'https://formalrag.com',
+        repoUrl: 'https://github.com/jonx0037/formalRAG',
     },
 ]
 
