@@ -35,7 +35,7 @@ function TrackCard({
             transition={{ duration: 0.5, delay: side === 'left' ? 0 : 0.1 }}
             className="bg-white dark:bg-gray-800 p-8 rounded-xl shadow-lg flex flex-col h-full"
         >
-            <div className={`relative w-[72px] h-[72px] rounded-full overflow-hidden mb-5 ring-4 ${accentRingClass}`}>
+            <div className={`relative w-[72px] h-[72px] rounded-xl overflow-hidden mb-5 ring-4 ${accentRingClass}`}>
                 <Image src={portraitSrc} alt={portraitAlt} fill sizes="72px" style={{ objectFit: 'cover' }} />
             </div>
             <h3 className="text-2xl font-semibold text-gray-900 dark:text-white mb-3">

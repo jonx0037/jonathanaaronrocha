@@ -18,7 +18,7 @@ export default function ContactSection() {
                     Get in Touch
                 </h2>
                 <div className="bg-white dark:bg-gray-800 p-8 rounded-xl shadow-lg">
-                    <div className="relative w-28 h-28 mx-auto mb-6 rounded-full overflow-hidden">
+                    <div className="relative w-28 h-28 mx-auto mb-6 rounded-2xl overflow-hidden">
                         <Image
                             src="/images/headshots/contact.webp"
                             alt={profile.fullName}

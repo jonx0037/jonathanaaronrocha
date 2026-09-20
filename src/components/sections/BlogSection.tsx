@@ -19,7 +19,7 @@ export default function BlogSection() {
                     <h2 className="text-3xl font-bold text-gray-900 dark:text-white">
                         Blog
                     </h2>
-                    <div className="relative w-14 h-14 rounded-full overflow-hidden ring-2 ring-gray-200 dark:ring-gray-700 flex-shrink-0">
+                    <div className="relative w-14 h-14 rounded-xl overflow-hidden ring-2 ring-gray-200 dark:ring-gray-700 flex-shrink-0">
                         <Image
                             src="/images/headshots/blog.webp"
                             alt={profile.fullName}

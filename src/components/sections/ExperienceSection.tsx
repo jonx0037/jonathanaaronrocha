@@ -16,7 +16,7 @@ export default function ExperienceSection() {
                     <h2 className="text-3xl font-bold text-gray-900 dark:text-white">
                         Experience
                     </h2>
-                    <div className="relative w-14 h-14 rounded-full overflow-hidden ring-2 ring-blue-200 dark:ring-blue-900/60 flex-shrink-0">
+                    <div className="relative w-14 h-14 rounded-xl overflow-hidden ring-2 ring-blue-200 dark:ring-blue-900/60 flex-shrink-0">
                         <Image
                             src="/images/headshots/experience.webp"
                             alt={profile.fullName}

@@ -68,7 +68,7 @@ export const education: Education[] = [
     {
         degree: 'Master of Science, Data Science',
         school: 'Southern Methodist University (SMU)',
-        status: 'Graduated August 2026 · GPA: 3.63',
+        status: 'Graduated August 2026 · GPA: 3.8',
         advisor: 'Dr. Lin',
         liveLink: { url: 'https://market-sentiment.io', label: 'market-sentiment.io' },
         diplomaLink: '/images/SMU-MS-DSCI-DIPLOMA.pdf',
@@ -106,7 +106,7 @@ export const experience: Experience[] = [
     {
         title: 'Founder & Chief Executive Officer',
         company: 'DataSalt.ai',
-        period: 'February 2025 – Present',
+        period: 'January 2026 – Present',
         location: 'Austin, TX',
         mode: 'Hybrid',
         current: true,
@@ -120,13 +120,12 @@ export const experience: Experience[] = [
     },
     {
         title: 'Senior Web Developer & Full-Stack Engineer',
-        company: 'Fullsteam / Fullsteam Marketing',
-        period: 'January 2015 – December 2025',
+        company: 'Fullsteam',
+        period: 'June 2021 – December 2025',
         location: 'Austin, TX',
         mode: 'Remote',
-        current: true,
         description:
-            '11-year tenure across three role transitions: Web Developer (Jan 2015) → Full-Stack Engineer at Fullsteam Marketing (Jan 2016, concurrent) → promoted to Senior Web Developer (Jan 2019). Architected and maintained React-based web applications aligned with company digital strategy.',
+            'Architected and maintained 150+ React web applications aligned with company digital strategy, building front and back end across JavaScript, Python, Go, HTML, and CSS.',
         bullets: [
             'Executed full-stack development with HTML, CSS, JavaScript, and Python; managed database systems and AWS cloud infrastructure',
             'Optimized site performance for SEO and user experience, significantly boosting visibility and search rankings of Fullsteam digital properties',
@@ -134,23 +133,22 @@ export const experience: Experience[] = [
         ],
     },
     {
-        title: 'Independent Web Development Consultant',
-        company: 'Self-Employed',
-        period: '2004 – Present',
+        title: 'Web Developer',
+        company: 'DRS',
+        period: 'February 2017 – June 2021',
         location: 'Austin, TX',
-        mode: 'Hybrid',
-        current: true,
         description:
-            'Two decades of end-to-end custom web solutions specializing in React, responsive design, and UX/UI for clients ranging from startups to enterprises.',
+            'Front-end and full-stack engineering for e-commerce clients, building storefront interfaces and the back-end services behind them.',
         bullets: [
-            'Manage every stage of the project lifecycle: requirements gathering, technical architecture, full-stack development, API integration, performance optimization, accessibility, ongoing maintenance',
-            'Translate complex business needs into clear technical solutions; provide strategic guidance on best practices to non-technical stakeholders',
+            'Built Bootstrap- and React-based storefront interfaces for 100+ e-commerce clients',
+            'Delivered full-stack work across JavaScript, Python, and Go on AWS; maintained production databases and REST integrations',
+            'Built responsive, mobile-first layouts wired to back-end services over REST APIs',
         ],
     },
     {
         title: 'Senior Web Developer',
         company: 'Amaru Motors LP dba Charlie Clark Nissan',
-        period: 'March 2009 – January 2015',
+        period: 'March 2009 – January 2017',
         location: 'Harlingen, TX',
         mode: 'Onsite',
         description:
@@ -171,6 +169,19 @@ export const experience: Experience[] = [
         bullets: [
             'Worked across the stack with a back-end focus using HTML, CSS, JavaScript, and Python; built reliable, high-performing features under banking-grade security standards',
             'Collaborated with product, design, and security teams to ensure regulatory compliance while optimizing backend services for response time, stability, and usability',
+        ],
+    },
+    {
+        title: 'Independent Web Development Consultant',
+        company: 'Self-Employed',
+        period: '2004 – Present',
+        location: 'Austin, TX',
+        mode: 'Hybrid',
+        description:
+            'Two decades of end-to-end custom web solutions specializing in React, responsive design, and UX/UI for clients ranging from startups to enterprises.',
+        bullets: [
+            'Manage every stage of the project lifecycle: requirements gathering, technical architecture, full-stack development, API integration, performance optimization, accessibility, ongoing maintenance',
+            'Translate complex business needs into clear technical solutions; provide strategic guidance on best practices to non-technical stakeholders',
         ],
     },
 ]

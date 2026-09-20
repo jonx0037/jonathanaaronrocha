@@ -18,7 +18,7 @@ export default function EducationSection() {
                     <h2 className="text-3xl font-bold text-gray-900 dark:text-white">
                         Education
                     </h2>
-                    <div className="relative w-14 h-14 rounded-full overflow-hidden ring-2 ring-purple-200 dark:ring-purple-900/60 flex-shrink-0">
+                    <div className="relative w-14 h-14 rounded-xl overflow-hidden ring-2 ring-purple-200 dark:ring-purple-900/60 flex-shrink-0">
                         <Image
                             src="/images/headshots/education.webp"
                             alt={profile.fullName}
